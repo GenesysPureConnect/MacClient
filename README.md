@@ -1,2 +1,1 @@
-MacClient
-=========
+Images are used from the oxygen-icons collection https://github.com/pasnox/oxygen-icons-png which has the LGPL license
