@@ -37,12 +37,23 @@ ConnectionService *_connectionService;
 }
 
 -(void) showLoginDialog{
+    if ([_currentViewController isKindOfClass:[LoginViewController class]])
+    {
+        return;
+    }
+    
     LoginViewController* c = [[LoginViewController alloc]initWithNibName:@"LoginView" bundle:nil];
     c.connectionService = _connectionService;
     [self setView:c];
 }
 
 -(void) showClientDialog{
+    if ([_currentViewController isKindOfClass:[ClientViewController class]])
+    {
+        return;
+    }
+    
+    
     ClientViewController* c = [[ClientViewController alloc]initWithNibName:@"ClientView" bundle:nil];
     [self setView:c];
     
@@ -51,6 +62,7 @@ ConnectionService *_connectionService;
 -(void) setView:(NSViewController*) controller{
     
     @try {
+        
         [[_currentViewController view ]removeFromSuperview ];
         
         self.currentViewController = controller;

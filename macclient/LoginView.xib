@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="connectButton" destination="kRS-SL-GkA" id="2O9-iN-ElT"/>
+                <outlet property="errorLabel" destination="ZYh-nB-UvO" id="VBu-J6-JOz"/>
                 <outlet property="passwordField" destination="6rz-0w-q1X" id="XxD-YP-Zil"/>
                 <outlet property="server" destination="vaD-7W-8GE" id="LCe-3P-NFv"/>
                 <outlet property="userNameField" destination="72R-qM-Ivo" id="qXa-Nd-Sua"/>
@@ -86,6 +87,15 @@
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-nB-UvO">
+                    <rect key="frame" x="20" y="8" width="265" height="42"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="HPI-Dz-U5a">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" red="0.89327870244565222" green="0.0" blue="0.16838203008567809" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>

@@ -51,8 +51,9 @@
     NSData* result = [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
     int statusCode = (int)[response statusCode];
     
-    if(result == nil)
+    if(statusCode == 0)
     {
+        self.userId = @"";
         [self sendConnectionStateChanged :false toServer:@"" withDetails:@"Unable to Contact Server"];
         return 0;
     }
