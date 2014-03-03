@@ -15,6 +15,7 @@
 #import "constants.h"
 #import "ClientViewController.h"
 #import "ServiceLocator.h"
+#import "QueueService.h"
 
 @implementation MainController
 
@@ -22,6 +23,9 @@ MessagePollService* _pollService;
 StatusBarController * _statusBarController;
 StatusService *_statusService;
 ConnectionService *_connectionService;
+QueueService *_myQueue;
+LoginViewController* _loginController;
+ClientViewController *_clientViewController;
 
 
 -(void) awakeFromNib{
@@ -41,10 +45,18 @@ ConnectionService *_connectionService;
     {
         return;
     }
+   
+    if(_loginController == NULL){
+        _loginController = [[LoginViewController alloc]initWithNibName:@"LoginView" bundle:nil];
+        [_loginController setConnectionService:_connectionService];
+        [_mainView addSubview:[_loginController view]];
+        [_loginController loadSavedData];
+    }
     
-    LoginViewController* c = [[LoginViewController alloc]initWithNibName:@"LoginView" bundle:nil];
-    c.connectionService = _connectionService;
-    [self setView:c];
+    [[_clientViewController view] setHidden:true];
+ 
+    [self setView: _loginController];
+
 }
 
 -(void) showClientDialog{
@@ -52,27 +64,28 @@ ConnectionService *_connectionService;
     {
         return;
     }
-    
-    
-    ClientViewController* c = [[ClientViewController alloc]initWithNibName:@"ClientView" bundle:nil];
-    [self setView:c];
-    
+
+    if(_clientViewController == NULL){
+        
+        _clientViewController = [[ClientViewController alloc]initWithNibName:@"ClientView" bundle:nil];
+        [_mainView addSubview:[_clientViewController view]];
+        
+    }
+    [[_loginController view] setHidden:true];
+   
+    [self setView: _clientViewController];
 }
 
 -(void) setView:(NSViewController*) controller{
     
     @try {
-        
-        [[_currentViewController view ]removeFromSuperview ];
-        
-        self.currentViewController = controller;
-        
-        [_mainView addSubview:[_currentViewController view]];
-//        [[_mainView window] setContentSize:_currentViewController.view.bounds.size ];
-   //     [[_mainView window] setContentView:_currentViewController.view];
+        [[_mainView window] setContentSize: controller.view.bounds.size];
+        controller.view.frame = CGRectMake(0, 50, controller.view.frame.size.width, controller.view.frame.size.height);
+        [[controller view] setHidden:false];
+        _currentViewController = controller;
     }
     @catch (NSException *exception) {
-        NSLog(exception);
+        //NSLog(exception);
     }
    
   
@@ -86,6 +99,7 @@ ConnectionService *_connectionService;
     }
     else{
         [self showLoginDialog ];
+       
     }
 }
 
@@ -100,10 +114,20 @@ ConnectionService *_connectionService;
     [_statusBarController setStatusService:_statusService];
     
     
-    _connectionService = [[ConnectionService alloc] initWithIcwsClient:client];
+    _connectionService = [ServiceLocator getConnectionService];
     
     _pollService = [[MessagePollService alloc] initWithIcwsClient:client andConnectionService:(ConnectionService*)_connectionService];
     
 
+}
+
+- (IBAction)showPreferences:(id)sender
+{
+    
+}
+- (IBAction)logOut:(id)sender{
+    [self showLoginDialog];
+    [_connectionService disconnect:@""];
+    
 }
 @end

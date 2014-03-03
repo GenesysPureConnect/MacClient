@@ -9,9 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "IcwsClient.h"
 #import "StatusService.h"
-
+#import "CallService.h"
+#import "QueueService.h"
+#import "ConnectionService.h"
 
 @interface ServiceLocator : NSObject
 +(IcwsClient*) getIcwsClient;
 +(StatusService*) getStatusService;
++(CallService*) getCallService;
++(QueueService*) getQueueService;
++(ConnectionService*) getConnectionService;
 @end

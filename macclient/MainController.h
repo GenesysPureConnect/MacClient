@@ -11,10 +11,14 @@
 @interface MainController : NSObject
 @property (weak) IBOutlet NSView *mainView;
 @property (strong) NSViewController *currentViewController;
+@property (weak) IBOutlet NSMenuItem *logOutMenuItem;
 
 -(void) setupServices;
 -(void) connectionStateChanged: (NSNotification *)notification;
 -(void) showClientDialog;
 -(void) showLoginDialog;
 -(void) setView:(NSViewController*) controller;
+- (IBAction)showPreferences:(id)sender;
+- (IBAction)logOut:(id)sender;
+
 @end

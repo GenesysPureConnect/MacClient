@@ -16,11 +16,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-     NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
-    [standardDefaults registerDefaults:@{@"favoriteColor": @"Green"}];
-    [standardDefaults synchronize];
-    
-      
         
 }
 

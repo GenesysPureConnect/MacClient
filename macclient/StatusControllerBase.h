@@ -13,12 +13,11 @@
 
 @interface StatusControllerBase : ConnectionDependantBaseClass
 
--(id) initWithStatusService: (StatusService*) statusService;
 -(void) onCurrentStatusChanged: (NSNotification *)notification;
 -(void) onAvailableStatusesChanged: (NSNotification *)notification;
 -(NSImage *)imageResize:(NSImage*)anImage newSize:(NSSize)newSize;
--(void)updateTimeInStatus:(NSTimer*)aTimer;
--(NSString*) getTimeInStatusString;
+//-(void)updateTimeInStatus:(NSTimer*)aTimer;
+//-(NSString*) getTimeInStatusString;
 -(void) setStatusService:(StatusService*)statusService;
 
 - (void)statusListChanged:(NSArray*)statusList;

@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IcwsServiceBase.h"
 
-@interface CallService : NSObject
-
+@interface CallService : IcwsServiceBase
+-(void) placeCall:(NSString*)number;
 @end

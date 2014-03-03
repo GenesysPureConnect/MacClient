@@ -16,13 +16,13 @@ StatusService* _statusService;
 
 -(void) awakeFromNib{
     [self setStatusService:[ServiceLocator getStatusService]];
-    [_statusButton setPullsDown:true];
-}
+   }
 
 
 -(void) setStatusService:(StatusService*)statusService{
     _statusService = statusService;
     [super setStatusService:statusService];
+    
 }
 
 - (void)statusListChanged:(NSArray*)statusList{
@@ -67,17 +67,17 @@ StatusService* _statusService;
     
 }
 - (void) currentStatusChanged:(Status*) status{
-   /*
+   
     for(int x =0; x<_statuses.count; x++)
     {
         Status* checkStatus = _statuses[x];
-        NSLog(checkStatus.id);
+ //       NSLog(checkStatus.id);
         if( [checkStatus id] == [status id]){
             [_statusButton selectItemAtIndex:x ];
             [_statusButton display];
         }
     }
-    */
+    
     
     NSImage* statusImage = [[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:[status imageUrl]]];
     NSSize newSize;

@@ -17,6 +17,9 @@
 		89671C7D18921CCA00918B1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89671C5C18921CC900918B1E /* Cocoa.framework */; };
 		89671C8518921CCA00918B1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89671C8318921CCA00918B1E /* InfoPlist.strings */; };
 		89671C8718921CCA00918B1E /* macclientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89671C8618921CCA00918B1E /* macclientTests.m */; };
+		8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985113C18BFBB1F00C6C33F /* QueueService.m */; };
+		8985114018BFFA0200C6C33F /* Interaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985113F18BFFA0200C6C33F /* Interaction.m */; };
+		8985114318C2EBE200C6C33F /* QueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985114218C2EBE200C6C33F /* QueueController.m */; };
 		89B2D72018B99729004F0AD5 /* StatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D71F18B99729004F0AD5 /* StatusBarController.m */; };
 		89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D72718BA3321004F0AD5 /* ConnectionService.m */; };
 		89B2D72B18BA3F12004F0AD5 /* IcwsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D72A18BA3F12004F0AD5 /* IcwsClient.m */; };
@@ -29,6 +32,12 @@
 		89B2D74618BC2167004F0AD5 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D74518BC2167004F0AD5 /* MainController.m */; };
 		89B94A8918BEB1F8007B25DA /* ServiceLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A8818BEB1F8007B25DA /* ServiceLocator.m */; };
 		89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A8A18BED086007B25DA /* appointment-recurring.png */; };
+		89B94A9218BEDB72007B25DA /* call-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A9118BEDB72007B25DA /* call-start.png */; };
+		89B94A9418BEDB93007B25DA /* call-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A9318BEDB93007B25DA /* call-stop.png */; };
+		89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A9518BEDBC8007B25DA /* media-playback-pause.png */; };
+		89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A9718BEDBE8007B25DA /* audio-volume-muted.png */; };
+		89B94A9B18BF7A75007B25DA /* CallService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A9A18BF7A75007B25DA /* CallService.m */; };
+		89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A9D18BF8C5D007B25DA /* MakeCallController.m */; };
 		89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA66818BD81C50026380B /* LoginViewController.m */; };
 		89BAA66B18BD81C50026380B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA66918BD81C50026380B /* LoginView.xib */; };
 		89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA66D18BD825A0026380B /* ClientViewController.m */; };
@@ -67,6 +76,12 @@
 		89671C8218921CCA00918B1E /* macclientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "macclientTests-Info.plist"; sourceTree = "<group>"; };
 		89671C8418921CCA00918B1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89671C8618921CCA00918B1E /* macclientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = macclientTests.m; sourceTree = "<group>"; };
+		8985113B18BFBB1F00C6C33F /* QueueService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueService.h; sourceTree = "<group>"; };
+		8985113C18BFBB1F00C6C33F /* QueueService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueService.m; sourceTree = "<group>"; };
+		8985113E18BFFA0200C6C33F /* Interaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interaction.h; sourceTree = "<group>"; };
+		8985113F18BFFA0200C6C33F /* Interaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interaction.m; sourceTree = "<group>"; };
+		8985114118C2EBE200C6C33F /* QueueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueController.h; sourceTree = "<group>"; };
+		8985114218C2EBE200C6C33F /* QueueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueController.m; sourceTree = "<group>"; };
 		89B2D71E18B99729004F0AD5 /* StatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusBarController.h; sourceTree = "<group>"; };
 		89B2D71F18B99729004F0AD5 /* StatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusBarController.m; sourceTree = "<group>"; };
 		89B2D72618BA3321004F0AD5 /* ConnectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionService.h; sourceTree = "<group>"; };
@@ -90,6 +105,14 @@
 		89B94A8718BEB1F8007B25DA /* ServiceLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLocator.h; sourceTree = "<group>"; };
 		89B94A8818BEB1F8007B25DA /* ServiceLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLocator.m; sourceTree = "<group>"; };
 		89B94A8A18BED086007B25DA /* appointment-recurring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appointment-recurring.png"; sourceTree = "<group>"; };
+		89B94A9118BEDB72007B25DA /* call-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call-start.png"; sourceTree = "<group>"; };
+		89B94A9318BEDB93007B25DA /* call-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "call-stop.png"; sourceTree = "<group>"; };
+		89B94A9518BEDBC8007B25DA /* media-playback-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-pause.png"; sourceTree = "<group>"; };
+		89B94A9718BEDBE8007B25DA /* audio-volume-muted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio-volume-muted.png"; sourceTree = "<group>"; };
+		89B94A9918BF7A75007B25DA /* CallService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallService.h; sourceTree = "<group>"; };
+		89B94A9A18BF7A75007B25DA /* CallService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallService.m; sourceTree = "<group>"; };
+		89B94A9C18BF8C5D007B25DA /* MakeCallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeCallController.h; sourceTree = "<group>"; };
+		89B94A9D18BF8C5D007B25DA /* MakeCallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeCallController.m; sourceTree = "<group>"; };
 		89BAA66718BD81C50026380B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		89BAA66818BD81C50026380B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		89BAA66918BD81C50026380B /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -127,6 +150,7 @@
 		89671C5018921CC900918B1E = {
 			isa = PBXGroup;
 			children = (
+				89B94A8C18BEDAB7007B25DA /* Images */,
 				89B94A8A18BED086007B25DA /* appointment-recurring.png */,
 				89B2D73E18BBAD9B004F0AD5 /* warning.png */,
 				89671C6218921CC900918B1E /* macclient */,
@@ -226,6 +250,10 @@
 				89B2D72A18BA3F12004F0AD5 /* IcwsClient.m */,
 				89B2D72618BA3321004F0AD5 /* ConnectionService.h */,
 				89B2D72718BA3321004F0AD5 /* ConnectionService.m */,
+				89B94A9918BF7A75007B25DA /* CallService.h */,
+				89B94A9A18BF7A75007B25DA /* CallService.m */,
+				8985113B18BFBB1F00C6C33F /* QueueService.h */,
+				8985113C18BFBB1F00C6C33F /* QueueService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -235,6 +263,8 @@
 			children = (
 				89B2D72D18BA51A7004F0AD5 /* Status.h */,
 				89B2D72E18BA51A7004F0AD5 /* Status.m */,
+				8985113E18BFFA0200C6C33F /* Interaction.h */,
+				8985113F18BFFA0200C6C33F /* Interaction.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -261,6 +291,10 @@
 				89BAA66D18BD825A0026380B /* ClientViewController.m */,
 				89B2D71E18B99729004F0AD5 /* StatusBarController.h */,
 				89B2D71F18B99729004F0AD5 /* StatusBarController.m */,
+				89B94A9C18BF8C5D007B25DA /* MakeCallController.h */,
+				89B94A9D18BF8C5D007B25DA /* MakeCallController.m */,
+				8985114118C2EBE200C6C33F /* QueueController.h */,
+				8985114218C2EBE200C6C33F /* QueueController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -276,6 +310,17 @@
 				89B2D73818BADAD3004F0AD5 /* IcwsServiceBase.m */,
 			);
 			name = "Base Classes";
+			sourceTree = "<group>";
+		};
+		89B94A8C18BEDAB7007B25DA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				89B94A9718BEDBE8007B25DA /* audio-volume-muted.png */,
+				89B94A9318BEDB93007B25DA /* call-stop.png */,
+				89B94A9518BEDBC8007B25DA /* media-playback-pause.png */,
+				89B94A9118BEDB72007B25DA /* call-start.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,16 +367,16 @@
 		89671C5118921CC900918B1E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = inin;
+				CLASSPREFIX = "";
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = ININ;
+				ORGANIZATIONNAME = "Interactive Intelligence";
 				TargetAttributes = {
 					89671C7918921CCA00918B1E = {
 						TestTargetID = 89671C5818921CC900918B1E;
 					};
 				};
 			};
-			buildConfigurationList = 89671C5418921CC900918B1E /* Build configuration list for PBXProject "macclient" */;
+			buildConfigurationList = 89671C5418921CC900918B1E /* Build configuration list for PBXProject "CIC Mac Client" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -359,9 +404,13 @@
 				89671C6718921CC900918B1E /* InfoPlist.strings in Resources */,
 				89671C6D18921CC900918B1E /* Credits.rtf in Resources */,
 				89BAA67418BDA50A0026380B /* Images.xcassets in Resources */,
+				89B94A9218BEDB72007B25DA /* call-start.png in Resources */,
 				89671C7318921CC900918B1E /* MainMenu.xib in Resources */,
 				89B2D73F18BBAD9B004F0AD5 /* warning.png in Resources */,
+				89B94A9418BEDB93007B25DA /* call-stop.png in Resources */,
+				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
 				89BAA67018BD825A0026380B /* ClientView.xib in Resources */,
+				89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */,
 				89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +430,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8985114018BFFA0200C6C33F /* Interaction.m in Sources */,
+				8985114318C2EBE200C6C33F /* QueueController.m in Sources */,
 				89B94A8918BEB1F8007B25DA /* ServiceLocator.m in Sources */,
 				89B2D72018B99729004F0AD5 /* StatusBarController.m in Sources */,
 				89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */,
@@ -391,10 +442,13 @@
 				89B2D74618BC2167004F0AD5 /* MainController.m in Sources */,
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */,
+				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
+				8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */,
 				89B2D72B18BA3F12004F0AD5 /* IcwsClient.m in Sources */,
 				89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */,
 				89B2D73918BADAD3004F0AD5 /* IcwsServiceBase.m in Sources */,
+				89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */,
 				89B2D73618BADAA3004F0AD5 /* StatusService.m in Sources */,
 				89B2D74318BBAFA2004F0AD5 /* ConnectionDependantBaseClass.m in Sources */,
 			);
@@ -591,7 +645,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		89671C5418921CC900918B1E /* Build configuration list for PBXProject "macclient" */ = {
+		89671C5418921CC900918B1E /* Build configuration list for PBXProject "CIC Mac Client" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				89671C8818921CCA00918B1E /* Debug */,

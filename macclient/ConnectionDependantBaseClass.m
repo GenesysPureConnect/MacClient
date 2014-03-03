@@ -35,9 +35,12 @@
     _userId = params[@"userId"];
 
     if([params[@"isConnected"]  isEqual: @"true"]){
+        self.connectionIsUp = true;
         [self connectionUp];
     }
     else{
+        self.connectionIsUp = false;
+        
         [self connectionDown ];
     }
 }

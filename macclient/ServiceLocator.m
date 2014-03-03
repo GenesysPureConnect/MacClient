@@ -7,10 +7,15 @@
 //
 
 #import "ServiceLocator.h"
+#import "CallService.h"
+#import "QueueService.h"
+#import "ConnectionService.h"
 
 static NSDictionary* s_fooDict;
-static StatusService* s_statusService;
 static IcwsClient* s_icwsClient;
+static CallService* s_callService;
+static StatusService* s_statusService;
+static ConnectionService* s_connectionService;
 
 @implementation ServiceLocator
 
@@ -31,5 +36,34 @@ static IcwsClient* s_icwsClient;
     
     return s_statusService;
 }
+
++(CallService*) getCallService
+{
+    if (s_callService == nil)
+    {
+        s_callService = [[CallService alloc] initWithIcwsClient:[self getIcwsClient]];
+    }
+    
+    return s_callService;
+}
+
++(ConnectionService*) getConnectionService{
+    if (s_connectionService == nil)
+    {
+        s_connectionService = [[ConnectionService alloc] initWithIcwsClient:[self getIcwsClient]];
+    }
+    
+    return s_connectionService;
+}
+
++(QueueService*) getQueueService
+{
+    QueueService* queue =  [[QueueService alloc] initMyInteractionsQueue:[self getIcwsClient] isConnected:[[self getConnectionService] isConnected] withUser:[[self getConnectionService] userId]];
+
+    return queue;
+}
+
+                            
+
 @end
 

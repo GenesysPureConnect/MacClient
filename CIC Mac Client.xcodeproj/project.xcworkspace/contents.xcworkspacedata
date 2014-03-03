@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:macclient.xcodeproj">
+      location = "self:CIC Mac Client.xcodeproj">
    </FileRef>
 </Workspace>

@@ -22,6 +22,8 @@ NSTimer* _timer;
 -(void)processMessage:(NSTimer*)aTimer
 {
     NSLog(@"Getting Messages: %@", aTimer);
+    
+    NSString *type =@"";
     @try {
     
         NSArray* data = [[self icwsClient] getAsArray: @"/messaging/messages"];
@@ -32,7 +34,7 @@ NSTimer* _timer;
                 if([data[x] isKindOfClass:[NSDictionary class]])
                 {
                     NSDictionary *message = data[x] ;
-                    NSString *type = message[@"__type"];
+                    type = message[@"__type"];
                     
                     [[NSNotificationCenter defaultCenter]
                      postNotificationName:type
@@ -45,6 +47,7 @@ NSTimer* _timer;
     }
     
     @catch ( NSException *e ) {
+        NSLog(type);
         [_connectionService disconnect:@""];
     }
 }

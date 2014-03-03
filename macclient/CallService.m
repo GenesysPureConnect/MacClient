@@ -9,5 +9,14 @@
 #import "CallService.h"
 
 @implementation CallService
+-(void) placeCall:(NSString*)number
+{
+    NSDictionary *callInfo = @{
+                                 @"__type" : @"urn:inin.com:interactions:createCallParameters",
+                                 @"target": number
+                                 
+                                 };
+    [[self icwsClient] post:@"/interactions" withData:callInfo];
+}
 
 @end

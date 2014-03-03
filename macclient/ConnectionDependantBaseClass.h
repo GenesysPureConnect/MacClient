@@ -10,6 +10,8 @@
 
 @interface ConnectionDependantBaseClass : NSObject
 
+@property BOOL connectionIsUp;
+
 @property NSString *userId;
 @property NSString *serverUrl;
 

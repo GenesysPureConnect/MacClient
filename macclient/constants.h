@@ -17,4 +17,17 @@
 #define kUrlConnectBaseFormat @"http://%@:8018/icws%@"
 #define kUrlImageFormat @"http://%@:8018%@"
 #define kUrlRequestBaseFormat @"http://%@:8018/icws/%@/%@"
+
+//#define kUrlConnectBaseFormat @"http://%@:8888/icws%@"
+//#define kUrlImageFormat @"http://%@:8888%@"
+//#define kUrlRequestBaseFormat @"http://%@:8888/icws/%@/%@"
+
+#define kAttributeState @"Eic_State"
+#define kAttributeRemoteName @"Eic_RemoteName"
+#define kAttributeRemoteNumber @"Eic_RemoteAddress"
+#define kAttributeMuted @"Eic_Muted"
+#define kAttributeCallStateString @"Eic_CallStateString"
+#define kAttributeCapabilities @"Eic_Capabilities"
+
+
 #endif

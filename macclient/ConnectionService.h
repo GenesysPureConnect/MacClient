@@ -15,7 +15,7 @@
 @property bool isConnected;
 @property NSString *connectionDetails;
 
-- (int) attemptConnection :(NSString*)server withData:(NSDictionary*)data getResult:(NSDictionary*)results getResponse:(NSHTTPURLResponse*)response;
+- (NSDictionary*) attemptConnection :(NSString*)server withData:(NSDictionary*)data;
 
 - (void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server;
 

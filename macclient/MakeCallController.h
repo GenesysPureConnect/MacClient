@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface MakeCallController : NSObject
+@property (weak) IBOutlet NSTextField *phoneNumberTextBox;
+@property (weak) IBOutlet NSButton *makeCallButton;
+
+- (IBAction)makeCallButtonClick:(id)sender;
 
 @end

@@ -7,7 +7,30 @@
 //
 
 #import "MakeCallController.h"
+#import "ServiceLocator.h"
+#import "CallService.h"
 
 @implementation MakeCallController
+
+-(id) init{
+    self = [super init];
+    
+    return self;
+}
+
+- (IBAction)makeCallButtonClick:(id)sender {
+    NSString* phoneNumber = [_phoneNumberTextBox stringValue];
+    if(phoneNumber.length == 0)
+    {
+        return;
+    }
+    
+    CallService* callService = [ServiceLocator getCallService];
+    [callService placeCall:phoneNumber];
+    
+    [_phoneNumberTextBox setStringValue:@""];
+}
+
+
 
 @end

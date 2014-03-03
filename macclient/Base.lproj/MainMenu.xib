@@ -13,8 +13,8 @@
         <customObject id="-3" userLabel="Application"/>
         <menu title="AMainMenu" systemMenu="main" id="29">
             <items>
-                <menuItem title="MacClient" id="56">
-                    <menu key="submenu" title="MacClient" systemMenu="apple" id="57">
+                <menuItem title="Mac Client" id="56">
+                    <menu key="submenu" title="Mac Client" systemMenu="apple" id="57">
                         <items>
                             <menuItem title="About macclient" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -25,7 +25,11 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                                <connections>
+                                    <action selector="showPreferences:" target="nYl-j7-R0C" id="JoL-fj-m9e"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
@@ -65,13 +69,10 @@
                 <menuItem title="Connection" id="83">
                     <menu key="submenu" title="Connection" id="81">
                         <items>
-                            <menuItem title="Log In" toolTip="Connects to a Server" id="ibk-0x-VxL">
-                                <modifierMask key="keyEquivalentModifierMask"/>
-                            </menuItem>
                             <menuItem title="Log Out" id="77">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="runPageLayout:" target="-1" id="87"/>
+                                    <action selector="logOut:" target="nYl-j7-R0C" id="ZHt-5b-DgI"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -82,14 +83,14 @@
         <window title="Mac Client" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="499" height="352"/>
+            <rect key="contentRect" x="335" y="390" width="609" height="307"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" id="372">
-                <rect key="frame" x="0.0" y="0.0" width="499" height="352"/>
+                <rect key="frame" x="0.0" y="0.0" width="609" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgB-Ub-iws">
-                        <rect key="frame" x="-8" y="0.0" width="507" height="352"/>
+                        <rect key="frame" x="0.0" y="9" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
@@ -103,6 +104,7 @@
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="nYl-j7-R0C" customClass="MainController">
             <connections>
+                <outlet property="logOutMenuItem" destination="77" id="rFe-aZ-obf"/>
                 <outlet property="mainView" destination="PgB-Ub-iws" id="2wu-t5-MaO"/>
             </connections>
         </customObject>

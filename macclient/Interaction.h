@@ -10,4 +10,25 @@
 
 @interface Interaction : NSObject
 
+@property NSString* interactionId;
+@property NSString* remoteName;
+@property NSString* remoteId;
+@property NSString* callState;
+@property NSDate* initiationTime;
+@property NSString* callStateDescription;
+@property NSString* conferenceParent;
+@property NSInteger muted;
+
+-(id) initWithId:(NSString*)interactionId;
+-(void) setAttributes:(NSDictionary*) data;
+-(BOOL) isConnected;
+-(BOOL) isDisconnected;
+-(BOOL) isHeld;
+-(BOOL) isMuted;
+-(BOOL) canPickup;
+-(BOOL) canDisconnet;
+-(BOOL) canHold;
+-(BOOL) canMute;
+
+
 @end

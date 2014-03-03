@@ -73,6 +73,7 @@
 
 - (void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server
 {
+    self.isConnected = FALSE;
     NSDictionary *connectionProperties = @{
                                            @"userID" : userName,
                                            @"password" : password,
@@ -124,7 +125,7 @@
             self.userId = userName;
             self.serverUrl = server;
             self.connectionDetails = @"";
-            
+             self.isConnected = TRUE;
             [self sendConnectionStateChanged :true toServer:self.serverUrl withDetails:self.connectionDetails];
         }
         else{
@@ -137,6 +138,7 @@
 }
 
 -(void) disconnect:(NSString*) details{
+     self.isConnected = FALSE;
     self.userId = @"";
     self.serverUrl = @"";
     self.connectionDetails = details;

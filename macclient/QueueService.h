@@ -7,7 +7,16 @@
 //
 
 #import "IcwsServiceBase.h"
-
+#import "Interaction.h"
 @interface QueueService : IcwsServiceBase
 
+-(id) initMyInteractionsQueue:(IcwsClient*) icwsClient isConnected:(BOOL)isConnected withUser:(NSString*) user;
+- (void) onQueueContentsChanged: (NSNotification*) data;
+@property NSArray* queueList;
+
+-(NSString*) getActionUrl:(NSString*)action forInteraction:(NSString*) interactionId;
+-(void) muteInteraction:(Interaction*) interaction  muteOn:(BOOL)muteOn;
+-(void) holdInteraction:(Interaction*) interaction holdOn:(BOOL)holdOn;
+-(void) pickupInteraction:(Interaction*) interaction;
+-(void) disconnectInteraction:(Interaction*) interaction;
 @end

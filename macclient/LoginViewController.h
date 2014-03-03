@@ -15,11 +15,15 @@
 @property (weak) IBOutlet NSTextField *userNameField;
 @property (weak) IBOutlet NSSecureTextField *passwordField;
 @property (weak) IBOutlet NSTextField *errorLabel;
+@property (weak) IBOutlet NSButton *rememberPassword;
+@property (weak) IBOutlet NSButton *autoLogIn;
 
 @property (weak) IBOutlet NSButton *connectButton;
 - (IBAction)doConnect:(id)sender;
+-(void)loadSavedData;
 
 @property (weak) IBOutlet NSTextField *server;
+- (IBAction)rememberPasswordChecked:(id)sender;
 
 -(void) connectionStateChanged: (NSNotification *)notification;
 @end
