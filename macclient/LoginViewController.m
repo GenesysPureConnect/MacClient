@@ -43,16 +43,34 @@
     [_userNameField setStringValue:[prefs stringForKey:kUserName]];
     [_passwordField setStringValue:[prefs stringForKey:kPassword]];
     [_server setStringValue:[prefs stringForKey:kServer]];
+    
     NSInteger autoLogin =[prefs integerForKey:kAutoLogIn];
     [_autoLogIn setState:autoLogin];
     
     NSInteger rememberPassword =[prefs integerForKey:kRememberPassword];
-    [_rememberPassword setState:[prefs integerForKey:kRememberPassword]];
+    [_rememberPassword setState:rememberPassword];
+    
+    if(rememberPassword == 1)
+    {
+        [_autoLogIn setEnabled:true ];
+    //    [_rememberPassword setState:YES];
+    }
     
     if([_autoLogIn isEnabled] && [_autoLogIn state] == NSOnState)
     {
-        [self doConnect:self];
+        [NSTimer scheduledTimerWithTimeInterval:0.50
+                                         target:self
+                                       selector:@selector(timerDoConnect:)
+                                       userInfo:nil
+                                        repeats:NO];
+       
     }
+     
+}
+
+- (void)timerDoConnect:(NSTimer*)theTimer
+{
+     [self doConnect:self];
 }
 
 - (IBAction)rememberPasswordChecked:(id)sender

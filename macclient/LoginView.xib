@@ -11,7 +11,7 @@
                 <outlet property="connectButton" destination="kRS-SL-GkA" id="2O9-iN-ElT"/>
                 <outlet property="errorLabel" destination="ZYh-nB-UvO" id="VBu-J6-JOz"/>
                 <outlet property="passwordField" destination="6rz-0w-q1X" id="XxD-YP-Zil"/>
-                <outlet property="rememberPassword" destination="WRv-4G-Ea5" id="Mhu-dQ-onW"/>
+                <outlet property="rememberPassword" destination="WcK-be-xlP" id="PSZ-hZ-h6D"/>
                 <outlet property="server" destination="vaD-7W-8GE" id="LCe-3P-NFv"/>
                 <outlet property="userNameField" destination="72R-qM-Ivo" id="qXa-Nd-Sua"/>
                 <outlet property="view" destination="1" id="2"/>
@@ -103,7 +103,7 @@
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WcK-be-xlP">
                     <rect key="frame" x="106" y="126" width="165" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Remember Password" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UZR-Ad-WXS">
+                    <buttonCell key="cell" type="check" title="Remember Password" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="UZR-Ad-WXS">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>

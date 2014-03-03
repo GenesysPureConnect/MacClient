@@ -26,4 +26,6 @@
 - (IBAction)rememberPasswordChecked:(id)sender;
 
 -(void) connectionStateChanged: (NSNotification *)notification;
+
+- (void)timerDoConnect:(NSTimer*)theTimer;
 @end
