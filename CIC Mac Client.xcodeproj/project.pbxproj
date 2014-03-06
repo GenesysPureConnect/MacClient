@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892C8C2318C55C72007BB4EA /* OtherSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2218C55C72007BB4EA /* OtherSessionService.m */; };
+		892C8C2618C5FDF9007BB4EA /* AutoConnectService.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2518C5FDF9007BB4EA /* AutoConnectService.m */; };
+		892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2818C5FE86007BB4EA /* Reachability.m */; };
+		892C8C2B18C5FEDA007BB4EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */; };
+		892D1B2118C4254600C86E8E /* TestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B2018C4254600C86E8E /* TestConnection.m */; };
 		89671C5D18921CC900918B1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89671C5C18921CC900918B1E /* Cocoa.framework */; };
 		89671C6718921CC900918B1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89671C6518921CC900918B1E /* InfoPlist.strings */; };
 		89671C6918921CC900918B1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89671C6818921CC900918B1E /* main.m */; };
@@ -58,6 +63,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		892C8C2118C55C72007BB4EA /* OtherSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OtherSessionService.h; sourceTree = "<group>"; };
+		892C8C2218C55C72007BB4EA /* OtherSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OtherSessionService.m; sourceTree = "<group>"; };
+		892C8C2418C5FDF9007BB4EA /* AutoConnectService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoConnectService.h; sourceTree = "<group>"; };
+		892C8C2518C5FDF9007BB4EA /* AutoConnectService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoConnectService.m; sourceTree = "<group>"; };
+		892C8C2718C5FE86007BB4EA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		892C8C2818C5FE86007BB4EA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		892D1B1F18C4254600C86E8E /* TestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConnection.h; sourceTree = "<group>"; };
+		892D1B2018C4254600C86E8E /* TestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestConnection.m; sourceTree = "<group>"; };
 		89671C5918921CC900918B1E /* macclient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macclient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89671C5C18921CC900918B1E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		89671C5F18921CC900918B1E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -131,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892C8C2B18C5FEDA007BB4EA /* SystemConfiguration.framework in Frameworks */,
 				89671C5D18921CC900918B1E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,6 +187,7 @@
 		89671C5B18921CC900918B1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */,
 				89671C5C18921CC900918B1E /* Cocoa.framework */,
 				89671C7B18921CCA00918B1E /* XCTest.framework */,
 				89671C5E18921CC900918B1E /* Other Frameworks */,
@@ -192,6 +208,8 @@
 		89671C6218921CC900918B1E /* macclient */ = {
 			isa = PBXGroup;
 			children = (
+				892C8C2718C5FE86007BB4EA /* Reachability.h */,
+				892C8C2818C5FE86007BB4EA /* Reachability.m */,
 				89B2D74018BBAF85004F0AD5 /* Base Classes */,
 				89B2D73A18BAFE10004F0AD5 /* Controllers */,
 				89B2D73018BA550F004F0AD5 /* Views */,
@@ -254,6 +272,12 @@
 				89B94A9A18BF7A75007B25DA /* CallService.m */,
 				8985113B18BFBB1F00C6C33F /* QueueService.h */,
 				8985113C18BFBB1F00C6C33F /* QueueService.m */,
+				892D1B1F18C4254600C86E8E /* TestConnection.h */,
+				892D1B2018C4254600C86E8E /* TestConnection.m */,
+				892C8C2118C55C72007BB4EA /* OtherSessionService.h */,
+				892C8C2218C55C72007BB4EA /* OtherSessionService.m */,
+				892C8C2418C5FDF9007BB4EA /* AutoConnectService.h */,
+				892C8C2518C5FDF9007BB4EA /* AutoConnectService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -434,19 +458,23 @@
 				8985114318C2EBE200C6C33F /* QueueController.m in Sources */,
 				89B94A8918BEB1F8007B25DA /* ServiceLocator.m in Sources */,
 				89B2D72018B99729004F0AD5 /* StatusBarController.m in Sources */,
+				892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */,
 				89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */,
 				89B2D72F18BA51A7004F0AD5 /* Status.m in Sources */,
 				89B2D73D18BB8176004F0AD5 /* MessagePollService.m in Sources */,
 				89671C7018921CC900918B1E /* ininAppDelegate.m in Sources */,
 				89671C6918921CC900918B1E /* main.m in Sources */,
+				892C8C2318C55C72007BB4EA /* OtherSessionService.m in Sources */,
 				89B2D74618BC2167004F0AD5 /* MainController.m in Sources */,
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
+				892D1B2118C4254600C86E8E /* TestConnection.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
 				8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */,
 				89B2D72B18BA3F12004F0AD5 /* IcwsClient.m in Sources */,
 				89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */,
+				892C8C2618C5FDF9007BB4EA /* AutoConnectService.m in Sources */,
 				89B2D73918BADAD3004F0AD5 /* IcwsServiceBase.m in Sources */,
 				89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */,
 				89B2D73618BADAA3004F0AD5 /* StatusService.m in Sources */,

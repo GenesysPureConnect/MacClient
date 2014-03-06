@@ -16,6 +16,8 @@
 #import "ClientViewController.h"
 #import "ServiceLocator.h"
 #import "QueueService.h"
+#import "OtherSessionService.h"
+#import "AutoConnectService.h"
 
 @implementation MainController
 
@@ -26,7 +28,9 @@ ConnectionService *_connectionService;
 QueueService *_myQueue;
 LoginViewController* _loginController;
 ClientViewController *_clientViewController;
+AutoConnectService *_autoConnectService;
 
+NSButton* closeButton;
 
 -(void) awakeFromNib{
     [self setupServices];
@@ -38,6 +42,14 @@ ClientViewController *_clientViewController;
      name: kConnectionStateChangedEvent
      object:nil];
 
+    closeButton = [[_mainView window] standardWindowButton:NSWindowCloseButton];
+    [closeButton setTarget:self];
+    [closeButton setAction:@selector(closeThisWindow:)];
+    
+}
+
+-(void)closeThisWindow: (id) sender {
+  //  [[_mainView window] miniaturize:];
 }
 
 -(void) showLoginDialog{
@@ -80,15 +92,13 @@ ClientViewController *_clientViewController;
     
     @try {
         [[_mainView window] setContentSize: controller.view.bounds.size];
-        controller.view.frame = CGRectMake(0, 50, controller.view.frame.size.width, controller.view.frame.size.height);
+        controller.view.frame = CGRectMake(0, 40, controller.view.frame.size.width, controller.view.frame.size.height);
         [[controller view] setHidden:false];
         _currentViewController = controller;
     }
     @catch (NSException *exception) {
         //NSLog(exception);
     }
-   
-  
 }
 
 -(void) connectionStateChanged: (NSNotification *)notification{
@@ -111,6 +121,7 @@ ClientViewController *_clientViewController;
     _statusService = [ServiceLocator getStatusService];
     
     _statusBarController = [[StatusBarController alloc]init];
+    [_statusBarController setOtherSessionService:[ServiceLocator getOtherSessionService]];
     [_statusBarController setStatusService:_statusService];
     
     
@@ -118,7 +129,7 @@ ClientViewController *_clientViewController;
     
     _pollService = [[MessagePollService alloc] initWithIcwsClient:client andConnectionService:(ConnectionService*)_connectionService];
     
-
+    _autoConnectService = [[AutoConnectService alloc] initWithConnectionService:_connectionService];
 }
 
 - (IBAction)showPreferences:(id)sender

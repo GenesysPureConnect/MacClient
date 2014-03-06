@@ -18,7 +18,16 @@
     return self;
 }
 
+- (IBAction)numberFieldFinishedEditing:(id)sender {
+    [self makeCall];
+}
+
 - (IBAction)makeCallButtonClick:(id)sender {
+    [self makeCall];
+}
+
+-(void) makeCall
+{
     NSString* phoneNumber = [_phoneNumberTextBox stringValue];
     if(phoneNumber.length == 0)
     {
@@ -29,6 +38,7 @@
     [callService placeCall:phoneNumber];
     
     [_phoneNumberTextBox setStringValue:@""];
+
 }
 
 

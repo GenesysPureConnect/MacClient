@@ -10,14 +10,25 @@
 #import "CallService.h"
 #import "QueueService.h"
 #import "ConnectionService.h"
+#import "TestConnection.h"
 
 static NSDictionary* s_fooDict;
 static IcwsClient* s_icwsClient;
 static CallService* s_callService;
 static StatusService* s_statusService;
-static ConnectionService* s_connectionService;
+static TestConnection* s_connectionService;
+static OtherSessionService* s_otherSessionService;
 
 @implementation ServiceLocator
+
++(OtherSessionService*) getOtherSessionService{
+    if (s_statusService == nil)
+    {
+        s_otherSessionService = [[OtherSessionService alloc] initWithIcwsClient:[self getIcwsClient]];
+    }
+    
+    return s_otherSessionService;
+}
 
 +(IcwsClient*) getIcwsClient{
     if(s_icwsClient == nil)
@@ -31,6 +42,7 @@ static ConnectionService* s_connectionService;
 {
     if (s_statusService == nil)
     {
+        s_otherSessionService = [[OtherSessionService alloc] initWithIcwsClient:[self getIcwsClient]];
         s_statusService = [[StatusService alloc] initWithIcwsClient:[self getIcwsClient]];
     }
     
@@ -47,10 +59,10 @@ static ConnectionService* s_connectionService;
     return s_callService;
 }
 
-+(ConnectionService*) getConnectionService{
++(TestConnection*) getConnectionService{
     if (s_connectionService == nil)
     {
-        s_connectionService = [[ConnectionService alloc] initWithIcwsClient:[self getIcwsClient]];
+        s_connectionService = [[TestConnection alloc] initWithIcwsClient:[self getIcwsClient]];
     }
     
     return s_connectionService;

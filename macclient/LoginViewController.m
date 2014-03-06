@@ -15,16 +15,25 @@
 
 @implementation LoginViewController
 
-#define kUserName @"UserName"
-#define kPassword @"Password"
-#define kServer @"Server"
-#define kRememberPassword @"RememberPassword"
-#define kAutoLogIn @"AutoLogIn"
+enum WorkstationType{
+    StationLess=0,
+    Workstation=1
+};
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+    
+        NSDictionary* defaults=@{kUserName:@"",
+                                 kPassword:@"",
+                                 kServer:@"",
+                                 kWorkstationName:@"",
+                                 kWorkstationType:@1,
+                                 kAutoLogIn:@0,
+                                 kRememberPassword:@0};
+        [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
         
         [[NSNotificationCenter defaultCenter]
          addObserver:self
@@ -53,7 +62,6 @@
     if(rememberPassword == 1)
     {
         [_autoLogIn setEnabled:true ];
-    //    [_rememberPassword setState:YES];
     }
     
     if([_autoLogIn isEnabled] && [_autoLogIn state] == NSOnState)
@@ -65,6 +73,10 @@
                                         repeats:NO];
        
     }
+    
+    [_workstationType selectItemWithTag:[prefs integerForKey:kWorkstationType]];
+    [self workstationTypeChange:_workstationType];
+    [_workstationField setStringValue:[prefs stringForKey:kWorkstationName]];
      
 }
 
@@ -97,9 +109,36 @@
     
     [prefs setInteger:[_rememberPassword state] forKey: kRememberPassword];
     [prefs setInteger:[_autoLogIn state] forKey: kAutoLogIn];
+    [prefs setInteger:[_workstationType selectedTag] forKey:kWorkstationType];
+    [prefs setObject:[_workstationField stringValue] forKey:kWorkstationName];
     [prefs synchronize];
 
     [_connectionService connect:[_userNameField stringValue] withPassword:[_passwordField stringValue] toServer:[_server stringValue]];
+   
+    
+    if(_connectionService.isConnected && [_workstationType selectedTag] > 0)
+    {
+        bool result = [_connectionService setWorkstation:[_workstationField stringValue]];
+        if(!result)
+        {
+            [_connectionService disconnect:@"Unable to set station"];
+        }
+        else{
+            [ServiceLocator getOtherSessionService].stationName = [_workstationField stringValue];
+        }
+    }
+}
+
+- (IBAction)workstationTypeChange:(id)sender {
+    NSPopUpButton* btn = sender;
+    if([btn selectedTag] == 0 )
+        
+    {
+        [_workstationField setEnabled:false];
+    }
+         else{
+             [_workstationField setEnabled:true];
+         }
 }
 
 

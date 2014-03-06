@@ -9,17 +9,45 @@
 #import "StatusBarController.h"
 #import "constants.h"
 #import "Status.h"
+#import "OtherSessionService.h"
 
 @implementation StatusBarController
 
 NSMutableArray *_statuses;
 StatusService* _statusService;
+OtherSessionService *_otherSessionService = NULL;
 
 -(void) setStatusService:(StatusService*)statusService{
     _statusService = statusService;
     [super setStatusService:statusService];
     [self activateStatusMenu];
 }
+
+-(void) setOtherSessionService:(OtherSessionService*)sessionService{
+    _otherSessionService = sessionService;
+    [_otherSessionService addObserver:self forKeyPath:@"stationName" options:NSKeyValueObservingOptionNew context:NULL];
+    
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if([keyPath isEqualToString:@"stationName"])
+    {
+        NSString* newStation = [change objectForKey:NSKeyValueChangeNewKey];
+        if(newStation.length > 0)
+        {
+            _rootStatusItem.title = @"";
+        }
+        else
+        {
+            NSDictionary *titleAttributes = [NSDictionary dictionaryWithObject:[NSColor redColor] forKey:NSForegroundColorAttributeName];
+            NSAttributedString* redTitle = [[NSAttributedString alloc] initWithString:@"No Station" attributes:titleAttributes];
+            
+            [_rootStatusItem setAttributedTitle:redTitle];
+        }
+    }
+}
+
 
 - (void)activateStatusMenu
 {
@@ -71,6 +99,7 @@ StatusService* _statusService;
     [menu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [[menu addItemWithTitle:@"Exit" action:@selector(exit:) keyEquivalent:@""] setTarget:self];
 }
+
 - (void) currentStatusChanged:(Status*) status{
     // _rootStatusItem.title = [status text];
     _rootStatusItem.toolTip = [status text];
@@ -114,6 +143,10 @@ StatusService* _statusService;
     NSBundle *bundle = [NSBundle mainBundle];
     _rootStatusItem.image = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"warning" ofType:@"png"]];
     _rootStatusItem.toolTip = @"Disconnected";
+    
+    NSMenu* menu = _rootStatusItem.menu;
+    [menu removeAllItems];
+    
 }
 
 @end

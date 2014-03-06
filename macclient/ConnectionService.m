@@ -49,6 +49,20 @@
     NSHTTPURLResponse* response;
     
     NSData* result = [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
+    if(error != NULL)
+    {
+        self.userId = @"";
+        NSString* errorDescription = [error userInfo][@"NSLocalizedDescription"];
+        
+        if(errorDescription == NULL || errorDescription.length == 0)
+        {
+            errorDescription = @"Unknown error connecting";
+        }
+        
+        [self sendConnectionStateChanged :false toServer:@"" withDetails:errorDescription];
+        return 0;
+    }
+    
     int statusCode = (int)[response statusCode];
     
     if(statusCode == 0)
@@ -71,15 +85,21 @@
     return @{@"statusCode":[NSNumber numberWithInt:statusCode],@"results":results,@"response":response};
 }
 
-- (void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server
+-(NSDictionary*) getConnectionPropertiesObject:(NSString*) userName withPassword:(NSString*)password
 {
-    self.isConnected = FALSE;
     NSDictionary *connectionProperties = @{
                                            @"userID" : userName,
                                            @"password" : password,
                                            @"__type" : @"urn:inin.com:connection:icAuthConnectionRequestSettings",
-                                           @"applicationName" : @"Mac Client",
+                                           @"applicationName" : kAppName,
                                            };
+    return connectionProperties;
+}
+
+- (void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server
+{
+    self.isConnected = FALSE;
+    NSDictionary *connectionProperties = [self getConnectionPropertiesObject: userName withPassword:password];
 
     NSDictionary *results;
     NSHTTPURLResponse* response;
@@ -98,7 +118,8 @@
         NSArray* serverList = results[@"alternateHostList"];
         int index = 0;
         while ([statusCode intValue ]  == 503){
-            connectResponse = [self attemptConnection:serverList[index] withData:connectionProperties ];
+            server = serverList[index];
+            connectResponse = [self attemptConnection:server withData:connectionProperties ];
             statusCode =  connectResponse[@"statusCode"];
             index++;
         }
@@ -136,7 +157,15 @@
     }
 
 }
-
+-(BOOL) setWorkstation:(NSString*)workstation
+{
+    NSDictionary* stationData = @{@"__type":@"urn:inin.com:connection:workstationSettings",
+                                  @"supportedMediaTypes": @[@1],
+                                  @"workstation":workstation};
+                                  
+    int statusCode = [[self icwsClient] put:@"/connection/station" withData:stationData];
+    return statusCode == 200;
+}
 -(void) disconnect:(NSString*) details{
      self.isConnected = FALSE;
     self.userId = @"";

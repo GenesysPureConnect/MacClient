@@ -56,25 +56,36 @@ NSString* _server;
 
 -(id) get:(NSString*) url
 {
-    NSMutableURLRequest* restRequest = [self createRequest:url];
+    @try
+    {
+        NSMutableURLRequest* restRequest = [self createRequest:url];
     
-    NSError* error = nil;
-    NSHTTPURLResponse* response;
+        NSError* error = nil;
+        NSHTTPURLResponse* response;
     
-    NSData* result = [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
-    int statusCode = (int)[response statusCode];
+        NSData* result = [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
+        int statusCode = (int)[response statusCode];
    
-    if(statusCode != 200){
-        [NSException raise:@"Error getting data" format:@"%d", statusCode];
-        return [[NSDictionary alloc] init];
-    }
-    id object = [NSJSONSerialization
+        if(statusCode != 200){
+            [NSException raise:@"Error getting data" format:@"%d", statusCode];
+            return [[NSDictionary alloc] init];
+        }
+        id object = [NSJSONSerialization
                  JSONObjectWithData:result
                  options:0
                  error:&error];
     
    
-    return object;
+        return object;
+    }
+    @catch (NSException *exception)
+    {
+        // Print exception information
+        NSLog( @"NSException caught during get" );
+        NSLog( @"Name: %@", exception.name);
+        NSLog( @"Reason: %@", exception.reason );
+        @throw exception;
+    }
 }
 
 -(NSDictionary*) getAsDictionary:(NSString*) url
@@ -90,6 +101,7 @@ NSString* _server;
 
 -(NSArray*) getAsArray:(NSString*) url
 {
+    
     id object = [self get:url];
     if([object isKindOfClass:[NSArray class]])
     {
@@ -101,28 +113,64 @@ NSString* _server;
 
 -(int) post:(NSString*) url withData:(NSDictionary*)data
 {
-    NSMutableURLRequest* restRequest = [self createRequest:url withData:data];
-    [restRequest setHTTPMethod:@"POST"];
-    
+    int statusCode = 0;
     NSError* error = nil;
-    NSHTTPURLResponse* response;
-    
-    [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
-    int statusCode = (int)[response statusCode];
-    return statusCode;
+    @try
+    {
+        NSMutableURLRequest* restRequest = [self createRequest:url withData:data];
+        [restRequest setHTTPMethod:@"POST"];
+        
+        
+        NSHTTPURLResponse* response;
+        
+        [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
+        if (error) {
+            NSLog(@"Error in POST %@ %@", url, [error userInfo]);
+        }
+        statusCode = (int)[response statusCode];
+        return statusCode;
+    }
+    @catch (NSException *exception)
+    {
+        
+        // Print exception information
+        NSLog( @"NSException caught during POST %@" ,url );
+        NSLog( @"Name: %@", exception.name);
+        NSLog( @"Reason: %@", exception.reason );
+        
+        return statusCode;
+    }
 }
+
 
 -(int) put:(NSString*) url withData:(NSDictionary*)data
 {
-    NSMutableURLRequest* restRequest = [self createRequest:url withData:data];
-    [restRequest setHTTPMethod:@"PUT"];
-    
+    int statusCode = 0;
     NSError* error = nil;
-    NSHTTPURLResponse* response;
+    @try
+    {
+        NSMutableURLRequest* restRequest = [self createRequest:url withData:data];
+        [restRequest setHTTPMethod:@"PUT"];
     
-    [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
-    int statusCode = (int)[response statusCode];
-    return statusCode;
+       
+        NSHTTPURLResponse* response;
+    
+        [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
+        if (error) {
+            NSLog(@"Error in PUT %@ %@", url, [error userInfo]);
+        }
+        statusCode = (int)[response statusCode];
+        return statusCode;
+    }
+    @catch (NSException *exception)
+    {
+        // Print exception information
+        NSLog( @"NSException caught during put %@" ,url );
+        NSLog( @"Name: %@", exception.name);
+        NSLog( @"Reason: %@", exception.reason );
+        
+        return statusCode;
+    }
 }
 
 

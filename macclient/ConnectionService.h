@@ -16,9 +16,11 @@
 @property NSString *connectionDetails;
 
 - (NSDictionary*) attemptConnection :(NSString*)server withData:(NSDictionary*)data;
+-(void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server;
 
-- (void) connect:(NSString*) userName withPassword:(NSString*)password toServer:(NSString*)server;
+-(NSDictionary*) getConnectionPropertiesObject:(NSString*) userName withPassword:(NSString*)password;
 
 -(void) sendConnectionStateChanged: (bool) isConnected toServer:(NSString*) serverUrl withDetails:(NSString*) details;
 -(void) disconnect:(NSString*) details;
+-(BOOL) setWorkstation:(NSString*)workstation;
 @end

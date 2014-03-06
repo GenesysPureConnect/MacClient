@@ -15,11 +15,21 @@
 QueueService* _queueService;
 NSArray* _interactions;
 Interaction* _currentInteraction;
-
+NSTimer* _timer;
 -(void) awakeFromNib{
     _queueService = [ServiceLocator getQueueService];
     [_queueService addObserver:self forKeyPath:@"queueList" options:NSKeyValueObservingOptionNew context:NULL];
+   
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
+                                            selector:@selector(updateInteractionTime:) userInfo:nil repeats:YES];
     
+}
+-(void)updateInteractionTime:(NSTimer*)aTimer
+{
+    if(_interactions.count > 0 )
+    {
+        [_queueTable reloadData];
+    }
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -95,7 +105,14 @@ Interaction* _currentInteraction;
 {
     Interaction* interaction = _interactions[row];
     NSString *identifier = [tableColumn identifier];
-    return [interaction valueForKey:identifier];
+    if([identifier isEqualToString:@"time"])
+    {
+        return [interaction formattedDurationString];
+    }
+    else
+    {
+        return [interaction valueForKey:identifier];
+    }
 }
 
 @end

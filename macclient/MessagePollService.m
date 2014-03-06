@@ -21,16 +21,23 @@ NSTimer* _timer;
 }
 -(void)processMessage:(NSTimer*)aTimer
 {
-    NSLog(@"Getting Messages: %@", aTimer);
+ //   NSLog(@"Getting Messages: %@", aTimer);
     
     NSString *type =@"";
-    @try {
+    NSArray* data;
     
-        NSArray* data = [[self icwsClient] getAsArray: @"/messaging/messages"];
-  //  NSLog(data);
-        if([data count] > 0 ){
-            for(int x=0; x< [data count]; x++)
-            {
+    @try {
+        data = [[self icwsClient] getAsArray: @"/messaging/messages"];
+    }
+    @catch (NSException *exception) {
+        return;
+    }
+    
+    
+    if([data count] > 0 ){
+        for(int x=0; x< [data count]; x++)
+        {
+            @try {
                 if([data[x] isKindOfClass:[NSDictionary class]])
                 {
                     NSDictionary *message = data[x] ;
@@ -43,12 +50,12 @@ NSTimer* _timer;
 
                 }
             }
+            @catch ( NSException *e ) {
+                NSLog([NSString stringWithFormat:@"error with message type %@" , type]);
+                NSLog(data[x]);
+                [_connectionService disconnect:@""];
+            }
         }
-    }
-    
-    @catch ( NSException *e ) {
-        NSLog(type);
-        [_connectionService disconnect:@""];
     }
 }
 

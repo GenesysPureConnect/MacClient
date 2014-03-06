@@ -13,11 +13,50 @@
 
 NSMutableArray *_statuses;
 StatusService* _statusService;
+NSTimer *_timer;
+NSDate *_lastStatusChange;
 
 -(void) awakeFromNib{
     [self setStatusService:[ServiceLocator getStatusService]];
-   }
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
+                                            selector:@selector(updateStatusTime:) userInfo:nil repeats:YES];
+    
+}
 
+-(void)updateStatusTime:(NSTimer*)aTimer
+{
+    if(_lastStatusChange == NULL)
+    {
+        return;
+    }
+    
+    NSDate *now = [NSDate date];
+    
+    // Get the system calendar. If you're positive it will be the
+    // Gregorian, you could use the specific method for that.
+    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
+    
+    // Specify which date components to get. This will get the hours,
+    // minutes, and seconds, but you could do days, months, and so on
+    // (as I believe iTunes does).
+    NSUInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    
+    // Create an NSDateComponents object from these dates using the system calendar.
+    NSDateComponents *durationComponents = [currentCalendar components:unitFlags
+                                                              fromDate:_lastStatusChange
+                                                                toDate:now
+                                                               options:0];
+    
+    // Format this as desired for display to the user.
+    NSString *durationString = [NSString stringWithFormat:
+                                @"%d:%02d:%02d",
+                                [durationComponents hour],
+                                [durationComponents minute],
+                                [durationComponents second]];
+    [_timeInStatus setStringValue:durationString];
+    
+
+}
 
 -(void) setStatusService:(StatusService*)statusService{
     _statusService = statusService;
@@ -54,13 +93,12 @@ StatusService* _statusService;
             [newItem setTag:[_statuses count]];
             [newItem setEnabled:true];
             
-            //[menu addItem:newItem];
+            [menu addItem:newItem];
             
             
              [_statuses addObject:status];
              
-            //[menu addItemWithTitle:[status text] action:@selector(changeStatus:) keyEquivalent:@""];
-            [_statusButton addItemWithTitle:[status text]];
+           // [_statusButton addItemWithTitle:[status text]];
             
         }
     }
@@ -68,6 +106,9 @@ StatusService* _statusService;
 }
 - (void) currentStatusChanged:(Status*) status{
    
+    _lastStatusChange = [[NSDate alloc] init];
+    [self updateStatusTime:NULL];
+    
     for(int x =0; x<_statuses.count; x++)
     {
         Status* checkStatus = _statuses[x];
@@ -85,7 +126,7 @@ StatusService* _statusService;
     newSize.height=24;
     
     [_statusImage setImage:[self imageResize:statusImage newSize:newSize]];
-    [_timeInStatus setStringValue:[status text]];
+    [_statusMessage setStringValue:[status text]];
 }
 
 

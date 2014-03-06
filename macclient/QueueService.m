@@ -44,7 +44,8 @@ NSMutableDictionary* _queueMap;
                            @"attributeNames":@[kAttributeState, kAttributeRemoteName, kAttributeRemoteNumber,
                                                kAttributeCallStateString,
                                                kAttributeCapabilities,
-                                               kAttributeMuted]};
+                                               kAttributeMuted,
+                                               kAttributeInitiationTime]};
                                            
     [_icwsClient put:[NSString stringWithFormat:@"/messaging/subscriptions/queues/%@", _subscriptionId] withData:data];
 };

@@ -9,6 +9,8 @@
 #ifndef macclient_constants_h
 #define macclient_constants_h
 
+#define kAppName @"Open Source Mac Client"
+
 //Notification Constants
 #define kConnectionStateChangedEvent @"CONNECTIONSTATECHANGED"
 #define kCurrentStatusChange @"CURRENTSTATUSCHANGED"
@@ -16,11 +18,11 @@
 
 #define kUrlConnectBaseFormat @"http://%@:8018/icws%@"
 #define kUrlImageFormat @"http://%@:8018%@"
-#define kUrlRequestBaseFormat @"http://%@:8018/icws/%@/%@"
+#define kUrlRequestBaseFormat @"http://%@:8018/icws/%@%@"
 
 //#define kUrlConnectBaseFormat @"http://%@:8888/icws%@"
 //#define kUrlImageFormat @"http://%@:8888%@"
-//#define kUrlRequestBaseFormat @"http://%@:8888/icws/%@/%@"
+//#define kUrlRequestBaseFormat @"http://%@:8888/icws/%@%@"
 
 #define kAttributeState @"Eic_State"
 #define kAttributeRemoteName @"Eic_RemoteName"
@@ -28,6 +30,13 @@
 #define kAttributeMuted @"Eic_Muted"
 #define kAttributeCallStateString @"Eic_CallStateString"
 #define kAttributeCapabilities @"Eic_Capabilities"
+#define kAttributeInitiationTime @"Eic_InitiationTime"
 
-
+#define kUserName @"UserName"
+#define kPassword @"Password"
+#define kServer @"Server"
+#define kRememberPassword @"RememberPassword"
+#define kAutoLogIn @"AutoLogIn"
+#define kWorkstationType @"WorkstationType"
+#define kWorkstationName @"WorkstationName"
 #endif

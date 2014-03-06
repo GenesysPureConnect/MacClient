@@ -18,7 +18,8 @@
 -(void) showClientDialog;
 -(void) showLoginDialog;
 -(void) setView:(NSViewController*) controller;
-- (IBAction)showPreferences:(id)sender;
-- (IBAction)logOut:(id)sender;
+-(IBAction)showPreferences:(id)sender;
+-(IBAction)logOut:(id)sender;
+-(void)closeThisWindow: (id) sender;
 
 @end

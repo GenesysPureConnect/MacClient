@@ -10,6 +10,7 @@
 #import "IcwsServiceBase.h"
 
 @interface StatusService : IcwsServiceBase
+@property NSDate* lastStatusChange;
 
 -(void) onCurrentStatusChanged: (NSNotification *)notification;
 - (void) onAllStatusesChanged: (NSNotification*) data;

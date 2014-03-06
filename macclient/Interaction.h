@@ -29,6 +29,6 @@
 -(BOOL) canDisconnet;
 -(BOOL) canHold;
 -(BOOL) canMute;
-
+-(NSString*) formattedDurationString;
 
 @end

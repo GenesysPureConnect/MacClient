@@ -17,9 +17,13 @@
 @property (weak) IBOutlet NSTextField *errorLabel;
 @property (weak) IBOutlet NSButton *rememberPassword;
 @property (weak) IBOutlet NSButton *autoLogIn;
+@property (weak) IBOutlet NSTextFieldCell *workstationLabel;
+@property (weak) IBOutlet NSTextField *workstationField;
+@property (weak) IBOutlet NSPopUpButton *workstationType;
 
 @property (weak) IBOutlet NSButton *connectButton;
 - (IBAction)doConnect:(id)sender;
+- (IBAction)workstationTypeChange:(id)sender;
 -(void)loadSavedData;
 
 @property (weak) IBOutlet NSTextField *server;

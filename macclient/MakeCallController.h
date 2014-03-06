@@ -11,7 +11,8 @@
 @interface MakeCallController : NSObject
 @property (weak) IBOutlet NSTextField *phoneNumberTextBox;
 @property (weak) IBOutlet NSButton *makeCallButton;
+- (IBAction)numberFieldFinishedEditing:(id)sender;
 
 - (IBAction)makeCallButtonClick:(id)sender;
-
+-(void) makeCall;
 @end

@@ -12,10 +12,13 @@
 #import "IcwsClient.h"
 #import "StatusService.h"
 #import "StatusControllerBase.h"
+#import "OtherSessionService.h"
 
-@interface StatusBarController : StatusControllerBase
+@interface StatusBarController : StatusControllerBase 
 
 @property (strong, nonatomic) NSStatusItem *rootStatusItem;
+-(void) setOtherSessionService:(OtherSessionService*)sessionService;
+
 - (void)activateStatusMenu;
 - (void)setStatus:(id)sender;
 - (void)exit:(id)sender;

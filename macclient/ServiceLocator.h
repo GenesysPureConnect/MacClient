@@ -12,11 +12,14 @@
 #import "CallService.h"
 #import "QueueService.h"
 #import "ConnectionService.h"
+#import "OtherSessionService.h"
+#import "TestConnection.h"
 
 @interface ServiceLocator : NSObject
 +(IcwsClient*) getIcwsClient;
 +(StatusService*) getStatusService;
 +(CallService*) getCallService;
 +(QueueService*) getQueueService;
-+(ConnectionService*) getConnectionService;
++(TestConnection*) getConnectionService;
++(OtherSessionService*) getOtherSessionService;
 @end

@@ -13,5 +13,6 @@
 - (IBAction)changeStatus:(id)sender;
 @property (weak) IBOutlet NSImageView *statusImage;
 @property (weak) IBOutlet NSTextField *timeInStatus;
+@property (weak) IBOutlet NSTextField *statusMessage;
 
 @end
