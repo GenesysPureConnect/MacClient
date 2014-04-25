@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Interaction.h"
 
-@interface QueueController : NSObject <NSTableViewDataSource>
+@interface QueueController : NSObject <NSTableViewDataSource, NSTableViewDelegate>
 
 @property (weak) IBOutlet NSButton *pickupButton;
 @property (weak) IBOutlet NSButton *disconnectButton;

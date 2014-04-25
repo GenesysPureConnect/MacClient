@@ -10,25 +10,38 @@
 #import "ServiceLocator.h"
 #import "QueueService.h"
 #import "Interaction.h"
+#import "QueueItemView.h"
 
 @implementation QueueController
 QueueService* _queueService;
 NSArray* _interactions;
 Interaction* _currentInteraction;
 NSTimer* _timer;
+
+BOOL isInitialized = NO;
+
 -(void) awakeFromNib{
-    _queueService = [ServiceLocator getQueueService];
-    [_queueService addObserver:self forKeyPath:@"queueList" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    if(isInitialized == NO)
+    {
+        _queueService = [ServiceLocator getQueueService];
+        [_queueService addObserver:self forKeyPath:@"queueList" options:NSKeyValueObservingOptionNew context:NULL];
    
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
                                             selector:@selector(updateInteractionTime:) userInfo:nil repeats:YES];
+        
+        isInitialized = YES;
+    }
     
 }
 -(void)updateInteractionTime:(NSTimer*)aTimer
 {
     if(_interactions.count > 0 )
     {
+        NSInteger row = [_queueTable selectedRow];
         [_queueTable reloadData];
+        [_queueTable selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+        
     }
 }
 
@@ -36,7 +49,12 @@ NSTimer* _timer;
 {
     NSArray* newContents = [change objectForKey:NSKeyValueChangeNewKey];
     _interactions = newContents;
+ 
+    
+    NSInteger row = [_queueTable selectedRow];
     [_queueTable reloadData];
+    [_queueTable selectRowIndexes:[NSIndexSet indexSetWithIndex:row] byExtendingSelection:NO];
+    
     if(_currentInteraction != NULL)
     {
         [self setCallControlButtonState:_currentInteraction];
@@ -101,18 +119,24 @@ NSTimer* _timer;
     return _interactions.count;
 }
 
--(id) tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    
+    
+    QueueItemView *result = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
+ //   Item *item = [self.items objectAtIndex:row];
+   // result.imageView.image = item.itemIcon;
+    
     Interaction* interaction = _interactions[row];
-    NSString *identifier = [tableColumn identifier];
-    if([identifier isEqualToString:@"time"])
-    {
-        return [interaction formattedDurationString];
-    }
-    else
-    {
-        return [interaction valueForKey:identifier];
-    }
+
+    result.textField.stringValue = [NSMutableString stringWithString: interaction.remoteName];
+    result.callId.stringValue = [NSMutableString stringWithString: interaction.interactionId];
+    result.stateString.stringValue = [NSMutableString stringWithString: interaction.callStateDescription];
+    result.number.stringValue = [NSMutableString stringWithString: interaction.remoteId];
+    result.timeInStatus.stringValue =  [NSMutableString stringWithString: interaction.formattedDurationString];
+    result.imageView.image = interaction.image;
+    return result;
 }
+
 
 @end

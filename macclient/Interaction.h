@@ -30,5 +30,6 @@
 -(BOOL) canHold;
 -(BOOL) canMute;
 -(NSString*) formattedDurationString;
+-(NSImage*) image;
 
 @end

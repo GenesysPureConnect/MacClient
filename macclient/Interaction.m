@@ -9,13 +9,31 @@
 #import "Interaction.h"
 #import "constants.h"
 
+
+
+static NSImage* DisconnectedCallImage = NULL;
+static NSImage* ConnectedCallImage = NULL;
+static NSImage* HeldCallImage = NULL;
+
 @implementation Interaction
 NSInteger _capabilities;
+
 
 -(id) initWithId:(NSString*)interactionId
 {
     self = [self init];
     _interactionId = interactionId;
+    
+    if(DisconnectedCallImage == NULL){
+        NSBundle *bundle = [NSBundle mainBundle];
+        DisconnectedCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"call-stop" ofType:@"png"]];
+        ConnectedCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"call-start" ofType:@"png"]];
+        HeldCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"media-playback-pause" ofType:@"png"]];
+
+
+    }
+    
+    
     return self;
     
 }
@@ -118,7 +136,21 @@ NSInteger _capabilities;
     return durationString;
 
 }
+
+-(NSImage*) image
+{
+    if([self isDisconnected]){
+        return DisconnectedCallImage;
+    }
+    else if([self isHeld]){
+        return HeldCallImage;
+    }
+    
+    return ConnectedCallImage;
+}
 @end
+
+
 
 //@property NSDate* initiationTime;
 //@property NSString* callStateDescription;

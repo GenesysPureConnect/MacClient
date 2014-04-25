@@ -53,6 +53,7 @@
 		89BAA67418BDA50A0026380B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA67318BDA50A0026380B /* Images.xcassets */; };
 		89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67618BE273D0026380B /* StatusControllerBase.m */; };
 		89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67918BE3AEB0026380B /* StatusController.m */; };
+		89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,8 @@
 		89BAA67618BE273D0026380B /* StatusControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusControllerBase.m; sourceTree = "<group>"; };
 		89BAA67818BE3AEB0026380B /* StatusController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusController.h; sourceTree = "<group>"; };
 		89BAA67918BE3AEB0026380B /* StatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusController.m; sourceTree = "<group>"; };
+		89E5C8AA190A0D0B00DC58D6 /* QueueItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueItemView.h; sourceTree = "<group>"; };
+		89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueItemView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +326,8 @@
 				89B94A9D18BF8C5D007B25DA /* MakeCallController.m */,
 				8985114118C2EBE200C6C33F /* QueueController.h */,
 				8985114218C2EBE200C6C33F /* QueueController.m */,
+				89E5C8AA190A0D0B00DC58D6 /* QueueItemView.h */,
+				89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -481,6 +486,7 @@
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
+				89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */,
 				892D1B2118C4254600C86E8E /* TestConnection.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
 				8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */,
