@@ -15,6 +15,7 @@ NSMutableArray *_statuses;
 StatusService* _statusService;
 NSTimer *_timer;
 NSDate *_lastStatusChange;
+Status * _currentStatus;
 
 -(void) awakeFromNib{
     [self setStatusService:[ServiceLocator getStatusService]];
@@ -96,8 +97,11 @@ NSDate *_lastStatusChange;
             [menu addItem:newItem];
             
             
-             [_statuses addObject:status];
-             
+            [_statuses addObject:status];
+            
+            if(_currentStatus != NULL && [status id] == [_currentStatus id]){
+                [_statusButton selectItem: newItem];
+            }
            // [_statusButton addItemWithTitle:[status text]];
             
         }
@@ -106,14 +110,15 @@ NSDate *_lastStatusChange;
 }
 - (void) currentStatusChanged:(Status*) status{
    
+    _currentStatus = status;
+    
     _lastStatusChange = [[NSDate alloc] init];
     [self updateStatusTime:NULL];
     
     for(int x =0; x<_statuses.count; x++)
     {
         Status* checkStatus = _statuses[x];
- //       NSLog(checkStatus.id);
-        if( [checkStatus id] == [status id]){
+        if( [checkStatus id] == [_currentStatus id]){
             [_statusButton selectItemAtIndex:x ];
             [_statusButton display];
         }

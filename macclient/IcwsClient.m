@@ -74,8 +74,7 @@ NSString* _server;
                  JSONObjectWithData:result
                  options:0
                  error:&error];
-    
-   
+     
         return object;
     }
     @catch (NSException *exception)

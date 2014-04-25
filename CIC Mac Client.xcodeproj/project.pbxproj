@@ -12,6 +12,9 @@
 		892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2818C5FE86007BB4EA /* Reachability.m */; };
 		892C8C2B18C5FEDA007BB4EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */; };
 		892D1B2118C4254600C86E8E /* TestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B2018C4254600C86E8E /* TestConnection.m */; };
+		895442D618EF3F57008E7EE8 /* media-playback-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D318EF3F57008E7EE8 /* media-playback-pause.png */; };
+		895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D418EF3F57008E7EE8 /* media-playback-start.png */; };
+		895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D518EF3F57008E7EE8 /* media-playback-stop.png */; };
 		89671C5D18921CC900918B1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89671C5C18921CC900918B1E /* Cocoa.framework */; };
 		89671C6718921CC900918B1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89671C6518921CC900918B1E /* InfoPlist.strings */; };
 		89671C6918921CC900918B1E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89671C6818921CC900918B1E /* main.m */; };
@@ -72,6 +75,9 @@
 		892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		892D1B1F18C4254600C86E8E /* TestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConnection.h; sourceTree = "<group>"; };
 		892D1B2018C4254600C86E8E /* TestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestConnection.m; sourceTree = "<group>"; };
+		895442D318EF3F57008E7EE8 /* media-playback-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-pause.png"; sourceTree = "<group>"; };
+		895442D418EF3F57008E7EE8 /* media-playback-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-start.png"; sourceTree = "<group>"; };
+		895442D518EF3F57008E7EE8 /* media-playback-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-stop.png"; sourceTree = "<group>"; };
 		89671C5918921CC900918B1E /* macclient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = macclient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89671C5C18921CC900918B1E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		89671C5F18921CC900918B1E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -166,8 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				89B94A8C18BEDAB7007B25DA /* Images */,
-				89B94A8A18BED086007B25DA /* appointment-recurring.png */,
-				89B2D73E18BBAD9B004F0AD5 /* warning.png */,
 				89671C6218921CC900918B1E /* macclient */,
 				89671C8018921CCA00918B1E /* macclientTests */,
 				89671C5B18921CC900918B1E /* Frameworks */,
@@ -339,6 +343,11 @@
 		89B94A8C18BEDAB7007B25DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				89B94A8A18BED086007B25DA /* appointment-recurring.png */,
+				89B2D73E18BBAD9B004F0AD5 /* warning.png */,
+				895442D318EF3F57008E7EE8 /* media-playback-pause.png */,
+				895442D418EF3F57008E7EE8 /* media-playback-start.png */,
+				895442D518EF3F57008E7EE8 /* media-playback-stop.png */,
 				89B94A9718BEDBE8007B25DA /* audio-volume-muted.png */,
 				89B94A9318BEDB93007B25DA /* call-stop.png */,
 				89B94A9518BEDBC8007B25DA /* media-playback-pause.png */,
@@ -432,10 +441,13 @@
 				89671C7318921CC900918B1E /* MainMenu.xib in Resources */,
 				89B2D73F18BBAD9B004F0AD5 /* warning.png in Resources */,
 				89B94A9418BEDB93007B25DA /* call-stop.png in Resources */,
+				895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */,
 				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
+				895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */,
 				89BAA67018BD825A0026380B /* ClientView.xib in Resources */,
 				89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */,
 				89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */,
+				895442D618EF3F57008E7EE8 /* media-playback-pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

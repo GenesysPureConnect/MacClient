@@ -45,7 +45,10 @@ NSButton* closeButton;
     closeButton = [[_mainView window] standardWindowButton:NSWindowCloseButton];
     [closeButton setTarget:self];
     [closeButton setAction:@selector(closeThisWindow:)];
+
     
+    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+    [tile setBadgeLabel:@"X"];
 }
 
 -(void)closeThisWindow: (id) sender {
@@ -104,12 +107,15 @@ NSButton* closeButton;
 -(void) connectionStateChanged: (NSNotification *)notification{
     NSDictionary* params = [notification userInfo];
     
+    NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
+    
     if([params[@"isConnected"]  isEqual: @"true"]){
         [self showClientDialog ];
+        [tile setBadgeLabel:NULL];
     }
     else{
         [self showLoginDialog ];
-       
+        [tile setBadgeLabel:@"X"];
     }
 }
 

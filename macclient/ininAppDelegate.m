@@ -7,6 +7,8 @@
 //
 
 #import "ininAppDelegate.h"
+#import "CallService.h"
+#import "ServiceLocator.h"
 
 @implementation ininAppDelegate
 
@@ -16,7 +18,27 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    NSAppleEventManager *em = [NSAppleEventManager sharedAppleEventManager];
+    [em
+     setEventHandler:self
+     andSelector:@selector(getUrl:withReplyEvent:)
+     forEventClass:kInternetEventClass
+     andEventID:kAEGetURL];
         
 }
+- (void)getUrl:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
+{
+    // Get the URL
+    NSString *urlStr = [[event paramDescriptorForKeyword:keyDirectObject]
+                        stringValue];
+    
+    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"callto:" withString: @""];
+    urlStr = [urlStr stringByReplacingOccurrencesOfString:@"tel:" withString: @""];
+    
+    CallService* callService = [ServiceLocator getCallService];
+    [callService placeCall:urlStr];
+    
+}
+    
 
 @end

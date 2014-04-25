@@ -30,6 +30,8 @@ NSTimer* _timer;
         data = [[self icwsClient] getAsArray: @"/messaging/messages"];
     }
     @catch (NSException *exception) {
+        [_connectionService disconnect:@""];
+
         return;
     }
     
