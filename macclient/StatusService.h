@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IcwsServiceBase.h"
+#import "Status.h"
 
 @interface StatusService : IcwsServiceBase
 @property NSDate* lastStatusChange;
@@ -18,4 +19,6 @@
 -(void) notifyAvailableStatusList;
 - (NSDictionary*) getAvailableStatuses;
 - (void) setStatus:(NSString*)statusId;
+-(NSDictionary*) getStatus: (NSString*) userId;
+-(Status*) getStatusDetails: (NSString*) statusId;
 @end

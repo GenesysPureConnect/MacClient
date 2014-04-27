@@ -31,6 +31,7 @@
 #define kAttributeCallStateString @"Eic_CallStateString"
 #define kAttributeCapabilities @"Eic_Capabilities"
 #define kAttributeInitiationTime @"Eic_InitiationTime"
+#define kAttributeConferenceId @"Eic_ConferenceId"
 
 #define kUserName @"UserName"
 #define kPassword @"Password"

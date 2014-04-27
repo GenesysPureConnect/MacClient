@@ -45,7 +45,8 @@ NSMutableDictionary* _queueMap;
                                                kAttributeCallStateString,
                                                kAttributeCapabilities,
                                                kAttributeMuted,
-                                               kAttributeInitiationTime]};
+                                               kAttributeInitiationTime,
+                                               kAttributeConferenceId]};
                                            
     [_icwsClient put:[NSString stringWithFormat:@"/messaging/subscriptions/queues/%@", _subscriptionId] withData:data];
 };
@@ -67,10 +68,14 @@ NSMutableDictionary* _queueMap;
             for(int x=0; x<[interactionsAdded count];x++)
             {
                 NSDictionary* interactionData = interactionsAdded[x];
-                Interaction* interaction = [[Interaction alloc] initWithId:interactionData[@"interactionId"]];
-                [interaction setAttributes:interactionData[@"attributes"]];
+                
+                if(![[interactionData allKeys] containsObject:@"conferenceParentId"] || [interactionData[@"conferenceParentId"] isEqualToString:@""])
+                {
+                    Interaction* interaction = [[Interaction alloc] initWithId:interactionData[@"interactionId"]];
+                    [interaction setAttributes:interactionData[@"attributes"]];
         
-                [_queueMap setObject:interaction forKey:interactionData[@"interactionId"]];
+                    [_queueMap setObject:interaction forKey:interactionData[@"interactionId"]];
+                }
             }
         }
     
@@ -129,6 +134,14 @@ NSMutableDictionary* _queueMap;
 -(void) disconnectInteraction:(Interaction*) interaction
 {
         [_icwsClient post:[self getActionUrl:@"disconnect" forInteraction:[interaction interactionId]] withData:@{}];
+}
+
+-(void) conferenceInteractions:(Interaction*) firstInteraction withSecond:(Interaction*) secondInteraction{
+    [_icwsClient post:@"/interactions/conferences" withData:@{@"interactions":@[firstInteraction.interactionId, secondInteraction.interactionId]}];
+
+}
+-(void) addToConference:(Interaction*) interaction toConference:(Interaction*) conferenceInteraction{
+    [_icwsClient post:[NSString stringWithFormat:@"/interactions/conferences/%@", conferenceInteraction.interactionId] withData:@{@"interactions":@[interaction.interactionId]}];
 }
 
 @end

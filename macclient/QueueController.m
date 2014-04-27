@@ -20,6 +20,9 @@ NSTimer* _timer;
 
 BOOL isInitialized = NO;
 
+#define MyPrivateTableViewDataType @"MyPrivateTableViewDataType"
+
+
 -(void) awakeFromNib{
     
     if(isInitialized == NO)
@@ -29,6 +32,8 @@ BOOL isInitialized = NO;
    
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
                                             selector:@selector(updateInteractionTime:) userInfo:nil repeats:YES];
+        
+        [_queueTable registerForDraggedTypes: [NSArray arrayWithObject:MyPrivateTableViewDataType]];
         
         isInitialized = YES;
     }
@@ -83,6 +88,11 @@ BOOL isInitialized = NO;
     
     NSMenuItem* selectedItem = sender;
     NSInteger tag =  selectedItem.tag;
+    
+    if(_interactions.count < tag){
+        return;
+    }
+    
     Interaction* interaction = _interactions[tag];
     
     [self setCallControlButtonState:interaction];
@@ -112,6 +122,9 @@ BOOL isInitialized = NO;
         [_muteButton setState:NSOffState];
     }
     
+    [_conferenceButton setState: _interactions.count > 0 ? NSOnState : NSOffState];
+    
+    
     _currentInteraction = interaction;
 }
 
@@ -124,12 +137,16 @@ BOOL isInitialized = NO;
     
     
     QueueItemView *result = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
- //   Item *item = [self.items objectAtIndex:row];
-   // result.imageView.image = item.itemIcon;
-    
+   
     Interaction* interaction = _interactions[row];
 
-    result.textField.stringValue = [NSMutableString stringWithString: interaction.remoteName];
+    if(interaction.isConference)
+    {
+        result.textField.stringValue = @"Conference";
+    }
+    else{
+        result.textField.stringValue = [NSMutableString stringWithString: interaction.remoteName];
+    }
     result.callId.stringValue = [NSMutableString stringWithString: interaction.interactionId];
     result.stateString.stringValue = [NSMutableString stringWithString: interaction.callStateDescription];
     result.number.stringValue = [NSMutableString stringWithString: interaction.remoteId];
@@ -138,5 +155,54 @@ BOOL isInitialized = NO;
     return result;
 }
 
+
+int _dragInteractionIndex = -1;
+
+// drag operation stuff
+- (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard {
+    // Copy the row numbers to the pasteboard.
+    NSData *zNSIndexSetData =
+    [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard declareTypes:[NSArray arrayWithObject:MyPrivateTableViewDataType]
+                   owner:self];
+    [pboard setData:zNSIndexSetData forType:MyPrivateTableViewDataType];
+    
+    _dragInteractionIndex = (int)rowIndexes.firstIndex;
+    
+    Interaction* dragInteraction = _interactions[_dragInteractionIndex];
+    
+    if(dragInteraction.isConference){
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (NSDragOperation)tableView:(NSTableView*)tv validateDrop:(id )info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)op {
+    // Add code here to validate the drop
+    
+    return NSDragOperationEvery;
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView
+       acceptDrop:(id )info
+              row:(NSInteger)row
+    dropOperation:(NSTableViewDropOperation)operation {
+    
+    Interaction* dragInteraction = _interactions[_dragInteractionIndex];
+    Interaction* dropInteraction = _interactions[row];
+    
+    _dragInteractionIndex = -1;
+    
+    if(dropInteraction.isConference){
+        [_queueService addToConference:dragInteraction toConference:dropInteraction];
+    }
+    else{
+        [_queueService conferenceInteractions:dragInteraction withSecond:dropInteraction];
+    }
+    
+    
+    return YES;
+}
 
 @end

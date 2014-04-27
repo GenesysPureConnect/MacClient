@@ -16,7 +16,7 @@
 @property NSString* callState;
 @property NSDate* initiationTime;
 @property NSString* callStateDescription;
-@property NSString* conferenceParent;
+@property NSString* conferenceId;
 @property NSInteger muted;
 
 -(id) initWithId:(NSString*)interactionId;
@@ -31,5 +31,6 @@
 -(BOOL) canMute;
 -(NSString*) formattedDurationString;
 -(NSImage*) image;
+-(BOOL) isConference;
 
 @end

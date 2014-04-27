@@ -17,7 +17,7 @@ static NSImage* HeldCallImage = NULL;
 
 @implementation Interaction
 NSInteger _capabilities;
-
+BOOL _isConference;
 
 -(id) initWithId:(NSString*)interactionId
 {
@@ -29,10 +29,7 @@ NSInteger _capabilities;
         DisconnectedCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"call-stop" ofType:@"png"]];
         ConnectedCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"call-start" ofType:@"png"]];
         HeldCallImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"media-playback-pause" ofType:@"png"]];
-
-
     }
-    
     
     return self;
     
@@ -64,6 +61,11 @@ NSInteger _capabilities;
         else if([kAttributeMuted isEqualToString:key])
         {
             _muted = [attributes[key] intValue] == 1;
+        }
+        else if([kAttributeConferenceId isEqualToString:key])
+        {
+            _isConference = ![attributes[key] isEqualToString:@""];
+            
         }
         else if([kAttributeInitiationTime isEqualToString:key])
         {
@@ -103,6 +105,12 @@ NSInteger _capabilities;
 }
 -(BOOL) canMute{return (_capabilities & 32 )>0;}
 
+
+-(BOOL) isConference
+{
+    return _isConference;
+}
+
 -(NSString*) formattedDurationString
 {
     if([self isDisconnected])
@@ -129,10 +137,10 @@ NSInteger _capabilities;
     
     // Format this as desired for display to the user.
     NSString *durationString = [NSString stringWithFormat:
-                                @"%d:%02d:%02d",
-                                [durationComponents hour],
-                                [durationComponents minute], 
-                                [durationComponents second]];
+                                @"%ld:%02ld:%02ld",
+                                (long)[durationComponents hour],
+                                (long)[durationComponents minute], 
+                                (long)[durationComponents second]];
     return durationString;
 
 }

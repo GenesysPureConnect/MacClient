@@ -9,11 +9,5 @@
 #import "QueueItemView.h"
 
 @implementation QueueItemView
-/*
-@synthesize number = _number;
-@synthesize timeInStatus = _timeInStatus;
-@synthesize callId = _callId;
-@synthesize stateString = _stateString;
-*/
 
 @end

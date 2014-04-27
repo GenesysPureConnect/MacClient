@@ -50,10 +50,10 @@ Status * _currentStatus;
     
     // Format this as desired for display to the user.
     NSString *durationString = [NSString stringWithFormat:
-                                @"%d:%02d:%02d",
-                                [durationComponents hour],
-                                [durationComponents minute],
-                                [durationComponents second]];
+                                @"%ld:%02ld:%02ld",
+                                (long)[durationComponents hour],
+                                (long)[durationComponents minute],
+                                (long)[durationComponents second]];
     [_timeInStatus setStringValue:durationString];
     
 

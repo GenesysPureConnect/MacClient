@@ -14,6 +14,7 @@
 #import "ConnectionService.h"
 #import "OtherSessionService.h"
 #import "TestConnection.h"
+#import "DirectoryService.h"
 
 @interface ServiceLocator : NSObject
 +(IcwsClient*) getIcwsClient;
@@ -22,4 +23,5 @@
 +(QueueService*) getQueueService;
 +(TestConnection*) getConnectionService;
 +(OtherSessionService*) getOtherSessionService;
++(DirectoryService*) getDirectoryService;
 @end

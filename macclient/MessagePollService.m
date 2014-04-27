@@ -53,8 +53,8 @@ NSTimer* _timer;
                 }
             }
             @catch ( NSException *e ) {
-                NSLog([NSString stringWithFormat:@"error with message type %@" , type]);
-                NSLog(data[x]);
+                NSLog(@"error with message type %@" , type);
+                NSLog(@"%@" ,data[x]);
                 [_connectionService disconnect:@""];
             }
         }

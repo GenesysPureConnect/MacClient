@@ -141,6 +141,49 @@ NSString* _server;
     }
 }
 
+-(NSDictionary*) postWithResponseData:(NSString*) url withData:(NSDictionary*)data;
+{
+    int statusCode = 0;
+    NSError* error = nil;
+    @try
+    {
+        NSMutableURLRequest* restRequest = [self createRequest:url withData:data];
+        [restRequest setHTTPMethod:@"POST"];
+        
+        
+        NSHTTPURLResponse* response;
+        
+        NSData* result = [NSURLConnection sendSynchronousRequest:restRequest  returningResponse:&response error:&error];
+        if (error) {
+            NSLog(@"Error in POST %@ %@", url, [error userInfo]);
+        }
+        statusCode = (int)[response statusCode];
+        
+        if(statusCode != 200){
+            [NSException raise:@"Error getting data" format:@"%d", statusCode];
+            return [[NSDictionary alloc] init];
+        }
+        id object = [NSJSONSerialization
+                     JSONObjectWithData:result
+                     options:0
+                     error:&error];
+        
+        NSDictionary *results = object;
+        
+        return results;
+
+    }
+    @catch (NSException *exception)
+    {
+        
+        // Print exception information
+        NSLog( @"NSException caught during POST %@" ,url );
+        NSLog( @"Name: %@", exception.name);
+        NSLog( @"Reason: %@", exception.reason );
+        
+        @throw exception;
+    }
+}
 
 -(int) put:(NSString*) url withData:(NSDictionary*)data
 {

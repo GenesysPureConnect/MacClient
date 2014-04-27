@@ -18,6 +18,7 @@ static CallService* s_callService;
 static StatusService* s_statusService;
 static TestConnection* s_connectionService;
 static OtherSessionService* s_otherSessionService;
+static DirectoryService* s_directoryService;
 
 @implementation ServiceLocator
 
@@ -75,7 +76,14 @@ static OtherSessionService* s_otherSessionService;
     return queue;
 }
 
-                            
++(DirectoryService*) getDirectoryService{
+    if (s_directoryService == nil)
+    {
+        s_directoryService = [[DirectoryService alloc] initWithIcwsClient:[self getIcwsClient]];
+    }
+    
+    return s_directoryService;
+}
 
 @end
 

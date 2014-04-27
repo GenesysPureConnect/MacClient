@@ -16,6 +16,7 @@
 -(NSArray*) getAsArray:(NSString*) url;
 
 -(int) post:(NSString*) url withData:(NSDictionary*)data;
+-(NSDictionary*) postWithResponseData:(NSString*) url withData:(NSDictionary*)data;
 -(int) put:(NSString*) url withData:(NSDictionary*)data;
 
 @end

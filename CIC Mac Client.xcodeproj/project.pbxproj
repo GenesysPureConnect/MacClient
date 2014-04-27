@@ -12,7 +12,6 @@
 		892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2818C5FE86007BB4EA /* Reachability.m */; };
 		892C8C2B18C5FEDA007BB4EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */; };
 		892D1B2118C4254600C86E8E /* TestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B2018C4254600C86E8E /* TestConnection.m */; };
-		895442D618EF3F57008E7EE8 /* media-playback-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D318EF3F57008E7EE8 /* media-playback-pause.png */; };
 		895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D418EF3F57008E7EE8 /* media-playback-start.png */; };
 		895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D518EF3F57008E7EE8 /* media-playback-stop.png */; };
 		89671C5D18921CC900918B1E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89671C5C18921CC900918B1E /* Cocoa.framework */; };
@@ -54,6 +53,10 @@
 		89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67618BE273D0026380B /* StatusControllerBase.m */; };
 		89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67918BE3AEB0026380B /* StatusController.m */; };
 		89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */; };
+		89E5C8AF190ACA5A00DC58D6 /* DirectoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E5C8AE190ACA5A00DC58D6 /* DirectoryService.m */; };
+		89E5C8B2190AD56200DC58D6 /* DirectorySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */; };
+		89E5C8B7190B4B5800DC58D6 /* application-exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E5C8B6190B4B5800DC58D6 /* application-exit.png */; };
+		89E5C8BB190C73E400DC58D6 /* user-online.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E5C8BA190C73E400DC58D6 /* user-online.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +150,12 @@
 		89BAA67918BE3AEB0026380B /* StatusController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusController.m; sourceTree = "<group>"; };
 		89E5C8AA190A0D0B00DC58D6 /* QueueItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueItemView.h; sourceTree = "<group>"; };
 		89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueItemView.m; sourceTree = "<group>"; };
+		89E5C8AD190ACA5A00DC58D6 /* DirectoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectoryService.h; sourceTree = "<group>"; };
+		89E5C8AE190ACA5A00DC58D6 /* DirectoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectoryService.m; sourceTree = "<group>"; };
+		89E5C8B0190AD56200DC58D6 /* DirectorySearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectorySearchController.h; sourceTree = "<group>"; };
+		89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectorySearchController.m; sourceTree = "<group>"; };
+		89E5C8B6190B4B5800DC58D6 /* application-exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application-exit.png"; sourceTree = "<group>"; };
+		89E5C8BA190C73E400DC58D6 /* user-online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-online.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +294,8 @@
 				892C8C2218C55C72007BB4EA /* OtherSessionService.m */,
 				892C8C2418C5FDF9007BB4EA /* AutoConnectService.h */,
 				892C8C2518C5FDF9007BB4EA /* AutoConnectService.m */,
+				89E5C8AD190ACA5A00DC58D6 /* DirectoryService.h */,
+				89E5C8AE190ACA5A00DC58D6 /* DirectoryService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -328,6 +339,8 @@
 				8985114218C2EBE200C6C33F /* QueueController.m */,
 				89E5C8AA190A0D0B00DC58D6 /* QueueItemView.h */,
 				89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */,
+				89E5C8B0190AD56200DC58D6 /* DirectorySearchController.h */,
+				89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -348,6 +361,8 @@
 		89B94A8C18BEDAB7007B25DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				89E5C8BA190C73E400DC58D6 /* user-online.png */,
+				89E5C8B6190B4B5800DC58D6 /* application-exit.png */,
 				89B94A8A18BED086007B25DA /* appointment-recurring.png */,
 				89B2D73E18BBAD9B004F0AD5 /* warning.png */,
 				895442D318EF3F57008E7EE8 /* media-playback-pause.png */,
@@ -406,7 +421,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Interactive Intelligence";
 				TargetAttributes = {
 					89671C7918921CCA00918B1E = {
@@ -441,10 +456,12 @@
 				89BAA66B18BD81C50026380B /* LoginView.xib in Resources */,
 				89671C6718921CC900918B1E /* InfoPlist.strings in Resources */,
 				89671C6D18921CC900918B1E /* Credits.rtf in Resources */,
+				89E5C8BB190C73E400DC58D6 /* user-online.png in Resources */,
 				89BAA67418BDA50A0026380B /* Images.xcassets in Resources */,
 				89B94A9218BEDB72007B25DA /* call-start.png in Resources */,
 				89671C7318921CC900918B1E /* MainMenu.xib in Resources */,
 				89B2D73F18BBAD9B004F0AD5 /* warning.png in Resources */,
+				89E5C8B7190B4B5800DC58D6 /* application-exit.png in Resources */,
 				89B94A9418BEDB93007B25DA /* call-stop.png in Resources */,
 				895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */,
 				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
@@ -452,7 +469,6 @@
 				89BAA67018BD825A0026380B /* ClientView.xib in Resources */,
 				89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */,
 				89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */,
-				895442D618EF3F57008E7EE8 /* media-playback-pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,12 +497,14 @@
 				89B2D73D18BB8176004F0AD5 /* MessagePollService.m in Sources */,
 				89671C7018921CC900918B1E /* ininAppDelegate.m in Sources */,
 				89671C6918921CC900918B1E /* main.m in Sources */,
+				89E5C8AF190ACA5A00DC58D6 /* DirectoryService.m in Sources */,
 				892C8C2318C55C72007BB4EA /* OtherSessionService.m in Sources */,
 				89B2D74618BC2167004F0AD5 /* MainController.m in Sources */,
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
 				89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */,
+				89E5C8B2190AD56200DC58D6 /* DirectorySearchController.m in Sources */,
 				892D1B2118C4254600C86E8E /* TestConnection.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
 				8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */,

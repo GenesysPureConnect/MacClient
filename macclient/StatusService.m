@@ -170,5 +170,14 @@ NSString* _currentStatusId;
 }
 
 
+-(NSDictionary*) getStatus: (NSString*) userId{
+    NSString* url = [NSString stringWithFormat:@"/status/user-statuses/%@", userId];
+    
+   return [[self icwsClient] get:url ];
+}
+
+-(Status*) getStatusDetails: (NSString*) statusId{
+    return _statusMap[statusId];
+}
 
 @end

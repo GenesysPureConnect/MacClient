@@ -16,6 +16,7 @@
 @property (weak) IBOutlet NSButton *holdButton;
 @property (weak) IBOutlet NSButton *muteButton;
 @property (weak) IBOutlet NSTableView *queueTable;
+@property (weak) IBOutlet NSPopUpButton *conferenceButton;
 
 - (IBAction)pickupClick:(id)sender;
 - (IBAction)disconnectClick:(id)sender;
@@ -24,4 +25,19 @@
 
 - (IBAction)selectCall:(id)sender ;
 -(void) setCallControlButtonState:(Interaction*)interaction;
+
+- (BOOL)tableView:(NSTableView *)tv
+writeRowsWithIndexes:(NSIndexSet *)rowIndexes
+     toPasteboard:(NSPasteboard*)pboard;
+
+- (NSDragOperation)tableView:(NSTableView*)tv
+                validateDrop:(id )info
+                 proposedRow:(NSInteger)row
+       proposedDropOperation:(NSTableViewDropOperation)op;
+
+- (BOOL)tableView:(NSTableView *)aTableView
+       acceptDrop:(id )info
+              row:(NSInteger)row
+    dropOperation:(NSTableViewDropOperation)operation;
+
 @end

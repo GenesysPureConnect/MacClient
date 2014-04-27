@@ -87,8 +87,8 @@ ConnectionService* _connectionService;
     Reachability *reach = [notification object];
     if( [reach isKindOfClass: [Reachability class]]) {
         NetworkStatus status = [reach currentReachabilityStatus];
-        // Insert your code here
-        NSLog([self stringFromStatus:status]);
+       
+        NSLog(@"%@" ,[self stringFromStatus:status]);
         
         if(status == NotReachable)
         {
