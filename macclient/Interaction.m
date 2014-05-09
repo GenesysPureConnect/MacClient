@@ -87,6 +87,12 @@ BOOL _isConference;
 {
     return [_callState isEqualToString:@"H"];
 }
+
+-(BOOL) isAlerting
+{
+    return [_callState isEqualToString:@"A"];
+}
+
 -(BOOL) isConnected{ return [_callState isEqualToString:@"C"];}
 -(BOOL) isDisconnected{
     return [_callState isEqualToString:@"I"] || [_callState isEqualToString:@"E"];

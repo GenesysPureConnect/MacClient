@@ -167,6 +167,7 @@ NSString* _currentStatusId;
     int result = [[self icwsClient] put:@"/messaging/subscriptions/status/status-messages-user-access" withData:userIds];
     
     result = [[self icwsClient] put:@"/messaging/subscriptions/status/user-statuses" withData:userIds];
+
 }
 
 

@@ -22,6 +22,7 @@
 -(id) initWithId:(NSString*)interactionId;
 -(void) setAttributes:(NSDictionary*) data;
 -(BOOL) isConnected;
+-(BOOL) isAlerting;
 -(BOOL) isDisconnected;
 -(BOOL) isHeld;
 -(BOOL) isMuted;

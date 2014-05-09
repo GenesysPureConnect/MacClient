@@ -19,6 +19,7 @@ static StatusService* s_statusService;
 static TestConnection* s_connectionService;
 static OtherSessionService* s_otherSessionService;
 static DirectoryService* s_directoryService;
+static QueueService* s_myInteractionsQueueService;
 
 @implementation ServiceLocator
 
@@ -69,11 +70,14 @@ static DirectoryService* s_directoryService;
     return s_connectionService;
 }
 
-+(QueueService*) getQueueService
++(QueueService*) getMyInteractionsQueueService
 {
-    QueueService* queue =  [[QueueService alloc] initMyInteractionsQueue:[self getIcwsClient] isConnected:[[self getConnectionService] isConnected] withUser:[[self getConnectionService] userId]];
-
-    return queue;
+    if (s_myInteractionsQueueService == nil)
+    {
+        s_myInteractionsQueueService = [[QueueService alloc] initMyInteractionsQueue:[self getIcwsClient] isConnected:[[self getConnectionService] isConnected] withUser:[[self getConnectionService] userId]];
+    }
+    
+    return s_myInteractionsQueueService;
 }
 
 +(DirectoryService*) getDirectoryService{

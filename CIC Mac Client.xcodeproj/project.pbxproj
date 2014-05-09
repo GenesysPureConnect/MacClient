@@ -27,6 +27,9 @@
 		8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985113C18BFBB1F00C6C33F /* QueueService.m */; };
 		8985114018BFFA0200C6C33F /* Interaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985113F18BFFA0200C6C33F /* Interaction.m */; };
 		8985114318C2EBE200C6C33F /* QueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985114218C2EBE200C6C33F /* QueueController.m */; };
+		89A5E8C41913DCB100B1DF3D /* InteractionToastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */; };
+		89A5E8C61913F69700B1DF3D /* InteractionToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */; };
+		89A5E8C91915690A00B1DF3D /* RingCall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C81915690A00B1DF3D /* RingCall.mp3 */; };
 		89B2D72018B99729004F0AD5 /* StatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D71F18B99729004F0AD5 /* StatusBarController.m */; };
 		89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D72718BA3321004F0AD5 /* ConnectionService.m */; };
 		89B2D72B18BA3F12004F0AD5 /* IcwsClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B2D72A18BA3F12004F0AD5 /* IcwsClient.m */; };
@@ -57,6 +60,7 @@
 		89E5C8B2190AD56200DC58D6 /* DirectorySearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */; };
 		89E5C8B7190B4B5800DC58D6 /* application-exit.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E5C8B6190B4B5800DC58D6 /* application-exit.png */; };
 		89E5C8BB190C73E400DC58D6 /* user-online.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E5C8BA190C73E400DC58D6 /* user-online.png */; };
+		89E94197190F20A3004E528F /* AlertingCallNotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E94196190F20A3004E528F /* AlertingCallNotificationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +110,10 @@
 		8985113F18BFFA0200C6C33F /* Interaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interaction.m; sourceTree = "<group>"; };
 		8985114118C2EBE200C6C33F /* QueueController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueController.h; sourceTree = "<group>"; };
 		8985114218C2EBE200C6C33F /* QueueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueController.m; sourceTree = "<group>"; };
+		89A5E8C21913DCB100B1DF3D /* InteractionToastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionToastController.h; sourceTree = "<group>"; };
+		89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionToastController.m; sourceTree = "<group>"; };
+		89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionToastView.xib; sourceTree = "<group>"; };
+		89A5E8C81915690A00B1DF3D /* RingCall.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RingCall.mp3; sourceTree = "<group>"; };
 		89B2D71E18B99729004F0AD5 /* StatusBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusBarController.h; sourceTree = "<group>"; };
 		89B2D71F18B99729004F0AD5 /* StatusBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusBarController.m; sourceTree = "<group>"; };
 		89B2D72618BA3321004F0AD5 /* ConnectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionService.h; sourceTree = "<group>"; };
@@ -156,6 +164,8 @@
 		89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectorySearchController.m; sourceTree = "<group>"; };
 		89E5C8B6190B4B5800DC58D6 /* application-exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "application-exit.png"; sourceTree = "<group>"; };
 		89E5C8BA190C73E400DC58D6 /* user-online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user-online.png"; sourceTree = "<group>"; };
+		89E94195190F20A3004E528F /* AlertingCallNotificationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertingCallNotificationService.h; sourceTree = "<group>"; };
+		89E94196190F20A3004E528F /* AlertingCallNotificationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertingCallNotificationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +193,7 @@
 		89671C5018921CC900918B1E = {
 			isa = PBXGroup;
 			children = (
+				89A5E8C7191568A900B1DF3D /* Sounds */,
 				89B94A8C18BEDAB7007B25DA /* Images */,
 				89671C6218921CC900918B1E /* macclient */,
 				89671C8018921CCA00918B1E /* macclientTests */,
@@ -271,6 +282,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		89A5E8C7191568A900B1DF3D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				89A5E8C81915690A00B1DF3D /* RingCall.mp3 */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
 		89B2D72518BA330B004F0AD5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +315,8 @@
 				892C8C2518C5FDF9007BB4EA /* AutoConnectService.m */,
 				89E5C8AD190ACA5A00DC58D6 /* DirectoryService.h */,
 				89E5C8AE190ACA5A00DC58D6 /* DirectoryService.m */,
+				89E94195190F20A3004E528F /* AlertingCallNotificationService.h */,
+				89E94196190F20A3004E528F /* AlertingCallNotificationService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -316,6 +337,7 @@
 			children = (
 				89BAA66918BD81C50026380B /* LoginView.xib */,
 				89BAA66E18BD825A0026380B /* ClientView.xib */,
+				89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -341,6 +363,8 @@
 				89E5C8AB190A0D0B00DC58D6 /* QueueItemView.m */,
 				89E5C8B0190AD56200DC58D6 /* DirectorySearchController.h */,
 				89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */,
+				89A5E8C21913DCB100B1DF3D /* InteractionToastController.h */,
+				89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -458,10 +482,12 @@
 				89671C6D18921CC900918B1E /* Credits.rtf in Resources */,
 				89E5C8BB190C73E400DC58D6 /* user-online.png in Resources */,
 				89BAA67418BDA50A0026380B /* Images.xcassets in Resources */,
+				89A5E8C61913F69700B1DF3D /* InteractionToastView.xib in Resources */,
 				89B94A9218BEDB72007B25DA /* call-start.png in Resources */,
 				89671C7318921CC900918B1E /* MainMenu.xib in Resources */,
 				89B2D73F18BBAD9B004F0AD5 /* warning.png in Resources */,
 				89E5C8B7190B4B5800DC58D6 /* application-exit.png in Resources */,
+				89A5E8C91915690A00B1DF3D /* RingCall.mp3 in Resources */,
 				89B94A9418BEDB93007B25DA /* call-stop.png in Resources */,
 				895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */,
 				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
@@ -508,8 +534,10 @@
 				892D1B2118C4254600C86E8E /* TestConnection.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
 				8985113D18BFBB1F00C6C33F /* QueueService.m in Sources */,
+				89E94197190F20A3004E528F /* AlertingCallNotificationService.m in Sources */,
 				89B2D72B18BA3F12004F0AD5 /* IcwsClient.m in Sources */,
 				89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */,
+				89A5E8C41913DCB100B1DF3D /* InteractionToastController.m in Sources */,
 				892C8C2618C5FDF9007BB4EA /* AutoConnectService.m in Sources */,
 				89B2D73918BADAD3004F0AD5 /* IcwsServiceBase.m in Sources */,
 				89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */,

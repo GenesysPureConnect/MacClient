@@ -18,6 +18,7 @@
 #import "QueueService.h"
 #import "OtherSessionService.h"
 #import "AutoConnectService.h"
+#import "AlertingCallNotificationService.h"
 
 @implementation MainController
 
@@ -29,6 +30,7 @@ QueueService *_myQueue;
 LoginViewController* _loginController;
 ClientViewController *_clientViewController;
 AutoConnectService *_autoConnectService;
+AlertingCallNotificationService* _alertingCallNotificationService;
 
 NSButton* closeButton;
 
@@ -138,6 +140,9 @@ NSButton* closeButton;
     _pollService = [[MessagePollService alloc] initWithIcwsClient:client andConnectionService:(ConnectionService*)_connectionService];
     
     _autoConnectService = [[AutoConnectService alloc] initWithConnectionService:_connectionService];
+    
+    _alertingCallNotificationService = [[AlertingCallNotificationService alloc] init];
+
 }
 
 - (IBAction)showPreferences:(id)sender

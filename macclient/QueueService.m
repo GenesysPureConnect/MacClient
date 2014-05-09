@@ -40,6 +40,9 @@ NSMutableDictionary* _queueMap;
 }
 
 -(void) connectionUp{
+    
+    [_queueMap removeAllObjects];
+    
     NSDictionary* data = @{@"queueIds":@[@{@"queueType":@"1", @"queueName":[self userId]}],
                            @"attributeNames":@[kAttributeState, kAttributeRemoteName, kAttributeRemoteNumber,
                                                kAttributeCallStateString,

@@ -27,7 +27,7 @@ BOOL isInitialized = NO;
     
     if(isInitialized == NO)
     {
-        _queueService = [ServiceLocator getQueueService];
+        _queueService = [ServiceLocator getMyInteractionsQueueService];
         [_queueService addObserver:self forKeyPath:@"queueList" options:NSKeyValueObservingOptionNew context:NULL];
    
         _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self

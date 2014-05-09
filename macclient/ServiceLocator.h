@@ -20,7 +20,7 @@
 +(IcwsClient*) getIcwsClient;
 +(StatusService*) getStatusService;
 +(CallService*) getCallService;
-+(QueueService*) getQueueService;
++(QueueService*) getMyInteractionsQueueService;
 +(TestConnection*) getConnectionService;
 +(OtherSessionService*) getOtherSessionService;
 +(DirectoryService*) getDirectoryService;

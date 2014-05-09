@@ -122,6 +122,7 @@
             connectResponse = [self attemptConnection:server withData:connectionProperties ];
             statusCode =  connectResponse[@"statusCode"];
             index++;
+             results = connectResponse[@"results"];
         }
     }
     else
@@ -152,7 +153,7 @@
         else{
             self.connectionDetails = results[@"message"];
             NSLog(@"%@",  self.connectionDetails);
-            [self sendConnectionStateChanged :true toServer:self.serverUrl withDetails:self.connectionDetails];
+            [self sendConnectionStateChanged :false toServer:self.serverUrl withDetails:self.connectionDetails];
         }
     }
 

@@ -9,22 +9,28 @@
 #import "ininAppDelegate.h"
 #import "CallService.h"
 #import "ServiceLocator.h"
+#import "AlertingCallNotificationService.h"
+#import "InteractionToastController.h"
 
 @implementation ininAppDelegate
 
 //http://www.idev101.com/code/Objective-C/custom_url_schemes.html
 
-
+AlertingCallNotificationService *as ;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    
     NSAppleEventManager *em = [NSAppleEventManager sharedAppleEventManager];
     [em
      setEventHandler:self
      andSelector:@selector(getUrl:withReplyEvent:)
      forEventClass:kInternetEventClass
      andEventID:kAEGetURL];
-        
+    
+    NSSound *player = [[NSSound alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RingCall" ofType:@"mp3"] byReference:NO];
+    [player play];
+    
 }
 - (void)getUrl:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent
 {
