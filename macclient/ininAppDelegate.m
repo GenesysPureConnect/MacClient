@@ -28,8 +28,7 @@ AlertingCallNotificationService *as ;
      forEventClass:kInternetEventClass
      andEventID:kAEGetURL];
     
-    NSSound *player = [[NSSound alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RingCall" ofType:@"mp3"] byReference:NO];
-    [player play];
+ 
     
 }
 - (void)getUrl:(NSAppleEventDescriptor *)event withReplyEvent:(NSAppleEventDescriptor *)replyEvent

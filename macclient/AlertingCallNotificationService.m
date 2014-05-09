@@ -89,8 +89,8 @@ NSSound* _alertingSound;
     
     if(_alertingSound == NULL && _alertingInteractions.count > 0)
     {
-        //start sound
-       // [_alertingSound pl]
+        _alertingSound = [[NSSound alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"RingCall" ofType:@"mp3"] byReference:NO];
+        [_alertingSound play];
        
     }
     else if(_alertingSound != NULL && _alertingInteractions.count == 0)
