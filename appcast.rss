@@ -1,0 +1,15 @@
+XPath/RenderXSL
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>Mac Client Changelog </title>
+        <link>https://github.com/InteractiveIntelligence/MacClient/blob/master/appcast.rss</link>
+        <description>Open Source Mac Client updates</description>
+        <language>en</language>
+        <item>
+            <title>Version 2.1</title>
+            <description>Adding Auto Updates		</description>
+            <pubDate>Wed, 12 May 2014 19:20:11 +0000</pubDate>
+            <enclosure url="http://andymatuschak.org/files/Sparkle Test App_2.0.zip" sparkle:version="2.0" length="1600000" type="application/octet-stream" sparkle:dsaSignature="MCwCFAmB39sazl2xGIxSF8pHBbBh1zBLAhRmawuNanltHMlkCLv6R8OYiDRigQ=="/>
+        </item>
+    </channel>
+</rss>
