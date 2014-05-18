@@ -32,6 +32,8 @@
 		8985114018BFFA0200C6C33F /* Interaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985113F18BFFA0200C6C33F /* Interaction.m */; };
 		8985114318C2EBE200C6C33F /* QueueController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8985114218C2EBE200C6C33F /* QueueController.m */; };
 		8993A5E8192457600025703F /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A5E7192457600025703F /* DateUtil.m */; };
+		8993A5EA192847F50025703F /* ChangeStationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8993A5E9192847F50025703F /* ChangeStationWindow.xib */; };
+		8993A5ED192848FD0025703F /* ChangeStationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A5EC192848FD0025703F /* ChangeStationController.m */; };
 		89A5E8C41913DCB100B1DF3D /* InteractionToastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */; };
 		89A5E8C61913F69700B1DF3D /* InteractionToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */; };
 		89A5E8C91915690A00B1DF3D /* RingCall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C81915690A00B1DF3D /* RingCall.mp3 */; };
@@ -133,6 +135,9 @@
 		8985114218C2EBE200C6C33F /* QueueController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueController.m; sourceTree = "<group>"; };
 		8993A5E6192457600025703F /* DateUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateUtil.h; sourceTree = "<group>"; };
 		8993A5E7192457600025703F /* DateUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateUtil.m; sourceTree = "<group>"; };
+		8993A5E9192847F50025703F /* ChangeStationWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeStationWindow.xib; sourceTree = "<group>"; };
+		8993A5EB192848FD0025703F /* ChangeStationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeStationController.h; sourceTree = "<group>"; };
+		8993A5EC192848FD0025703F /* ChangeStationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeStationController.m; sourceTree = "<group>"; };
 		89A5E8C21913DCB100B1DF3D /* InteractionToastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionToastController.h; sourceTree = "<group>"; };
 		89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionToastController.m; sourceTree = "<group>"; };
 		89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionToastView.xib; sourceTree = "<group>"; };
@@ -375,6 +380,7 @@
 				89BAA66918BD81C50026380B /* LoginView.xib */,
 				89BAA66E18BD825A0026380B /* ClientView.xib */,
 				89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */,
+				8993A5E9192847F50025703F /* ChangeStationWindow.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -402,6 +408,8 @@
 				89E5C8B1190AD56200DC58D6 /* DirectorySearchController.m */,
 				89A5E8C21913DCB100B1DF3D /* InteractionToastController.h */,
 				89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */,
+				8993A5EB192848FD0025703F /* ChangeStationController.h */,
+				8993A5EC192848FD0025703F /* ChangeStationController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -533,6 +541,7 @@
 				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
 				895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */,
 				89BAA67018BD825A0026380B /* ClientView.xib in Resources */,
+				8993A5EA192847F50025703F /* ChangeStationWindow.xib in Resources */,
 				89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */,
 				89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */,
 			);
@@ -553,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8993A5ED192848FD0025703F /* ChangeStationController.m in Sources */,
 				8985114018BFFA0200C6C33F /* Interaction.m in Sources */,
 				8985114318C2EBE200C6C33F /* QueueController.m in Sources */,
 				89B94A8918BEB1F8007B25DA /* ServiceLocator.m in Sources */,

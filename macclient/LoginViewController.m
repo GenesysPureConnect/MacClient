@@ -183,7 +183,7 @@
     }
     else{
         [_errorLabel setStringValue:params[@"details"] ];
-        
+        [self loadSavedData];
     }
 }
 @end

@@ -69,6 +69,13 @@
                 <menuItem title="Connection" id="83">
                     <menu key="submenu" title="Connection" id="81">
                         <items>
+                            <menuItem title="Change Station" id="Wjx-P0-1Qt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="changeStationClick:" target="nYl-j7-R0C" id="Ksh-ai-dyP"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="rqh-rK-5Yw"/>
                             <menuItem title="Log Out" id="77">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -104,6 +111,8 @@
         <customObject id="420" customClass="NSFontManager"/>
         <customObject id="nYl-j7-R0C" customClass="MainController">
             <connections>
+                <outlet property="chanceStationMenuItem" destination="Wjx-P0-1Qt" id="N1a-Zk-goL"/>
+                <outlet property="changeStationClick" destination="Wjx-P0-1Qt" id="bAz-0f-OqR"/>
                 <outlet property="logOutMenuItem" destination="77" id="rFe-aZ-obf"/>
                 <outlet property="mainView" destination="PgB-Ub-iws" id="2wu-t5-MaO"/>
             </connections>

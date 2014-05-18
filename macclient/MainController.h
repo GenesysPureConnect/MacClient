@@ -15,6 +15,9 @@
 @property (weak) IBOutlet NSView *mainView;
 @property (strong) NSViewController *currentViewController;
 @property (weak) IBOutlet NSMenuItem *logOutMenuItem;
+@property (weak) IBOutlet NSMenuItem *chanceStationMenuItem;
+
+- (IBAction)changeStationClick:(id)sender;
 
 -(void) setupServices;
 -(void) connectionStateChanged: (NSNotification *)notification;

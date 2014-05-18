@@ -22,6 +22,7 @@
 #import "OtherSessionService.h"
 #import "AutoConnectService.h"
 #import "AlertingCallNotificationService.h"
+#import "ChangeStationController.h"
 
 @implementation MainController
 
@@ -126,7 +127,6 @@ NSButton* closeButton;
     }
 }
 
-
 -(void) setupServices{
     
     IcwsClient* client = [ServiceLocator getIcwsClient];
@@ -157,4 +157,12 @@ NSButton* closeButton;
     [_connectionService disconnect:@""];
     
 }
+
+ChangeStationController *changeStationController;
+
+- (IBAction) changeStationClick:(id)sender{
+     changeStationController = [[ChangeStationController alloc] initWithWindowNibName:@"ChangeStationWindow"];
+    [changeStationController showWindow:self];
+}
+
 @end
