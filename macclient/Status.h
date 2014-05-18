@@ -13,6 +13,7 @@
     @property NSString *text;
     @property bool isUserSelectable;
     @property NSString *imageUrl;
+@property NSDate *lastStatusChange;
 
 - (id) initFromDictionary:(NSDictionary *)statusData fromServer:(NSString*)url;
 - (NSComparisonResult)compare:(Status *)otherObject;

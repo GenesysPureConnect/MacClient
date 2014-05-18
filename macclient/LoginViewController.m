@@ -15,11 +15,6 @@
 
 @implementation LoginViewController
 
-enum WorkstationType{
-    StationLess=0,
-    Workstation=1
-};
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     
@@ -82,7 +77,9 @@ enum WorkstationType{
 
 - (void)timerDoConnect:(NSTimer*)theTimer
 {
+#if !DEBUG
      [self doConnect:self];
+#endif
 }
 
 - (IBAction)rememberPasswordChecked:(id)sender
@@ -92,6 +89,14 @@ enum WorkstationType{
 }
 
 - (IBAction)doConnect:(id)sender {
+   // [self performSelectorInBackground:@selector(doConnectOnBackgroundThread:) withObject:self];
+    [self doConnectOnBackgroundThread:self];
+}
+
+-(void) doConnectOnBackgroundThread:(id) object{
+        
+    [[self connectIndicator] startAnimation:self];
+    [[self connectButton] setEnabled:false];
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     [prefs setObject:[_userNameField stringValue] forKey:kUserName];
@@ -118,7 +123,15 @@ enum WorkstationType{
     
     if(_connectionService.isConnected && [_workstationType selectedTag] > 0)
     {
-        bool result = [_connectionService setWorkstation:[_workstationField stringValue]];
+        bool result = false;
+        if ([_workstationType selectedTag] == 1){
+            result = [_connectionService setWorkstation:[_workstationField stringValue]];
+        }
+        else if([_workstationType selectedTag] == 2){
+            result = [_connectionService setRemoteNumber:[_workstationField stringValue]];
+        }
+        
+        
         if(!result)
         {
             [_connectionService disconnect:@"Unable to set station"];
@@ -127,18 +140,33 @@ enum WorkstationType{
             [ServiceLocator getOtherSessionService].stationName = [_workstationField stringValue];
         }
     }
+    
+     [self performSelectorOnMainThread:@selector(stopConnectIndicator:)
+                           withObject:self
+                        waitUntilDone:YES];
+
+
+}
+
+
+- (void) stopConnectIndicator:(id)data
+{
+    [[self connectButton] setEnabled:true];
+    [[self connectIndicator] stopAnimation:self];
+    
+    
 }
 
 - (IBAction)workstationTypeChange:(id)sender {
     NSPopUpButton* btn = sender;
     if([btn selectedTag] == 0 )
-        
     {
         [_workstationField setEnabled:false];
     }
-         else{
-             [_workstationField setEnabled:true];
-         }
+    else
+    {
+        [_workstationField setEnabled:true];
+    }
 }
 
 

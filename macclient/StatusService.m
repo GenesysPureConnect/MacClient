@@ -9,12 +9,14 @@
 #import "StatusService.h"
 #import "constants.h"
 #import "Status.h"
+#import "DateUtil.h"
 
 @implementation StatusService
 
 NSMutableDictionary* _statusMap;
 NSMutableArray* _availableStatuses;
 NSString* _currentStatusId;
+
 - (id) init
 {
     self = [super init];
@@ -100,6 +102,7 @@ NSString* _currentStatusId;
         }
     }
     
+
 }
 
 - (void) onAllStatusesChanged: (NSNotification*) data;
@@ -140,7 +143,10 @@ NSString* _currentStatusId;
     
     for(int x=0; x<userList.count; x++)
     {
-        _currentStatusId = userList[0][@"statusId"];
+        NSDictionary* status = userList[0];
+        _lastStatusChange = [DateUtil getDateFromString:status[@"statusChanged"]];
+        
+        _currentStatusId = status[@"statusId"];
         
         [self notifyCurrentStatus];
     }

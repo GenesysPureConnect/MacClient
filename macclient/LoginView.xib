@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B3116" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment version="1070" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="autoLogIn" destination="WRv-4G-Ea5" id="Au5-bu-wv0"/>
                 <outlet property="connectButton" destination="kRS-SL-GkA" id="2O9-iN-ElT"/>
+                <outlet property="connectIndicator" destination="3IC-44-xFB" id="Zl3-71-smT"/>
                 <outlet property="errorLabel" destination="ZYh-nB-UvO" id="VBu-J6-JOz"/>
                 <outlet property="passwordField" destination="6rz-0w-q1X" id="XxD-YP-Zil"/>
                 <outlet property="rememberPassword" destination="WcK-be-xlP" id="PSZ-hZ-h6D"/>
@@ -93,10 +94,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-nB-UvO">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZYh-nB-UvO">
                     <rect key="frame" x="20" y="3" width="265" height="42"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="HPI-Dz-U5a">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="HPI-Dz-U5a">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" red="0.89327870244565222" green="0.0" blue="0.16838203008567809" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -124,13 +125,16 @@
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmu-xZ-UxP">
                     <rect key="frame" x="106" y="155" width="166" height="26"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="Workstation" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" tag="1" imageScaling="proportionallyDown" inset="2" selectedItem="eKj-BL-sQN" id="Qcg-H0-fms">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="Remote Number" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" tag="2" imageScaling="proportionallyDown" inset="2" selectedItem="0ew-bf-0oT" id="Qcg-H0-fms">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="7Fi-lK-cZ6">
                             <items>
                                 <menuItem title="Stationless" id="Dxs-xb-LCL"/>
-                                <menuItem title="Workstation" state="on" tag="1" id="eKj-BL-sQN"/>
+                                <menuItem title="Workstation" tag="1" id="eKj-BL-sQN"/>
+                                <menuItem title="Remote Number" state="on" tag="2" id="0ew-bf-0oT">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -150,7 +154,7 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tz2-IO-Oc7">
                     <rect key="frame" x="18" y="134" width="90" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Workstation:" id="CAS-tZ-Tf6">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Station:" id="CAS-tZ-Tf6">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -165,6 +169,10 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="3IC-44-xFB">
+                    <rect key="frame" x="192" y="50" width="16" height="16"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </progressIndicator>
             </subviews>
         </customView>
         <customObject id="QNF-Lq-Rsu" customClass="LoginViewController">

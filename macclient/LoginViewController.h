@@ -20,9 +20,11 @@
 @property (weak) IBOutlet NSTextFieldCell *workstationLabel;
 @property (weak) IBOutlet NSTextField *workstationField;
 @property (weak) IBOutlet NSPopUpButton *workstationType;
+@property (weak) IBOutlet NSProgressIndicator *connectIndicator;
 
 @property (weak) IBOutlet NSButton *connectButton;
 - (IBAction)doConnect:(id)sender;
+-(void) doConnectOnBackgroundThread:(id) object;
 - (IBAction)workstationTypeChange:(id)sender;
 -(void)loadSavedData;
 
@@ -30,6 +32,7 @@
 - (IBAction)rememberPasswordChecked:(id)sender;
 
 -(void) connectionStateChanged: (NSNotification *)notification;
+- (void) stopConnectIndicator:(id)data;
 
 - (void)timerDoConnect:(NSTimer*)theTimer;
 @end

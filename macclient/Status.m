@@ -8,15 +8,20 @@
 
 #import "Status.h"
 #import "constants.h"
+#import "DateUtil.h"
 
 @implementation Status
+
 - (id) initFromDictionary:(NSDictionary *)statusData fromServer:(NSString*)url
 {
+    
      self = [super init ];
     _id = statusData[@"statusId"];
     _text = statusData[@"messageText"];
     _isUserSelectable = [[statusData objectForKey:@"isSelectableStatus"] integerValue] == 1;
     _imageUrl = [NSString stringWithFormat:kUrlImageFormat, url , statusData[@"iconUri"]];
+    
+    _lastStatusChange = [DateUtil getDateFromString:statusData[@"statusChanged"]];
     return self;
     
 }

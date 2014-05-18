@@ -1,15 +1,24 @@
-XPath/RenderXSL
+
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
     <channel>
         <title>Mac Client Changelog </title>
-        <link>https://github.com/InteractiveIntelligence/MacClient/blob/master/appcast.rss</link>
+        <link>https://s3.amazonaws.com/MacClient/appcast.rss</link>
         <description>Open Source Mac Client updates</description>
         <language>en</language>
         <item>
-            <title>Version 2.1</title>
-            <description>Adding Auto Updates		</description>
-            <pubDate>Wed, 12 May 2014 19:20:11 +0000</pubDate>
-            <enclosure url="http://andymatuschak.org/files/Sparkle Test App_2.0.zip" sparkle:version="2.0" length="1600000" type="application/octet-stream" sparkle:dsaSignature="MCwCFAmB39sazl2xGIxSF8pHBbBh1zBLAhRmawuNanltHMlkCLv6R8OYiDRigQ=="/>
+            <title>Version 2.2</title>
+            <description>
+            <![CDATA[
+                <ul>
+                <li>Added Remote station login</li>
+                <li>Random bug fixes</li>
+                <li>Added auto update feature</li>
+                </ul>
+            ]]>
+            
+            </description>
+            <pubDate>Fri, 16 May 2014 13:53:01 +0000</pubDate>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.zip" sparkle:version="2.2" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
         </item>
     </channel>
 </rss>

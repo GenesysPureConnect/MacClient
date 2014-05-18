@@ -33,6 +33,16 @@
 #define kAttributeInitiationTime @"Eic_InitiationTime"
 #define kAttributeConferenceId @"Eic_ConferenceId"
 
+
+#if DEBUG
+#define kUserName @"DebugUserName"
+#define kPassword @"DebugPassword"
+#define kServer @"DebugServer"
+#define kRememberPassword @"DebugRememberPassword"
+#define kAutoLogIn @"DebugAutoLogIn"
+#define kWorkstationType @"DebugWorkstationType"
+#define kWorkstationName @"DebugWorkstationName"
+#else
 #define kUserName @"UserName"
 #define kPassword @"Password"
 #define kServer @"Server"
@@ -40,4 +50,7 @@
 #define kAutoLogIn @"AutoLogIn"
 #define kWorkstationType @"WorkstationType"
 #define kWorkstationName @"WorkstationName"
+
+#endif
+
 #endif

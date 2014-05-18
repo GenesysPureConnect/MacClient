@@ -8,6 +8,7 @@
 
 #import "StatusController.h"
 #import "ServiceLocator.h"
+#import "DateUtil.h"
 
 @implementation StatusController
 
@@ -18,9 +19,11 @@ NSDate *_lastStatusChange;
 Status * _currentStatus;
 
 -(void) awakeFromNib{
+    
     [self setStatusService:[ServiceLocator getStatusService]];
     _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self
                                             selector:@selector(updateStatusTime:) userInfo:nil repeats:YES];
+    
     
 }
 
@@ -31,6 +34,14 @@ Status * _currentStatus;
         return;
     }
     
+    NSString* durationString = [DateUtil getFormattedDurationString:_lastStatusChange];
+    [_timeInStatus setStringValue:durationString];
+    
+}
+
+
++(NSString*) formattedDurationString:(NSDate*) fromDate;
+{
     NSDate *now = [NSDate date];
     
     // Get the system calendar. If you're positive it will be the
@@ -44,7 +55,7 @@ Status * _currentStatus;
     
     // Create an NSDateComponents object from these dates using the system calendar.
     NSDateComponents *durationComponents = [currentCalendar components:unitFlags
-                                                              fromDate:_lastStatusChange
+                                                              fromDate:fromDate
                                                                 toDate:now
                                                                options:0];
     
@@ -54,9 +65,8 @@ Status * _currentStatus;
                                 (long)[durationComponents hour],
                                 (long)[durationComponents minute],
                                 (long)[durationComponents second]];
-    [_timeInStatus setStringValue:durationString];
+    return durationString;
     
-
 }
 
 -(void) setStatusService:(StatusService*)statusService{
@@ -112,7 +122,7 @@ Status * _currentStatus;
    
     _currentStatus = status;
     
-    _lastStatusChange = [[NSDate alloc] init];
+    _lastStatusChange = [_statusService lastStatusChange];
     [self updateStatusTime:NULL];
     
     for(int x =0; x<_statuses.count; x++)

@@ -23,4 +23,5 @@
 -(void) sendConnectionStateChanged: (bool) isConnected toServer:(NSString*) serverUrl withDetails:(NSString*) details;
 -(void) disconnect:(NSString*) details;
 -(BOOL) setWorkstation:(NSString*)workstation;
+-(BOOL) setRemoteNumber:(NSString*)number;
 @end

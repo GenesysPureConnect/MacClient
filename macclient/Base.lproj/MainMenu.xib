@@ -16,7 +16,7 @@
                 <menuItem title="Mac Client" id="56">
                     <menu key="submenu" title="Mac Client" systemMenu="apple" id="57">
                         <items>
-                            <menuItem title="About macclient" id="58">
+                            <menuItem title="About Mac Client" id="58">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="orderFrontStandardAboutPanel:" target="-2" id="142"/>
@@ -25,21 +25,21 @@
                             <menuItem isSeparatorItem="YES" id="236">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Preferences…" keyEquivalent="," id="129">
+                            <menuItem title="Preferences…" hidden="YES" keyEquivalent="," id="129">
                                 <connections>
                                     <action selector="showPreferences:" target="nYl-j7-R0C" id="JoL-fj-m9e"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check for Updates..." id="EuN-V7-VcY">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="eZc-Cq-lQN" id="SqU-K8-7MZ"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="143">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Services" id="131">
-                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
-                            </menuItem>
-                            <menuItem isSeparatorItem="YES" id="144">
-                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
-                            </menuItem>
-                            <menuItem title="Hide macclient" keyEquivalent="h" id="134">
+                            <menuItem title="Hide Mac Client" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="367"/>
                                 </connections>
@@ -58,7 +58,7 @@
                             <menuItem isSeparatorItem="YES" id="149">
                                 <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                             </menuItem>
-                            <menuItem title="Quit macclient" keyEquivalent="q" id="136">
+                            <menuItem title="Quit Mac Client" keyEquivalent="q" id="136">
                                 <connections>
                                     <action selector="terminate:" target="-3" id="449"/>
                                 </connections>
@@ -90,7 +90,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <customView autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PgB-Ub-iws">
-                        <rect key="frame" x="0.0" y="9" width="600" height="300"/>
+                        <rect key="frame" x="4" y="7" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </customView>
                 </subviews>
@@ -108,5 +108,7 @@
                 <outlet property="mainView" destination="PgB-Ub-iws" id="2wu-t5-MaO"/>
             </connections>
         </customObject>
+        <userDefaultsController representsSharedInstance="YES" id="Wb8-9W-PIn"/>
+        <customObject id="eZc-Cq-lQN" customClass="SUUpdater"/>
     </objects>
 </document>

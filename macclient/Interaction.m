@@ -8,12 +8,13 @@
 
 #import "Interaction.h"
 #import "constants.h"
-
+#import "DateUtil.h"
 
 
 static NSImage* DisconnectedCallImage = NULL;
 static NSImage* ConnectedCallImage = NULL;
 static NSImage* HeldCallImage = NULL;
+
 
 @implementation Interaction
 NSInteger _capabilities;
@@ -69,16 +70,9 @@ BOOL _isConference;
         }
         else if([kAttributeInitiationTime isEqualToString:key])
         {
-            //This is overly complicated, but I couldn't come up with an easier way -kpg
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-            [dateFormatter setDateFormat:@"yyyyMMdd HHmmss"];
-            [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
             NSString *dateString = attributes[key];
-            NSString *shortString =[dateString substringToIndex:dateString.length - 5];
-            shortString = [shortString stringByReplacingOccurrencesOfString:@"T" withString:@" "];
-            _initiationTime = [dateFormatter dateFromString:shortString];
             
+            _initiationTime = [DateUtil getDateFromString:dateString];
         }
        
     }
@@ -124,31 +118,7 @@ BOOL _isConference;
         return @"";
     }
     
-    NSDate *now = [NSDate date];
-    
-    // Get the system calendar. If you're positive it will be the
-    // Gregorian, you could use the specific method for that.
-    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
-    
-    // Specify which date components to get. This will get the hours,
-    // minutes, and seconds, but you could do days, months, and so on
-    // (as I believe iTunes does).
-    NSUInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    // Create an NSDateComponents object from these dates using the system calendar.
-    NSDateComponents *durationComponents = [currentCalendar components:unitFlags
-                                                              fromDate:_initiationTime
-                                                                toDate:now
-                                                               options:0];
-    
-    // Format this as desired for display to the user.
-    NSString *durationString = [NSString stringWithFormat:
-                                @"%ld:%02ld:%02ld",
-                                (long)[durationComponents hour],
-                                (long)[durationComponents minute], 
-                                (long)[durationComponents second]];
-    return durationString;
-
+    return [DateUtil getFormattedDurationString:_initiationTime];
 }
 
 -(NSImage*) image

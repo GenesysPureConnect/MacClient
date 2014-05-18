@@ -167,6 +167,17 @@
     int statusCode = [[self icwsClient] put:@"/connection/station" withData:stationData];
     return statusCode == 200;
 }
+
+-(BOOL) setRemoteNumber:(NSString*)number
+{
+    NSDictionary* stationData = @{@"__type":@"urn:inin.com:connection:remoteNumberSettings",
+                                  @"supportedMediaTypes": @[@1],
+                                  @"remoteNumber":number};
+    
+    int statusCode = [[self icwsClient] put:@"/connection/station" withData:stationData];
+    return statusCode == 200;
+}
+
 -(void) disconnect:(NSString*) details{
      self.isConnected = FALSE;
     self.userId = @"";

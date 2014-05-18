@@ -86,14 +86,13 @@ BOOL isInitialized = NO;
 
 - (IBAction)selectCall:(id)sender {
     
-    NSMenuItem* selectedItem = sender;
-    NSInteger tag =  selectedItem.tag;
-    
-    if(_interactions.count < tag){
+    NSInteger row = [_queueTable selectedRow];
+  
+    if(_interactions.count < row){
         return;
     }
     
-    Interaction* interaction = _interactions[tag];
+    Interaction* interaction = _interactions[row];
     
     [self setCallControlButtonState:interaction];
 

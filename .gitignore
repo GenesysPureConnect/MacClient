@@ -21,3 +21,5 @@ DerivedData
 Pods
 
 TestConnection*
+dsa_priv.pem
+deploymacapp.rb
