@@ -263,8 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				8993A5E4192455910025703F /* Util */,
-				892C8C2718C5FE86007BB4EA /* Reachability.h */,
-				892C8C2818C5FE86007BB4EA /* Reachability.m */,
 				89B2D74018BBAF85004F0AD5 /* Base Classes */,
 				89B2D73A18BAFE10004F0AD5 /* Controllers */,
 				89B2D73018BA550F004F0AD5 /* Views */,
@@ -313,6 +311,8 @@
 		8993A5E4192455910025703F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				892C8C2718C5FE86007BB4EA /* Reachability.h */,
+				892C8C2818C5FE86007BB4EA /* Reachability.m */,
 				8993A5E6192457600025703F /* DateUtil.h */,
 				8993A5E7192457600025703F /* DateUtil.m */,
 			);
