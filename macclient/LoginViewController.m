@@ -145,7 +145,7 @@
         }
     }
     
-     [self performSelectorOnMainThread:@selector(stopConnectIndicator:)
+    [self performSelectorOnMainThread:@selector(stopConnectIndicator:)
                            withObject:self
                         waitUntilDone:YES];
 
