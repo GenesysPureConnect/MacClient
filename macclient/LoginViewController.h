@@ -38,4 +38,5 @@
 - (void) stopConnectIndicator:(id)data;
 
 - (void)timerDoConnect:(NSTimer*)theTimer;
+-(void) autologinIfNecessary;
 @end

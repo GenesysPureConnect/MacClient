@@ -72,6 +72,7 @@ NSButton* closeButton;
         [_loginController setConnectionService:_connectionService];
         [_mainView addSubview:[_loginController view]];
         [_loginController loadSavedData];
+        [_loginController autologinIfNecessary];
     }
     
     [[_clientViewController view] setHidden:true];

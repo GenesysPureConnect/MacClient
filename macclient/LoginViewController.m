@@ -63,16 +63,6 @@
         [_autoLogIn setEnabled:true ];
     }
     
-    if([_autoLogIn isEnabled] && [_autoLogIn state] == NSOnState)
-    {
-        [NSTimer scheduledTimerWithTimeInterval:0.50
-                                         target:self
-                                       selector:@selector(timerDoConnect:)
-                                       userInfo:nil
-                                        repeats:NO];
-       
-    }
-    
     [_workstationType selectItemWithTag:[prefs integerForKey:kWorkstationType]];
     [self workstationTypeChange:_workstationType];
     [_workstationField setStringValue:[prefs stringForKey:kWorkstationName]];
@@ -81,9 +71,9 @@
 
 - (void)timerDoConnect:(NSTimer*)theTimer
 {
-#if !DEBUG
+//#if !DEBUG
      [self doConnect:self];
-#endif
+//#endif
 }
 
 - (IBAction)rememberPasswordChecked:(id)sender
@@ -184,6 +174,19 @@
     else{
         [_errorLabel setStringValue:params[@"details"] ];
         [self loadSavedData];
+    }
+}
+
+-(void)autologinIfNecessary{
+    
+    if([_autoLogIn isEnabled] && [_autoLogIn state] == NSOnState)
+    {
+        [NSTimer scheduledTimerWithTimeInterval:0.50
+                                         target:self
+                                       selector:@selector(timerDoConnect:)
+                                       userInfo:nil
+                                        repeats:NO];
+        
     }
 }
 @end
