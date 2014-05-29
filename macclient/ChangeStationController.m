@@ -32,10 +32,7 @@ NSMutableArray* _workstationHistory;
     }
     [_Station removeAllItems];
     [_Station addItemsWithObjectValues:_workstationHistory];
-    
-
-    
-    
+ 
     _connectionService = [ServiceLocator getConnectionService];
     
 }

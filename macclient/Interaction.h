@@ -12,6 +12,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    Call,
+    Chat,
+    Email,
+    GenericObject,
+    WorkItem,
+    Unknown
+} InteractionType;
+
 @interface Interaction : NSObject
 
 @property NSString* interactionId;
@@ -22,6 +31,7 @@
 @property NSString* callStateDescription;
 @property NSString* conferenceId;
 @property NSInteger muted;
+@property InteractionType interactionType;
 
 -(id) initWithId:(NSString*)interactionId;
 -(void) setAttributes:(NSDictionary*) data;
@@ -38,4 +48,6 @@
 -(NSImage*) image;
 -(BOOL) isConference;
 
+
 @end
+

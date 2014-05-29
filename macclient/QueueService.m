@@ -81,7 +81,9 @@ NSMutableDictionary* _queueMap;
                     Interaction* interaction = [[Interaction alloc] initWithId:interactionData[@"interactionId"]];
                     [interaction setAttributes:interactionData[@"attributes"]];
         
-                    [_queueMap setObject:interaction forKey:interactionData[@"interactionId"]];
+                    if([interaction interactionType] == Call){
+                        [_queueMap setObject:interaction forKey:interactionData[@"interactionId"]];
+                    }
                 }
             }
         }
@@ -94,7 +96,9 @@ NSMutableDictionary* _queueMap;
             {
                 NSDictionary* interactionData = interactionsChanged[x];
                 Interaction* interaction = _queueMap[interactionData[@"interactionId"]];
-                [interaction setAttributes:interactionData[@"attributes"]];
+                if(interaction != NULL){
+                    [interaction setAttributes:interactionData[@"attributes"]];
+                }
                
             }
         }

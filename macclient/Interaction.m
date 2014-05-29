@@ -78,6 +78,17 @@ BOOL _isConference;
             
             _initiationTime = [DateUtil getDateFromString:dateString];
         }
+        else if([kAttributeObjectType isEqualToString:key])
+        {
+            NSString *objectType = attributes[key];
+            
+            if([objectType isEqualToString:@"Call"]){
+                _interactionType = Call;
+            }
+            else{
+                _interactionType = Unknown;
+            }
+        }
        
     }
 }
