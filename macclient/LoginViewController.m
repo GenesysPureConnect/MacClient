@@ -13,11 +13,14 @@
 #import "LoginViewController.h"
 #import "ServiceLocator.h"
 #import "constants.h"
+/*
 @interface LoginViewController ()
 
 @end
-
+*/
 @implementation LoginViewController
+
+NSMutableArray* _workstationHistory;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +55,7 @@
     [_passwordField setStringValue:[prefs stringForKey:kPassword]];
     [_server setStringValue:[prefs stringForKey:kServer]];
     
+    
     NSInteger autoLogin =[prefs integerForKey:kAutoLogIn];
     [_autoLogIn setState:autoLogin];
     
@@ -65,8 +69,19 @@
     
     [_workstationType selectItemWithTag:[prefs integerForKey:kWorkstationType]];
     [self workstationTypeChange:_workstationType];
-    [_workstationField setStringValue:[prefs stringForKey:kWorkstationName]];
-     
+    
+    NSString* workstationName = [prefs stringForKey:kWorkstationName];
+    
+    [_workstationField setStringValue:workstationName];
+   
+    _workstationHistory = [[NSMutableArray alloc] initWithArray: [prefs arrayForKey:kWorkstationHistory]];
+    if(_workstationHistory == NULL){
+        _workstationHistory = [[NSMutableArray alloc] init];
+    }
+    [_workstationField removeAllItems];
+    [_workstationField addItemsWithObjectValues:_workstationHistory];
+    
+    
 }
 
 - (void)timerDoConnect:(NSTimer*)theTimer
@@ -110,12 +125,27 @@
     [prefs setInteger:[_autoLogIn state] forKey: kAutoLogIn];
     [prefs setInteger:[_workstationType selectedTag] forKey:kWorkstationType];
     [prefs setObject:[_workstationField stringValue] forKey:kWorkstationName];
+
+    if(_workstationHistory != NULL)
+    {
+        NSString* workstation = [_workstationField stringValue];
+        
+        if(workstation != NULL && ![_workstationHistory containsObject:workstation]){
+            [_workstationHistory insertObject:workstation atIndex:0];
+            
+            if([_workstationHistory count] > 5)
+            {
+                [_workstationHistory removeLastObject];
+            }
+        }
+        [prefs setObject:_workstationHistory forKey:kWorkstationHistory];
+    }
     [prefs synchronize];
 
     [_connectionService connect:[_userNameField stringValue] withPassword:[_passwordField stringValue] toServer:[_server stringValue]];
    
     
-    if(_connectionService.isConnected && [_workstationType selectedTag] > 0)
+    if(_connectionService.isConnected && [_workstationType selectedTag] > 0 && [[_workstationField stringValue] length] > 0)
     {
         bool result = false;
         if ([_workstationType selectedTag] == 1){

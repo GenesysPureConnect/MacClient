@@ -25,7 +25,7 @@
                             <menu key="menu" title="OtherViews" id="KuI-iT-0LI">
                                 <items>
                                     <menuItem title="Workstation" tag="1" id="pxs-Xj-E22"/>
-                                    <menuItem title="Remote Number" state="on" tag="2" id="M1h-oY-O2L">
+                                    <menuItem title="Remote Number" tag="2" id="M1h-oY-O2L">
                                         <modifierMask key="keyEquivalentModifierMask"/>
                                     </menuItem>
                                 </items>
@@ -48,15 +48,6 @@
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LvE-HC-UyM">
-                        <rect key="frame" x="108" y="70" width="161" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="blh-6C-L6K">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s3h-Wk-q18">
@@ -96,13 +87,22 @@ DQ
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS2-1U-9SD">
+                        <rect key="frame" x="109" y="67" width="163" height="26"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="RtF-58-X3n">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </comboBoxCell>
+                    </comboBox>
                 </subviews>
             </view>
         </window>
         <customObject id="pve-SB-n5R" customClass="ChangeStationController">
             <connections>
                 <outlet property="OkButton" destination="FDI-c5-tqj" id="DFU-65-Vip"/>
-                <outlet property="Station" destination="LvE-HC-UyM" id="I9A-Jh-RVs"/>
+                <outlet property="Station" destination="nS2-1U-9SD" id="xy5-qr-sT1"/>
                 <outlet property="changeStationWindow" destination="QvC-M9-y7g" id="b8E-xj-mlo"/>
                 <outlet property="errorTextField" destination="tmS-Y1-Fdi" id="xxu-eV-8n4"/>
                 <outlet property="stationType" destination="bRj-UP-y3S" id="1Zy-gh-78h"/>

@@ -42,6 +42,7 @@
 #define kAutoLogIn @"DebugAutoLogIn"
 #define kWorkstationType @"DebugWorkstationType"
 #define kWorkstationName @"DebugWorkstationName"
+#define kWorkstationHistory @"DebugWorkstationHistory"
 #else
 #define kUserName @"UserName"
 #define kPassword @"Password"
@@ -50,7 +51,7 @@
 #define kAutoLogIn @"AutoLogIn"
 #define kWorkstationType @"WorkstationType"
 #define kWorkstationName @"WorkstationName"
-
+#define kWorkstationHistory @"WorkstationHistory"
 #endif
 
 #endif

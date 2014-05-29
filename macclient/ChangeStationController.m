@@ -18,12 +18,23 @@
 @implementation ChangeStationController
 
 ConnectionService *_connectionService;
+NSMutableArray* _workstationHistory;
 
 -(void) awakeFromNib{
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
     
     [_stationType selectItemWithTag:[prefs integerForKey:kWorkstationType]];
     [_Station setStringValue:[prefs stringForKey:kWorkstationName]];
+    
+    _workstationHistory = [[NSMutableArray alloc] initWithArray: [prefs arrayForKey:kWorkstationHistory]];
+    if(_workstationHistory == NULL){
+        _workstationHistory = [[NSMutableArray alloc] init];
+    }
+    [_Station removeAllItems];
+    [_Station addItemsWithObjectValues:_workstationHistory];
+    
+
+    
     
     _connectionService = [ServiceLocator getConnectionService];
     
@@ -53,6 +64,23 @@ ConnectionService *_connectionService;
         
         [prefs setInteger:[_stationType selectedTag] forKey:kWorkstationType];
         [prefs setObject:[_Station stringValue] forKey:kWorkstationName];
+        
+        if(_workstationHistory != NULL)
+        {
+            NSString* workstation = [_Station stringValue];
+            
+            if(workstation != NULL && ![_workstationHistory containsObject:workstation]){
+                [_workstationHistory insertObject:workstation atIndex:0];
+                
+                if([_workstationHistory count] > 5)
+                {
+                    [_workstationHistory removeLastObject];
+                }
+            }
+            [prefs setObject:_workstationHistory forKey:kWorkstationHistory];
+        }
+
+        
         [prefs synchronize];
         
         [_changeStationWindow close];

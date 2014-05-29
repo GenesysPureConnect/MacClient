@@ -14,7 +14,7 @@
 
 @interface ChangeStationController : NSWindowController
 @property (weak) IBOutlet NSPopUpButton *stationType;
-@property (weak) IBOutlet NSTextField *Station;
+@property (weak) IBOutlet NSComboBox *Station;
 @property (unsafe_unretained) IBOutlet NSWindow *changeStationWindow;
 
 @property (weak) IBOutlet NSButton *OkButton;

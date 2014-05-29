@@ -21,7 +21,7 @@
 @property (weak) IBOutlet NSButton *rememberPassword;
 @property (weak) IBOutlet NSButton *autoLogIn;
 @property (weak) IBOutlet NSTextFieldCell *workstationLabel;
-@property (weak) IBOutlet NSTextField *workstationField;
+@property (weak) IBOutlet NSComboBox *workstationField;
 @property (weak) IBOutlet NSPopUpButton *workstationType;
 @property (weak) IBOutlet NSProgressIndicator *connectIndicator;
 
