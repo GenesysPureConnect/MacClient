@@ -30,7 +30,21 @@
                 
             ]]></description>
             <pubDate>Tue, 20 May 2014 10:49:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.1.zip" sparkle:version="2.2.1" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.1.zip" sparkle:version="2.2.1" length="3263956" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCUZHe7ab2l9+w5/gAUpMcdMNJcAgIUAY/sDieLDHoahmtr61CbFyB0mWM= "/>
+        </item>
+        <item>
+        <title>Version 2.3</title>
+            <description><![CDATA[
+                
+                <ul>
+                <li>Added station history to login dialog</li>
+                <li>Ignore non call interactions</li>
+                </ul>
+                
+                
+            ]]></description>
+            <pubDate>Thur, 29 May 2014 14:39:01 +0000</pubDate>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.3.zip" sparkle:version="2.3" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
         </item>
     </channel>
 </rss>
