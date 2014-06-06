@@ -50,10 +50,13 @@ NSMutableDictionary* _queueMap;
     NSDictionary* data = @{@"queueIds":@[@{@"queueType":@"1", @"queueName":[self userId]}],
                            @"attributeNames":@[kAttributeState, kAttributeRemoteName, kAttributeRemoteNumber,
                                                kAttributeCallStateString,
+                                               kAttributeUserName,
                                                kAttributeCapabilities,
                                                kAttributeMuted,
                                                kAttributeInitiationTime,
-                                               kAttributeConferenceId]};
+                                               kAttributeConferenceId,
+                                               kAttributeRecorders
+                                               ]};
                                            
     [_icwsClient put:[NSString stringWithFormat:@"/messaging/subscriptions/queues/%@", _subscriptionId] withData:data];
 };
@@ -131,8 +134,17 @@ NSMutableDictionary* _queueMap;
 -(void) muteInteraction:(Interaction*) interaction muteOn:(BOOL)muteOn
 {
     NSString* on = muteOn ? @"1" : @"0";
+    
     [_icwsClient post:[self getActionUrl:@"mute" forInteraction:[interaction interactionId]] withData:@{@"on":on}];
 }
+
+-(void) recordInteraction:(Interaction*) interaction recordOn:(BOOL)recordOn
+{
+    NSString* on = recordOn ? @"1" : @"0";
+    
+    [_icwsClient post:[self getActionUrl:@"record" forInteraction:[interaction interactionId]] withData:@{@"on":on, @"supervisor":@"0"}];
+}
+
 -(void) holdInteraction:(Interaction*) interaction holdOn:(BOOL)holdOn
 {
     NSString* on = holdOn ? @"1" : @"0";

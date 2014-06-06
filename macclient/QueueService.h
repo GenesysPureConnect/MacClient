@@ -22,6 +22,7 @@
 -(void) muteInteraction:(Interaction*) interaction  muteOn:(BOOL)muteOn;
 -(void) holdInteraction:(Interaction*) interaction holdOn:(BOOL)holdOn;
 -(void) pickupInteraction:(Interaction*) interaction;
+-(void) recordInteraction:(Interaction*) interaction recordOn:(BOOL)recordOn;
 -(void) disconnectInteraction:(Interaction*) interaction;
 -(void) conferenceInteractions:(Interaction*) firstInteraction withSecond:(Interaction*) secondInteraction;
 -(void) addToConference:(Interaction*) interaction toConference:(Interaction*) conferenceInteraction;

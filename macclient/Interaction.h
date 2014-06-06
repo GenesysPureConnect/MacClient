@@ -40,10 +40,13 @@ typedef enum {
 -(BOOL) isDisconnected;
 -(BOOL) isHeld;
 -(BOOL) isMuted;
+-(BOOL) isRecording;
 -(BOOL) canPickup;
 -(BOOL) canDisconnet;
 -(BOOL) canHold;
 -(BOOL) canMute;
+-(BOOL) canRecord;
+
 -(NSString*) formattedDurationString;
 -(NSImage*) image;
 -(BOOL) isConference;

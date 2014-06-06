@@ -16,4 +16,5 @@
 @property (strong) IBOutlet NSTextField *timeInStatus;
 @property (strong) IBOutlet NSTextField *callId;
 @property (strong) IBOutlet NSTextField *stateString;
+@property (strong) IBOutlet NSImageView *recordingImage;
 @end

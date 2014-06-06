@@ -18,6 +18,7 @@
 @property (weak) IBOutlet NSButton *disconnectButton;
 @property (weak) IBOutlet NSButton *holdButton;
 @property (weak) IBOutlet NSButton *muteButton;
+@property (weak) IBOutlet NSButton *recordButton;
 @property (weak) IBOutlet NSTableView *queueTable;
 @property (weak) IBOutlet NSPopUpButton *conferenceButton;
 
@@ -25,6 +26,7 @@
 - (IBAction)disconnectClick:(id)sender;
 - (IBAction)holdClick:(id)sender;
 - (IBAction)muteClick:(id)sender;
+- (IBAction)recordClick:(id)sender;
 
 - (IBAction)selectCall:(id)sender ;
 -(void) setCallControlButtonState:(Interaction*)interaction;

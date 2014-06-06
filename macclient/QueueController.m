@@ -87,6 +87,11 @@ BOOL isInitialized = NO;
 
 }
 
+- (IBAction)recordClick:(id)sender {
+    [_queueService recordInteraction:_currentInteraction recordOn:![_currentInteraction isRecording]];
+    
+}
+
 - (IBAction)selectCall:(id)sender {
     
     NSInteger row = [_queueTable selectedRow];
@@ -124,6 +129,17 @@ BOOL isInitialized = NO;
         [_muteButton setState:NSOffState];
     }
     
+    [_recordButton setEnabled:interaction.canRecord];
+    if(interaction.isRecording)
+    {
+        [_recordButton setState: NSOnState];
+    }
+    else
+    {
+        [_recordButton setState: NSOffState];
+    }
+    
+    
     [_conferenceButton setState: _interactions.count > 0 ? NSOnState : NSOffState];
     
     
@@ -154,6 +170,7 @@ BOOL isInitialized = NO;
     result.number.stringValue = [NSMutableString stringWithString: interaction.remoteId];
     result.timeInStatus.stringValue =  [NSMutableString stringWithString: interaction.formattedDurationString];
     result.imageView.image = interaction.image;
+    [[result recordingImage] setHidden:![interaction isRecording]];
     return result;
 }
 

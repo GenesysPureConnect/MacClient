@@ -23,6 +23,9 @@ static NSImage* HeldCallImage = NULL;
 @implementation Interaction
 NSInteger _capabilities;
 BOOL _isConference;
+bool _isRecording= false;
+NSString* _userName;
+NSString* _recorders;
 
 -(id) initWithId:(NSString*)interactionId
 {
@@ -78,6 +81,22 @@ BOOL _isConference;
             
             _initiationTime = [DateUtil getDateFromString:dateString];
         }
+        else if ([kAttributeRecorders isEqualToString:key])
+        {
+         //   Eic_Recorders
+            _recorders = attributes[key];
+                          
+            NSRange range = [attributes[key] rangeOfString:_userName options:NSCaseInsensitiveSearch];
+            
+            _isRecording = (range.location != NSNotFound);
+        }
+        else if ([kAttributeUserName isEqualToString:key])
+        {
+            _userName = attributes[key];
+            
+            NSRange range = [_recorders rangeOfString:_userName options:NSCaseInsensitiveSearch];
+            _isRecording = (range.location != NSNotFound);
+        }
         else if([kAttributeObjectType isEqualToString:key])
         {
             NSString *objectType = attributes[key];
@@ -120,6 +139,16 @@ BOOL _isConference;
 }
 -(BOOL) canMute{return (_capabilities & 32 )>0;}
 
+-(BOOL) canRecord
+{
+    BOOL record = (_capabilities & 1024 ) > 0 ;
+    return record || [self isConnected];
+}
+
+-(BOOL) isRecording
+{
+    return _isRecording;
+}
 
 -(BOOL) isConference
 {

@@ -33,6 +33,8 @@
 #define kAttributeInitiationTime @"Eic_InitiationTime"
 #define kAttributeConferenceId @"Eic_ConferenceId"
 #define kAttributeObjectType @"Eic_ObjectType"
+#define kAttributeRecorders @"Eic_Recorders"
+#define kAttributeUserName @"Eic_UserName"
 
 #if DEBUG
 #define kUserName @"DebugUserName"
