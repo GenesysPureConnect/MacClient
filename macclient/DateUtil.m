@@ -50,12 +50,43 @@ static DateUtil* s_instance= NULL;
                                                                options:0];
     
     // Format this as desired for display to the user.
-    NSString *durationString = [NSString stringWithFormat:
-                                @"%ld:%02ld:%02ld",
-                                (long)[durationComponents hour],
-                                (long)[durationComponents minute],
-                                (long)[durationComponents second]];
+    NSString *durationString;
+    
+    if([durationComponents hour] < 24)
+    {
+        durationString = [NSString stringWithFormat:
+                          @"%ld:%02ld:%02ld",
+                          (long)[durationComponents hour],
+                          (long)[durationComponents minute],
+                          (long)[durationComponents second]];
+    }
+    else
+    {
+        NSInteger days = [durationComponents hour] / 24;
+        NSInteger hours = [durationComponents hour] % 24;
+        
+        if(days == 1)
+        {
+            
+            durationString = [NSString stringWithFormat:
+                              @"1 day %ld:%02ld:%02ld",
+                              (long)hours,
+                              (long)[durationComponents minute],
+                              (long)[durationComponents second]];
+        }
+        else
+        {
+            durationString = [NSString stringWithFormat:
+                              @"%ld days %ld:%02ld:%02ld",
+                              (long)days,
+                              (long)hours,
+                              (long)[durationComponents minute],
+                              (long)[durationComponents second]];
+        }
+    }
+    
     return durationString;
+    
     
 }
 @end

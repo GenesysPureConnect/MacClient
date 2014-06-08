@@ -42,36 +42,6 @@ Status * _currentStatus;
     
 }
 
-
-+(NSString*) formattedDurationString:(NSDate*) fromDate;
-{
-    NSDate *now = [NSDate date];
-    
-    // Get the system calendar. If you're positive it will be the
-    // Gregorian, you could use the specific method for that.
-    NSCalendar *currentCalendar = [NSCalendar currentCalendar];
-    
-    // Specify which date components to get. This will get the hours,
-    // minutes, and seconds, but you could do days, months, and so on
-    // (as I believe iTunes does).
-    NSUInteger unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    
-    // Create an NSDateComponents object from these dates using the system calendar.
-    NSDateComponents *durationComponents = [currentCalendar components:unitFlags
-                                                              fromDate:fromDate
-                                                                toDate:now
-                                                               options:0];
-    
-    // Format this as desired for display to the user.
-    NSString *durationString = [NSString stringWithFormat:
-                                @"%ld:%02ld:%02ld",
-                                (long)[durationComponents hour],
-                                (long)[durationComponents minute],
-                                (long)[durationComponents second]];
-    return durationString;
-    
-}
-
 -(void) setStatusService:(StatusService*)statusService{
     _statusService = statusService;
     [super setStatusService:statusService];
