@@ -33,6 +33,8 @@
 
 - (NSDictionary*) attemptConnection :(NSString*)server withData:(NSDictionary*)data
 {
+    self.userId = @"";
+    self.serverUrl = @"";
     NSString *restCallString = [NSString stringWithFormat:kUrlConnectBaseFormat, server , @"/connection"];
     
     // Create the URL to make the rest call.
