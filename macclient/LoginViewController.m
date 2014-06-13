@@ -86,9 +86,9 @@ NSMutableArray* _workstationHistory;
 
 - (void)timerDoConnect:(NSTimer*)theTimer
 {
-//#if !DEBUG
+#if !DEBUG
      [self doConnect:self];
-//#endif
+#endif
 }
 
 - (IBAction)rememberPasswordChecked:(id)sender

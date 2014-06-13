@@ -103,9 +103,9 @@ NSButton* closeButton;
     @try {
         NSSize size = controller.view.bounds.size;
         size.height = size.height + 20;
-        [[_mainView window] setContentSize: size];
-       // controller.view.frame = CGRectMake(0, 40, controller.view.frame.size.width, controller.view.frame.size.height);
+     //   [[_mainView window] setContentSize: size];
         [[controller view] setHidden:false];
+        [[controller view] setAutoresizingMask:NSViewNotSizable];
         _currentViewController = controller;
     }
     @catch (NSException *exception) {
