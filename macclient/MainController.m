@@ -164,6 +164,7 @@ ChangeStationController *changeStationController;
 - (IBAction) changeStationClick:(id)sender{
      changeStationController = [[ChangeStationController alloc] initWithWindowNibName:@"ChangeStationWindow"];
     [changeStationController showWindow:self];
+    [[changeStationController window] center];
 }
 
 @end
