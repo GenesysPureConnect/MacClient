@@ -57,7 +57,22 @@
                 
             ]]></description>
             <pubDate>Fri, 6 Jun 2014 14:25:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.4.zip" sparkle:version="2.4" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.4.zip" sparkle:version="2.4" length="3271846" type="application/octet-stream" sparkle:dsaSignature="MCwCFDjmWlJLE/DBaiT4CHNjW6mGQKf0AhQmPzMxIFDPQly4koiaroLeIiTtqg== "/>
+        </item>
+        <item>
+            <title>Version 2.5</title>
+            <description><![CDATA[
+                
+                <ul>
+                <li>Center change station dialog</li>
+                <li>Fixed window resize issues</li>
+                <li>Better handling for connection errors</li>
+                </ul>
+                
+                
+            ]]></description>
+            <pubDate>Fri, 13 Jun 2014 12:25:01 +0000</pubDate>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.5.zip" sparkle:version="2.5" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
         </item>
 
     </channel>

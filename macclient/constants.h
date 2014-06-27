@@ -16,9 +16,9 @@
 #define kCurrentStatusChange @"CURRENTSTATUSCHANGED"
 #define kAvailableStatusesChanged @"AVAILABLESTATUSESCHANGED"
 
-#define kUrlConnectBaseFormat @"http://%@:8018/icws%@"
-#define kUrlImageFormat @"http://%@:8018%@"
-#define kUrlRequestBaseFormat @"http://%@:8018/icws/%@%@"
+#define kUrlConnectBaseFormat @"https://%@:8019/icws%@"
+#define kUrlImageFormat @"https://%@:8019%@"
+#define kUrlRequestBaseFormat @"https://%@:8019/icws/%@%@"
 
 //#define kUrlConnectBaseFormat @"http://%@:8888/icws%@"
 //#define kUrlImageFormat @"http://%@:8888%@"

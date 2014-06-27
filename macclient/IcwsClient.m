@@ -13,6 +13,15 @@
 #import "IcwsClient.h"
 #import "constants.h"
 
+@implementation NSURLRequest (IgnoreSSL)
+
++ (BOOL)allowsAnyHTTPSCertificateForHost:(NSString *)host
+{
+    return YES;
+}
+
+@end
+
 @implementation IcwsClient
 NSString *_sessionId;
 NSString *_cookie;
