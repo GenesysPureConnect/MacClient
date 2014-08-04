@@ -61,6 +61,7 @@
 		89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B94A9718BEDBE8007B25DA /* audio-volume-muted.png */; };
 		89B94A9B18BF7A75007B25DA /* CallService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A9A18BF7A75007B25DA /* CallService.m */; };
 		89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A9D18BF8C5D007B25DA /* MakeCallController.m */; };
+		89BA495F198F0B8F00D341AC /* FeatureService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BA495E198F0B8F00D341AC /* FeatureService.m */; };
 		89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA66818BD81C50026380B /* LoginViewController.m */; };
 		89BAA66B18BD81C50026380B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA66918BD81C50026380B /* LoginView.xib */; };
 		89BAA67418BDA50A0026380B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA67318BDA50A0026380B /* Images.xcassets */; };
@@ -184,6 +185,8 @@
 		89B94A9A18BF7A75007B25DA /* CallService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallService.m; sourceTree = "<group>"; };
 		89B94A9C18BF8C5D007B25DA /* MakeCallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MakeCallController.h; sourceTree = "<group>"; };
 		89B94A9D18BF8C5D007B25DA /* MakeCallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MakeCallController.m; sourceTree = "<group>"; };
+		89BA495D198F0B8F00D341AC /* FeatureService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeatureService.h; sourceTree = "<group>"; };
+		89BA495E198F0B8F00D341AC /* FeatureService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureService.m; sourceTree = "<group>"; };
 		89BAA66718BD81C50026380B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		89BAA66818BD81C50026380B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		89BAA66918BD81C50026380B /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
@@ -367,6 +370,8 @@
 				89E5C8AE190ACA5A00DC58D6 /* DirectoryService.m */,
 				89E94195190F20A3004E528F /* AlertingCallNotificationService.h */,
 				89E94196190F20A3004E528F /* AlertingCallNotificationService.m */,
+				89BA495D198F0B8F00D341AC /* FeatureService.h */,
+				89BA495E198F0B8F00D341AC /* FeatureService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -597,6 +602,7 @@
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
 				89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */,
+				89BA495F198F0B8F00D341AC /* FeatureService.m in Sources */,
 				89E5C8B2190AD56200DC58D6 /* DirectorySearchController.m in Sources */,
 				892D1B2118C4254600C86E8E /* TestConnection.m in Sources */,
 				89B2D72818BA3321004F0AD5 /* ConnectionService.m in Sources */,
