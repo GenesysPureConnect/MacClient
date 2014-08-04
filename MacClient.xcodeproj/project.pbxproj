@@ -37,6 +37,9 @@
 		8993A5E8192457600025703F /* DateUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A5E7192457600025703F /* DateUtil.m */; };
 		8993A5EA192847F50025703F /* ChangeStationWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8993A5E9192847F50025703F /* ChangeStationWindow.xib */; };
 		8993A5ED192848FD0025703F /* ChangeStationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A5EC192848FD0025703F /* ChangeStationController.m */; };
+		899C51C1198C2045005D9B92 /* InteractionsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899C51C0198C2045005D9B92 /* InteractionsView.xib */; };
+		899C51C3198C205E005D9B92 /* DirectoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 899C51C2198C205E005D9B92 /* DirectoryView.xib */; };
+		899C51C8198C2374005D9B92 /* MyInteractionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 899C51C7198C2374005D9B92 /* MyInteractionsController.m */; };
 		89A5E8C41913DCB100B1DF3D /* InteractionToastController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */; };
 		89A5E8C61913F69700B1DF3D /* InteractionToastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */; };
 		89A5E8C91915690A00B1DF3D /* RingCall.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 89A5E8C81915690A00B1DF3D /* RingCall.mp3 */; };
@@ -60,8 +63,6 @@
 		89B94A9E18BF8C5D007B25DA /* MakeCallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B94A9D18BF8C5D007B25DA /* MakeCallController.m */; };
 		89BAA66A18BD81C50026380B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA66818BD81C50026380B /* LoginViewController.m */; };
 		89BAA66B18BD81C50026380B /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA66918BD81C50026380B /* LoginView.xib */; };
-		89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA66D18BD825A0026380B /* ClientViewController.m */; };
-		89BAA67018BD825A0026380B /* ClientView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA66E18BD825A0026380B /* ClientView.xib */; };
 		89BAA67418BDA50A0026380B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89BAA67318BDA50A0026380B /* Images.xcassets */; };
 		89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67618BE273D0026380B /* StatusControllerBase.m */; };
 		89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BAA67918BE3AEB0026380B /* StatusController.m */; };
@@ -144,6 +145,10 @@
 		8993A5E9192847F50025703F /* ChangeStationWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeStationWindow.xib; sourceTree = "<group>"; };
 		8993A5EB192848FD0025703F /* ChangeStationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeStationController.h; sourceTree = "<group>"; };
 		8993A5EC192848FD0025703F /* ChangeStationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeStationController.m; sourceTree = "<group>"; };
+		899C51C0198C2045005D9B92 /* InteractionsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionsView.xib; sourceTree = "<group>"; };
+		899C51C2198C205E005D9B92 /* DirectoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DirectoryView.xib; sourceTree = "<group>"; };
+		899C51C6198C2374005D9B92 /* MyInteractionsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInteractionsController.h; sourceTree = "<group>"; };
+		899C51C7198C2374005D9B92 /* MyInteractionsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInteractionsController.m; sourceTree = "<group>"; };
 		89A5E8C21913DCB100B1DF3D /* InteractionToastController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionToastController.h; sourceTree = "<group>"; };
 		89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionToastController.m; sourceTree = "<group>"; };
 		89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionToastView.xib; sourceTree = "<group>"; };
@@ -182,9 +187,6 @@
 		89BAA66718BD81C50026380B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		89BAA66818BD81C50026380B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		89BAA66918BD81C50026380B /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
-		89BAA66C18BD825A0026380B /* ClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
-		89BAA66D18BD825A0026380B /* ClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
-		89BAA66E18BD825A0026380B /* ClientView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClientView.xib; sourceTree = "<group>"; };
 		89BAA67318BDA50A0026380B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89BAA67518BE273D0026380B /* StatusControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusControllerBase.h; sourceTree = "<group>"; };
 		89BAA67618BE273D0026380B /* StatusControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusControllerBase.m; sourceTree = "<group>"; };
@@ -384,9 +386,10 @@
 			isa = PBXGroup;
 			children = (
 				89BAA66918BD81C50026380B /* LoginView.xib */,
-				89BAA66E18BD825A0026380B /* ClientView.xib */,
 				89A5E8C51913F69700B1DF3D /* InteractionToastView.xib */,
 				8993A5E9192847F50025703F /* ChangeStationWindow.xib */,
+				899C51C0198C2045005D9B92 /* InteractionsView.xib */,
+				899C51C2198C205E005D9B92 /* DirectoryView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -400,8 +403,6 @@
 				89B2D74518BC2167004F0AD5 /* MainController.m */,
 				89BAA66718BD81C50026380B /* LoginViewController.h */,
 				89BAA66818BD81C50026380B /* LoginViewController.m */,
-				89BAA66C18BD825A0026380B /* ClientViewController.h */,
-				89BAA66D18BD825A0026380B /* ClientViewController.m */,
 				89B2D71E18B99729004F0AD5 /* StatusBarController.h */,
 				89B2D71F18B99729004F0AD5 /* StatusBarController.m */,
 				89B94A9C18BF8C5D007B25DA /* MakeCallController.h */,
@@ -416,6 +417,8 @@
 				89A5E8C31913DCB100B1DF3D /* InteractionToastController.m */,
 				8993A5EB192848FD0025703F /* ChangeStationController.h */,
 				8993A5EC192848FD0025703F /* ChangeStationController.m */,
+				899C51C6198C2374005D9B92 /* MyInteractionsController.h */,
+				899C51C7198C2374005D9B92 /* MyInteractionsController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				899C51C3198C205E005D9B92 /* DirectoryView.xib in Resources */,
 				89BAA66B18BD81C50026380B /* LoginView.xib in Resources */,
 				89671C6718921CC900918B1E /* InfoPlist.strings in Resources */,
 				89671C6D18921CC900918B1E /* Credits.rtf in Resources */,
@@ -545,6 +549,7 @@
 				89A5E8C61913F69700B1DF3D /* InteractionToastView.xib in Resources */,
 				89B94A9218BEDB72007B25DA /* call-start.png in Resources */,
 				89671C7318921CC900918B1E /* MainMenu.xib in Resources */,
+				899C51C1198C2045005D9B92 /* InteractionsView.xib in Resources */,
 				89B2D73F18BBAD9B004F0AD5 /* warning.png in Resources */,
 				89E5C8B7190B4B5800DC58D6 /* application-exit.png in Resources */,
 				89A5E8C91915690A00B1DF3D /* RingCall.mp3 in Resources */,
@@ -552,7 +557,6 @@
 				895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */,
 				89B94A9818BEDBE8007B25DA /* audio-volume-muted.png in Resources */,
 				895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */,
-				89BAA67018BD825A0026380B /* ClientView.xib in Resources */,
 				8993A5EA192847F50025703F /* ChangeStationWindow.xib in Resources */,
 				89B94A9618BEDBC8007B25DA /* media-playback-pause.png in Resources */,
 				89B94A8B18BED086007B25DA /* appointment-recurring.png in Resources */,
@@ -588,9 +592,9 @@
 				8993A5E8192457600025703F /* DateUtil.m in Sources */,
 				89E5C8AF190ACA5A00DC58D6 /* DirectoryService.m in Sources */,
 				892C8C2318C55C72007BB4EA /* OtherSessionService.m in Sources */,
+				899C51C8198C2374005D9B92 /* MyInteractionsController.m in Sources */,
 				89B2D74618BC2167004F0AD5 /* MainController.m in Sources */,
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
-				89BAA66F18BD825A0026380B /* ClientViewController.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
 				89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */,
 				89E5C8B2190AD56200DC58D6 /* DirectorySearchController.m in Sources */,

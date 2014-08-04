@@ -11,7 +11,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DirectorySearchController : NSObject <NSTableViewDataSource, NSTableViewDelegate>
+@interface DirectorySearchController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
 @property (weak) IBOutlet NSSearchField *directorySearch;
 - (IBAction)performSearch:(id)sender;
 @property (weak) IBOutlet NSTableView *searchResultsTable;

@@ -13,19 +13,21 @@
 
 @interface MainController : NSObject
 @property (weak) IBOutlet NSView *mainView;
+@property (weak) IBOutlet NSWindow *window;
 @property (strong) NSViewController *currentViewController;
 @property (weak) IBOutlet NSMenuItem *logOutMenuItem;
 @property (weak) IBOutlet NSMenuItem *chanceStationMenuItem;
+@property (weak) IBOutlet NSToolbar *toolbar;
 
 - (IBAction)changeStationClick:(id)sender;
 
 -(void) setupServices;
 -(void) connectionStateChanged: (NSNotification *)notification;
--(void) showClientDialog;
+-(void) showInteractionsDialog;
 -(void) showLoginDialog;
 -(void) setView:(NSViewController*) controller;
 -(IBAction)showPreferences:(id)sender;
 -(IBAction)logOut:(id)sender;
 -(void)closeThisWindow: (id) sender;
-
+-(NSView *) viewForTag:(int)tag;
 @end

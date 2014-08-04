@@ -16,13 +16,16 @@
 #import "StatusBarController.h"
 #import "LoginViewController.h"
 #import "constants.h"
-#import "ClientViewController.h"
 #import "ServiceLocator.h"
 #import "QueueService.h"
 #import "OtherSessionService.h"
 #import "AutoConnectService.h"
 #import "AlertingCallNotificationService.h"
 #import "ChangeStationController.h"
+#import "MyInteractionsController.h"
+#import "DirectorySearchController.h"
+
+
 
 @implementation MainController
 
@@ -32,7 +35,8 @@ StatusService *_statusService;
 ConnectionService *_connectionService;
 QueueService *_myQueue;
 LoginViewController* _loginController;
-ClientViewController *_clientViewController;
+MyInteractionsController *_myInteractionsController;
+DirectorySearchController *_directorySearchController;
 AutoConnectService *_autoConnectService;
 AlertingCallNotificationService* _alertingCallNotificationService;
 
@@ -41,6 +45,8 @@ NSButton* closeButton;
 -(void) awakeFromNib{
     [self setupServices];
     [self showLoginDialog];
+    
+    [[self toolbar] setVisible:NO];
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -61,6 +67,36 @@ NSButton* closeButton;
   //  [[_mainView window] miniaturize:];
 }
 
+-(NSRect) newFrameForNewContentView: (NSView*)view{
+    NSWindow *window = [self window];
+    NSRect newFrameRect = [window frameRectForContentRect:[view frame]];
+    NSRect oldFrameRect = [window frame];
+    NSSize newSize = newFrameRect.size;
+    NSSize oldSize = oldFrameRect.size;
+    
+    NSRect frame = [[self window] frame];
+    frame.size = newSize;
+    frame.origin.y -= (newSize.height- oldSize.height);
+    
+    return frame;
+}
+
+-(IBAction) switchView:(id)sender{
+    switch([sender tag]){
+        case 0:
+            [self showInteractionsDialog];
+            break;
+        case 1:
+            [self showDirectoryDialog];
+            break;
+        default:
+            [self showInteractionsDialog];
+            break;
+        
+    }
+}
+
+
 -(void) showLoginDialog{
     if ([_currentViewController isKindOfClass:[LoginViewController class]])
     {
@@ -74,43 +110,60 @@ NSButton* closeButton;
         [_loginController loadSavedData];
         [_loginController autologinIfNecessary];
     }
-    
-    [[_clientViewController view] setHidden:true];
- 
-    [self setView: _loginController];
+     [self setView: _loginController];
 
 }
 
--(void) showClientDialog{
-    if ([_currentViewController isKindOfClass:[ClientViewController class]])
+-(void) showDirectoryDialog{
+    if ([_currentViewController isKindOfClass:[DirectorySearchController class]])
     {
         return;
     }
 
-    if(_clientViewController == NULL){
+    if(_directorySearchController == NULL){
         
-        _clientViewController = [[ClientViewController alloc]initWithNibName:@"ClientView" bundle:nil];
-        [_mainView addSubview:[_clientViewController view]];
+        _directorySearchController = [[DirectorySearchController alloc]initWithNibName:@"DirectoryView" bundle:nil];
+    }
+   
+    [[self toolbar] setVisible:YES];
+    
+    [self setView: _directorySearchController];
+    
+    [self.toolbar setSelectedItemIdentifier:@"CompanyDirectory"];
+}
+
+-(void) showInteractionsDialog{
+    if ([_currentViewController isKindOfClass:[MyInteractionsController class]])
+    {
+        return;
+    }
+    
+    if(_myInteractionsController == NULL){
+        
+        _myInteractionsController = [[MyInteractionsController alloc]initWithNibName:@"InteractionsView" bundle:nil];
         
     }
-    [[_loginController view] setHidden:true];
-   
-    [self setView: _clientViewController];
+    
+    [[self toolbar] setVisible:YES];
+    
+    [self setView: _myInteractionsController];
+    
+    [self.toolbar setSelectedItemIdentifier:@"MyInteractions"];
+
 }
 
 -(void) setView:(NSViewController*) controller{
+    [[[self window] contentView] addSubview:[controller view]];
     
-    @try {
-        NSSize size = controller.view.bounds.size;
-        size.height = size.height + 20;
-     //   [[_mainView window] setContentSize: size];
-        [[controller view] setHidden:false];
-        [[controller view] setAutoresizingMask:NSViewNotSizable];
-        _currentViewController = controller;
+    [[self window] setContentSize: [[controller view] frame].size];
+    
+    if(_currentViewController){
+        [[_currentViewController view] removeFromSuperview];
     }
-    @catch (NSException *exception) {
-        //NSLog(exception);
-    }
+    [[[self window] contentView] setWantsLayer:YES];
+    
+    _currentViewController = controller;
+    
 }
 
 -(void) connectionStateChanged: (NSNotification *)notification{
@@ -119,7 +172,7 @@ NSButton* closeButton;
     NSDockTile *tile = [[NSApplication sharedApplication] dockTile];
     
     if([params[@"isConnected"]  isEqual: @"true"]){
-        [self showClientDialog ];
+        [self showInteractionsDialog ];
         [tile setBadgeLabel:NULL];
     }
     else{

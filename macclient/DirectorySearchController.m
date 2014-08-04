@@ -27,22 +27,34 @@ CallService* _callService;
 NSArray* _searchResults;
 BOOL _isDirectoryInitialized = NO;
 
--(void) awakeFromNib{
-    if(_isDirectoryInitialized == NO)
-    {
-        _directoryService = [ServiceLocator getDirectoryService];
-        _statusService = [ServiceLocator getStatusService];
-        _callService = [ServiceLocator getCallService];
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+   
+    if (self) {
+        // Initialization code here.
+    
+        if(_isDirectoryInitialized == NO)
+        {
+            _directoryService = [ServiceLocator getDirectoryService];
+            _statusService = [ServiceLocator getStatusService];
+            _callService = [ServiceLocator getCallService];
         
-        _isDirectoryInitialized = YES;
+            _isDirectoryInitialized = YES;
         
-        [_tableParent setHidden: YES];
-        [_directoryContactBox setHidden:YES];
+      //  [_tableParent setHidden: YES];
+            [_directoryContactBox setHidden:YES];
         
-        [_onPhoneImage setToolTip:@"On the Phone"];
-        [_loggedInImage setToolTip:@"Logged In"];
+            [_onPhoneImage setToolTip:@"On the Phone"];
+            [_loggedInImage setToolTip:@"Logged In"];
         
+        }
     }
+    
+    
+    [_directoryContactBox setHidden:YES];
+    
+    return self;
 }
 
 - (IBAction)performSearch:(id)sender {
@@ -50,20 +62,10 @@ BOOL _isDirectoryInitialized = NO;
     NSLog(@"perform search on %@", [_directorySearch stringValue]);
     _searchResults = [_directoryService lookupUsersByNameOrDepartment:[_directorySearch stringValue]];
     
-    [_tableParent setHidden:_searchResults.count == 0];
-    
     [_searchResultsTable reloadData];
     
-    float height = (kResultHeight * _searchResults.count * 1.1);
-    
-    if(_searchResults.count > 7){
-        height = (7 * kResultHeight) + 10;
-    }
-    
-    
-    NSRect size = _tableParent.frame;
-    size.size.height = height;
-    _tableParent.frame = size;
+    [_directoryContactBox setHidden:YES];
+    [_tableParent setHidden:NO];
 }
 
 
@@ -86,12 +88,10 @@ BOOL _isDirectoryInitialized = NO;
 
 - (IBAction)closeDirectoryContact:(id)sender {
     [_directoryContactBox setHidden:YES];
-    [_tableParent setHidden:_searchResults.count == 0];
+    [_tableParent setHidden:NO];
     
 }
 - (IBAction)directorySearchContectSelected:(id)sender {
-    [_directoryContactBox setHidden:NO];
-    [_tableParent setHidden:YES];
     
     NSDictionary* contact = _searchResults[[_searchResultsTable selectedRow]];
     
@@ -128,6 +128,9 @@ BOOL _isDirectoryInitialized = NO;
     _statusLabel.stringValue = statusDetails.text;
     [_statusImage setImage:[[NSImage alloc] initWithContentsOfURL:[NSURL URLWithString:statusDetails.imageUrl]]];
     
+    [_directoryContactBox setHidden:NO];
+    [_tableParent setHidden:YES];
+    
 }
 - (IBAction)onWorkButtonClicked:(id)sender {
     NSDictionary* contact = _searchResults[[_searchResultsTable selectedRow]];
@@ -135,7 +138,7 @@ BOOL _isDirectoryInitialized = NO;
     [_callService placeCall:contact[@"extension"]];
     
     [_directoryContactBox setHidden:YES];
-    [_tableParent setHidden:YES];
+    [_tableParent setHidden:NO];
     
     _directorySearch.stringValue = @"";
     
@@ -148,7 +151,8 @@ BOOL _isDirectoryInitialized = NO;
     [_callService placeCall:contact[@"mobilePhone"][@"dialString"]];
     
     [_directoryContactBox setHidden:YES];
-    [_tableParent setHidden:YES];
+    [_tableParent setHidden:NO];
+
     
     _directorySearch.stringValue = @"";
 }
@@ -159,7 +163,7 @@ BOOL _isDirectoryInitialized = NO;
     [_callService placeCall:contact[@"homePhone"][@"dialString"]];
     
     [_directoryContactBox setHidden:YES];
-    [_tableParent setHidden:YES];
+    [_tableParent setHidden:NO];
     
     _directorySearch.stringValue = @"";
     
