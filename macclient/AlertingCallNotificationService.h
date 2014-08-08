@@ -22,5 +22,6 @@
 
 -(void)ignoreCall:(Interaction*) interaction;
 -(void)pickupCall:(Interaction*) interaction;
+-(void)sendCallToVoicemail:(Interaction*) interaction;
 
 @end

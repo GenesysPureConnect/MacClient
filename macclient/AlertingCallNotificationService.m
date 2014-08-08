@@ -55,6 +55,10 @@ NSSound* _alertingSound;
     [_queueService pickupInteraction:interaction];
 }
 
+-(void)sendCallToVoicemail:(Interaction*) interaction{
+    [_queueService sendInteractionToVoicemail:interaction];
+}
+
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

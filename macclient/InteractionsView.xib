@@ -18,7 +18,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Pi-RfB">
                     <rect key="frame" x="95" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Hold" bezelStyle="regularSquare" image="media-playback-pause" imagePosition="only" alignment="center" alternateImage="Hold" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5uM-bn-0ht">
+                    <buttonCell key="cell" type="bevel" title="Hold" bezelStyle="regularSquare" image="media-playback-pause-2" imagePosition="only" alignment="center" alternateImage="Hold" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="5uM-bn-0ht">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -29,7 +29,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfT-xP-0PN">
                     <rect key="frame" x="7" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Pickup" alternateTitle="Pickup" bezelStyle="regularSquare" image="media-playback-start" imagePosition="only" alignment="center" alternateImage="Pickup" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jnd-vQ-wG1">
+                    <buttonCell key="cell" type="bevel" title="Pickup" alternateTitle="Pickup" bezelStyle="regularSquare" image="media-playback-start-2" imagePosition="only" alignment="center" alternateImage="Pickup" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="Jnd-vQ-wG1">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -40,7 +40,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGT-LR-0El">
                     <rect key="frame" x="51" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Disconnect" alternateTitle="Disconnect" bezelStyle="regularSquare" image="media-playback-stop" imagePosition="only" alignment="center" alternateImage="Disconnect" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6vL-aE-O1g">
+                    <buttonCell key="cell" type="bevel" title="Disconnect" alternateTitle="Disconnect" bezelStyle="regularSquare" image="media-playback-stop-2" imagePosition="only" alignment="center" alternateImage="Disconnect" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="6vL-aE-O1g">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -51,7 +51,7 @@
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-ze-u1Q">
                     <rect key="frame" x="139" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Mute" bezelStyle="regularSquare" image="audio-volume-muted" imagePosition="only" alignment="center" alternateImage="Mute" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ql-o8-Fed">
+                    <buttonCell key="cell" type="bevel" title="Mute" bezelStyle="regularSquare" image="audio-volume-muted-2" imagePosition="only" alignment="center" alternateImage="Mute" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ql-o8-Fed">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -62,12 +62,23 @@
                 <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-Cj-jbL" userLabel="Record Button">
                     <rect key="frame" x="183" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="media-record" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3vE-B3-Xx8">
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="media-record-2" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="3vE-B3-Xx8">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
                         <action selector="recordClick:" target="dCS-mw-vtR" id="PvR-xc-PVH"/>
+                    </connections>
+                </button>
+                <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McH-1o-c9c" userLabel="Record Button">
+                    <rect key="frame" x="227" y="192" width="40" height="41"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="mail-forward-2" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="95I-Lg-Dq2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="sendToVoicemailClick:" target="dCS-mw-vtR" id="lsa-IN-K2L"/>
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mav-pi-bDD">
@@ -205,7 +216,7 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="oQo-6n-SH8">
-                        <rect key="frame" x="1" y="-14" width="0.0" height="15"/>
+                        <rect key="frame" x="2" y="-13" width="0.0" height="15"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="NTh-V8-T0P">
@@ -257,6 +268,7 @@
                 <outlet property="pickupButton" destination="VfT-xP-0PN" id="EjO-Tk-fS6"/>
                 <outlet property="queueTable" destination="ArR-w5-NUd" id="SHJ-mg-s4u"/>
                 <outlet property="recordButton" destination="yHd-Cj-jbL" id="lAd-h9-5Kp"/>
+                <outlet property="voicemailButton" destination="McH-1o-c9c" id="Elx-FH-px0"/>
             </connections>
         </customObject>
         <customObject id="hye-VA-SWH" customClass="StatusController">
@@ -271,12 +283,13 @@
         <image name="Hold" width="128" height="128"/>
         <image name="Mute" width="128" height="128"/>
         <image name="Pickup" width="128" height="128"/>
-        <image name="audio-volume-muted" width="25.600000381469727" height="25.600000381469727"/>
+        <image name="audio-volume-muted-2" width="24" height="24"/>
         <image name="call-start" width="25.600000381469727" height="25.600000381469727"/>
-        <image name="media-playback-pause" width="100.17391204833984" height="100.17391204833984"/>
-        <image name="media-playback-start" width="100.17391204833984" height="100.17391204833984"/>
-        <image name="media-playback-stop" width="100.17391204833984" height="100.17391204833984"/>
-        <image name="media-record" width="104.72727203369141" height="104.72727203369141"/>
+        <image name="mail-forward-2" width="24" height="24"/>
+        <image name="media-playback-pause-2" width="3.8399999141693115" height="3.8399999141693115"/>
+        <image name="media-playback-start-2" width="3.8399999141693115" height="3.8399999141693115"/>
+        <image name="media-playback-stop-2" width="3.8399999141693115" height="3.8399999141693115"/>
+        <image name="media-record-2" width="3.8399999141693115" height="3.8399999141693115"/>
         <image name="media-record-3" width="16" height="16"/>
     </resources>
 </document>

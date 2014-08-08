@@ -126,6 +126,10 @@ NSMutableDictionary* _queueMap;
     
 }
 
+-(void) sendInteractionToVoicemail:(Interaction*) interaction{
+    [_icwsClient post:[self getActionUrl:@"send-to-voicemail" forInteraction:[interaction interactionId]] withData:@{}];
+}
+
 -(NSString*) getActionUrl:(NSString*)action forInteraction:(NSString*) interactionId
 {
     return [NSString stringWithFormat:@"/interactions/%@/%@", interactionId, action];

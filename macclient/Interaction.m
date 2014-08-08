@@ -145,6 +145,11 @@ NSString* _recorders;
     return record || [self isConnected];
 }
 
+-(BOOL) canSendToVoicemail
+{
+    return ![self isDisconnected ];
+}
+
 -(BOOL) isRecording
 {
     return _isRecording;

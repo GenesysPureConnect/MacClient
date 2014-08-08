@@ -87,6 +87,10 @@ BOOL isInitialized = NO;
 
 }
 
+- (IBAction)sendToVoicemailClick:(id)sender{
+     [_queueService sendInteractionToVoicemail:_currentInteraction];
+}
+
 - (IBAction)recordClick:(id)sender {
     [_queueService recordInteraction:_currentInteraction recordOn:![_currentInteraction isRecording]];
     
@@ -139,6 +143,13 @@ BOOL isInitialized = NO;
         [_recordButton setState: NSOffState];
     }
     
+    if(interaction.canSendToVoicemail)
+    {
+        [_voicemailButton setEnabled:true];
+    }
+    else{
+        [_voicemailButton setEnabled:false];
+    }
     
     [_conferenceButton setState: _interactions.count > 0 ? NSOnState : NSOffState];
     

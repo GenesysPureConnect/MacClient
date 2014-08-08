@@ -61,6 +61,10 @@ Interaction* _interaction;
     [_alertingCallNotificationService ignoreCall:_interaction];
 }
 
+- (IBAction)onSendToVoicemailClick:(id)sender{
+    [_alertingCallNotificationService sendCallToVoicemail:_interaction];
+}
+
 -(void) closeWindow{
     toastCount--;
     [[self toastWindow] close];

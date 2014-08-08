@@ -45,6 +45,7 @@ typedef enum {
 -(BOOL) canDisconnet;
 -(BOOL) canHold;
 -(BOOL) canMute;
+-(BOOL) canSendToVoicemail;
 -(BOOL) canRecord;
 
 -(NSString*) formattedDurationString;

@@ -18,10 +18,13 @@
 @interface InteractionToastController : NSWindowController
 @property (weak) IBOutlet NSTextField *remoteName;
 @property (weak) IBOutlet NSTextField *remoteNumber;
+@property (weak) IBOutlet NSButton *sendToVoicemailButton;
 @property (weak) IBOutlet NSButton *pickupButton;
 @property (weak) IBOutlet NSButton *ignoreButton;
 
 - (IBAction)onPickupClick:(id)sender;
+
+- (IBAction)onSendToVoicemailClick:(id)sender;
 - (IBAction)onIgnoreClick:(id)sender;
 
 - (void)setup:(AlertingCallNotificationService*) notificationService forInteraction:(Interaction*) interaction;

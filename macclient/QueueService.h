@@ -24,6 +24,7 @@
 -(void) pickupInteraction:(Interaction*) interaction;
 -(void) recordInteraction:(Interaction*) interaction recordOn:(BOOL)recordOn;
 -(void) disconnectInteraction:(Interaction*) interaction;
+-(void) sendInteractionToVoicemail:(Interaction*) interaction;
 -(void) conferenceInteractions:(Interaction*) firstInteraction withSecond:(Interaction*) secondInteraction;
 -(void) addToConference:(Interaction*) interaction toConference:(Interaction*) conferenceInteraction;
 @end

@@ -96,14 +96,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="312" height="325"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
-            <toolbar key="toolbar" implicitIdentifier="670134DD-AB52-4BD7-9D8D-693E068D6F7A" autosavesConfiguration="NO" allowsUserCustomization="NO" showsBaselineSeparator="NO" displayMode="iconAndLabel" sizeMode="small" id="zbQ-Rg-V0n">
+            <toolbar key="toolbar" implicitIdentifier="670134DD-AB52-4BD7-9D8D-693E068D6F7A" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="small" id="zbQ-Rg-V0n">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="5E861A70-4B20-434E-BE40-5FF42DC62C83" explicitItemIdentifier="MyInteractions" label="Interactions" paletteLabel="My Interactions" image="NSUser" selectable="YES" id="EgD-zR-FwZ">
+                    <toolbarItem implicitItemIdentifier="5E861A70-4B20-434E-BE40-5FF42DC62C83" explicitItemIdentifier="MyInteractions" label="Interactions" paletteLabel="My Interactions" image="call-start" selectable="YES" id="EgD-zR-FwZ">
                         <connections>
                             <action selector="switchView:" target="nYl-j7-R0C" id="qsQ-ll-XQm"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="57B5A63F-D39C-4E5A-A104-D47F889FA510" explicitItemIdentifier="CompanyDirectory" label="Directory" paletteLabel="Company Directory" tag="1" image="NSEveryone" selectable="YES" id="QAD-VZ-mgM">
+                    <toolbarItem implicitItemIdentifier="57B5A63F-D39C-4E5A-A104-D47F889FA510" explicitItemIdentifier="CompanyDirectory" label="Directory" paletteLabel="Company Directory" tag="1" image="book-addresses" selectable="YES" id="QAD-VZ-mgM">
                         <connections>
                             <action selector="switchView:" target="nYl-j7-R0C" id="TZk-uJ-V5t"/>
                         </connections>
@@ -134,7 +134,7 @@
         <customObject id="eZc-Cq-lQN" customClass="SUUpdater"/>
     </objects>
     <resources>
-        <image name="NSEveryone" width="32" height="32"/>
-        <image name="NSUser" width="32" height="32"/>
+        <image name="book-addresses" width="16" height="16"/>
+        <image name="call-start" width="25.600000381469727" height="25.600000381469727"/>
     </resources>
 </document>

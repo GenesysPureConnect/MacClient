@@ -4,6 +4,8 @@
         <link>https://s3.amazonaws.com/MacClient/appcast.rss</link>
         <description>Open Source Mac Client updates</description>
         <language>en</language>
+tream" sparkle:dsaSignature="MCwCFE54rNMUiI++Bh2Oo10/6XZZQeEyAhRT7tc77btTIP93Z3U6+ZOrkPNpFg== "/>
+        </item>
         <item>
             <title>Version 2.2</title>
             <description><![CDATA[
@@ -72,8 +74,21 @@
                 
             ]]></description>
             <pubDate>Fri, 13 Jun 2014 12:25:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.5.zip" sparkle:version="2.5" length="" type="application/octet-stream" sparkle:dsaSignature=""/>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.5.zip" sparkle:version="2.5" length="3272499" type="application/octet-stream" sparkle:dsaSignature=""/>
         </item>
+        <item>
+            <title>Version 2.6</title>
+            <description><![CDATA[
+                
+                <ul>
+                <li>Restyled the UI</li>
+                <li>Added send to voicemail option</li>
+                </ul>
+                
+                
+            ]]></description>
+            <pubDate>Fri, 8 Aug 2014 13:53:01 +0000</pubDate>
+            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.6.zip" sparkle:version="2.6" length="1293282" type="application/octet-s
 
     </channel>
 </rss>
