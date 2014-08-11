@@ -111,6 +111,19 @@ BOOL isInitialized = NO;
 }
 
 -(void) setCallControlButtonState:(Interaction*)interaction{
+    
+    if(interaction == NULL){
+        [_pickupButton setEnabled: false];
+        [_disconnectButton setEnabled:false];
+        [_holdButton setEnabled:false];
+        [_muteButton setEnabled:false];
+        [_recordButton setEnabled:false];
+        [_voicemailButton setEnabled:false];
+        return;
+
+    }
+    
+    
     [_pickupButton setEnabled: interaction.canPickup];
     [_disconnectButton setEnabled:interaction.canDisconnet];
     [_holdButton setEnabled:interaction.canHold];
@@ -143,13 +156,7 @@ BOOL isInitialized = NO;
         [_recordButton setState: NSOffState];
     }
     
-    if(interaction.canSendToVoicemail)
-    {
-        [_voicemailButton setEnabled:true];
-    }
-    else{
-        [_voicemailButton setEnabled:false];
-    }
+    [_voicemailButton setEnabled:interaction.canSendToVoicemail];
     
     [_conferenceButton setState: _interactions.count > 0 ? NSOnState : NSOffState];
     

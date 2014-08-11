@@ -92,18 +92,6 @@
                         <action selector="makeCallButtonClick:" target="Pnq-ix-J4c" id="Qyz-JJ-iiQ"/>
                     </connections>
                 </button>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LiZ-Og-2nM">
-                    <rect key="frame" x="9" y="239" width="172" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" placeholderString="Phone #" drawsBackground="YES" id="f70-cs-H9K">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <action selector="numberFieldFinishedEditing:" target="Pnq-ix-J4c" id="1L1-WR-ZDB"/>
-                    </connections>
-                </textField>
                 <scrollView appearanceType="aqua" fixedFrame="YES" borderType="groove" autohidesScrollers="YES" horizontalLineScroll="68" horizontalPageScroll="10" verticalLineScroll="68" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cZ-Fb-RAy" userLabel="Queue Table">
                     <rect key="frame" x="9" y="7" width="252" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -216,7 +204,7 @@
                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </clipView>
                     <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="oQo-6n-SH8">
-                        <rect key="frame" x="2" y="-13" width="0.0" height="15"/>
+                        <rect key="frame" x="2" y="-14" width="0.0" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="NTh-V8-T0P">
@@ -252,12 +240,21 @@
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFh-5o-XIv">
+                    <rect key="frame" x="9" y="239" width="172" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Phone Number" drawsBackground="YES" id="u4G-c6-daU">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
         </customView>
         <customObject id="Pnq-ix-J4c" customClass="MakeCallController">
             <connections>
                 <outlet property="makeCallButton" destination="mav-pi-bDD" id="S68-4W-j9t"/>
-                <outlet property="phoneNumberTextBox" destination="LiZ-Og-2nM" id="aJv-HB-Gtf"/>
+                <outlet property="phoneNumberTextBox" destination="KFh-5o-XIv" id="x8U-xC-F4q"/>
             </connections>
         </customObject>
         <customObject id="dCS-mw-vtR" customClass="QueueController">
