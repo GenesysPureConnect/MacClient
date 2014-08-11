@@ -85,6 +85,33 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Edit" id="TZq-Sg-n70">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="o1Z-MX-qBA">
+                        <items>
+                            <menuItem title="Cut" keyEquivalent="x" id="Ikf-Dt-xP9">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="d7g-Ln-JWy"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="vUb-FY-sEr">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="ond-bB-olA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="FHy-ss-4OS">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="wPd-C6-sJA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="Dli-lM-zh2">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="xb8-PP-B2i"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
             </items>
         </menu>
         <window title="Mac Client" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="371">
