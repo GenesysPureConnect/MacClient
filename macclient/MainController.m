@@ -103,6 +103,8 @@ NSButton* closeButton;
         return;
     }
    
+    [[self toolbar] setVisible:NO];
+
     if(_loginController == NULL){
         _loginController = [[LoginViewController alloc]initWithNibName:@"LoginView" bundle:nil];
         [_loginController setConnectionService:_connectionService];
