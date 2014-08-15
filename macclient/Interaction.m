@@ -88,7 +88,7 @@ NSString* _recorders;
                           
             NSRange range = [attributes[key] rangeOfString:_userName options:NSCaseInsensitiveSearch];
             
-            _isRecording = (range.location != NSNotFound);
+            _recording = (range.location != NSNotFound);
         }
         else if ([kAttributeUserName isEqualToString:key])
         {
@@ -126,7 +126,9 @@ NSString* _recorders;
     return [_callState isEqualToString:@"I"] || [_callState isEqualToString:@"E"];
 }
 
--(BOOL) isMuted{return _muted;}
+-(BOOL) isMuted{
+    return _muted;
+}
 -(BOOL) canPickup
 {
     return (_capabilities & 4 )>0 && ![self isConnected];
@@ -137,12 +139,14 @@ NSString* _recorders;
     BOOL hold = (_capabilities & 256 ) > 0 ;
     return hold || [self isHeld] || [self isConnected];
 }
--(BOOL) canMute{return (_capabilities & 32 )>0;}
+-(BOOL) canMute{
+    return (_capabilities & 32 )>0;
+}
 
 -(BOOL) canRecord
 {
     BOOL record = (_capabilities & 1024 ) > 0 ;
-    return record || [self isConnected];
+    return record || [self isConnected] || [self isHeld];
 }
 
 -(BOOL) canSendToVoicemail
@@ -152,7 +156,7 @@ NSString* _recorders;
 
 -(BOOL) isRecording
 {
-    return _isRecording;
+    return _recording;
 }
 
 -(BOOL) isConference

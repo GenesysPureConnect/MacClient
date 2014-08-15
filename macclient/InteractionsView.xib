@@ -15,68 +15,74 @@
             <rect key="frame" x="0.0" y="0.0" width="271" height="325"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Pi-RfB">
+                <button toolTip="Hold" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eRu-Pi-RfB">
                     <rect key="frame" x="95" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="Hold" bezelStyle="regularSquare" image="media-playback-pause-2" imagePosition="only" alignment="center" alternateImage="Hold" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="5uM-bn-0ht">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Hold"/>
                     <connections>
                         <action selector="holdClick:" target="dCS-mw-vtR" id="WVw-ab-pyf"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfT-xP-0PN">
+                <button toolTip="Pickup" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VfT-xP-0PN">
                     <rect key="frame" x="7" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="Pickup" alternateTitle="Pickup" bezelStyle="regularSquare" image="media-playback-start-2" imagePosition="only" alignment="center" alternateImage="Pickup" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="Jnd-vQ-wG1">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Pickup"/>
                     <connections>
                         <action selector="pickupClick:" target="dCS-mw-vtR" id="fRy-XL-2lq"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGT-LR-0El">
+                <button toolTip="Disconnect" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGT-LR-0El">
                     <rect key="frame" x="51" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" title="Disconnect" alternateTitle="Disconnect" bezelStyle="regularSquare" image="media-playback-stop-2" imagePosition="only" alignment="center" alternateImage="Disconnect" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="6vL-aE-O1g">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Disconnect"/>
                     <connections>
                         <action selector="disconnectClick:" target="dCS-mw-vtR" id="cs2-pc-MA4"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-ze-u1Q">
+                <button toolTip="Mute" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZM9-ze-u1Q">
                     <rect key="frame" x="139" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="bevel" title="Mute" bezelStyle="regularSquare" image="audio-volume-muted-2" imagePosition="only" alignment="center" alternateImage="Mute" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ql-o8-Fed">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="audio-volume-muted-2" imagePosition="overlaps" alignment="center" alternateImage="Mute" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8Ql-o8-Fed">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Mute"/>
                     <connections>
                         <action selector="muteClick:" target="dCS-mw-vtR" id="Qse-hs-LG7"/>
                     </connections>
                 </button>
-                <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-Cj-jbL" userLabel="Record Button">
+                <button toolTip="Record" appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-Cj-jbL">
                     <rect key="frame" x="183" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="media-record-2" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="3vE-B3-Xx8">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Record"/>
                     <connections>
                         <action selector="recordClick:" target="dCS-mw-vtR" id="PvR-xc-PVH"/>
                     </connections>
                 </button>
-                <button appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McH-1o-c9c" userLabel="Record Button">
+                <button toolTip="Send to Voicemail" appearanceType="aqua" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McH-1o-c9c">
                     <rect key="frame" x="227" y="192" width="40" height="41"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="mail-forward-2" imagePosition="only" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="95I-Lg-Dq2">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <accessibility description="Send to Voicemail"/>
                     <connections>
                         <action selector="sendToVoicemailClick:" target="dCS-mw-vtR" id="lsa-IN-K2L"/>
                     </connections>

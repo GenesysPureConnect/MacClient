@@ -32,6 +32,7 @@ typedef enum {
 @property NSString* conferenceId;
 @property NSInteger muted;
 @property InteractionType interactionType;
+@property Boolean recording;
 
 -(id) initWithId:(NSString*)interactionId;
 -(void) setAttributes:(NSDictionary*) data;

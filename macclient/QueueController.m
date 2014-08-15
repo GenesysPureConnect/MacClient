@@ -187,6 +187,8 @@ BOOL isInitialized = NO;
     result.stateString.stringValue = [NSMutableString stringWithString: interaction.callStateDescription];
     result.number.stringValue = [NSMutableString stringWithString: interaction.remoteId];
     result.timeInStatus.stringValue =  [NSMutableString stringWithString: interaction.formattedDurationString];
+    
+    
     result.imageView.image = interaction.image;
     [[result recordingImage] setHidden:![interaction isRecording]];
     return result;
