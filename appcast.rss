@@ -4,91 +4,108 @@
         <link>https://s3.amazonaws.com/MacClient/appcast.rss</link>
         <description>Open Source Mac Client updates</description>
         <language>en</language>
-tream" sparkle:dsaSignature="MCwCFE54rNMUiI++Bh2Oo10/6XZZQeEyAhRT7tc77btTIP93Z3U6+ZOrkPNpFg== "/>
+ 
+    <item>
+        <title>Version 2.2</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Added Remote station login</li>
+            <li>Random bug fixes</li>
+            <li>Added auto update feature</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Fri, 16 May 2014 13:53:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.zip" sparkle:version="2.2" length="3256087" type="application/octet-stream" sparkle:dsaSignature="MCwCFE54rNMUiI++Bh2Oo10/6XZZQeEyAhRT7tc77btTIP93Z3U6+ZOrkPNpFg== "/>
+    </item>
+    <item>
+        <title>Version 2.2.1</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Fixed bug with auto login</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Tue, 20 May 2014 10:49:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.1.zip" sparkle:version="2.2.1" length="3263956" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCUZHe7ab2l9+w5/gAUpMcdMNJcAgIUAY/sDieLDHoahmtr61CbFyB0mWM= "/>
+    </item>
+    <item>
+        <title>Version 2.3</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Added station history to login dialog</li>
+            <li>Ignore non call interactions</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Thur, 29 May 2014 14:39:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.3.zip" sparkle:version="2.3" length="3267410" type="application/octet-stream" sparkle:dsaSignature="MCwCFEHAqYs1x0oAJcR958/GQsBvAUg4AhRAVIG7x3g1tpQV8GvGVcSkbNvwoQ== "/>
+    </item>
+    <item>
+        <title>Version 2.4</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Added Record Button</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Fri, 6 Jun 2014 14:25:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.4.zip" sparkle:version="2.4" length="3271846" type="application/octet-stream" sparkle:dsaSignature="MCwCFDjmWlJLE/DBaiT4CHNjW6mGQKf0AhQmPzMxIFDPQly4koiaroLeIiTtqg== "/>
+    </item>
+    <item>
+        <title>Version 2.5</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Center change station dialog</li>
+            <li>Fixed window resize issues</li>
+            <li>Better handling for connection errors</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Fri, 13 Jun 2014 12:25:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.5.zip" sparkle:version="2.5" length="3272499" type="application/octet-stream" sparkle:dsaSignature=""/>
+    </item>
+    <item>
+        <title>Version 2.6</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Restyled the UI</li>
+            <li>Added send to voicemail option</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Fri, 8 Aug 2014 13:53:01 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.6.zip" sparkle:version="2.6" length="1293282" type="application/octet-stream" sparkle:dsaSignature=""/>
         </item>
-        <item>
-            <title>Version 2.2</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Added Remote station login</li>
-                <li>Random bug fixes</li>
-                <li>Added auto update feature</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Fri, 16 May 2014 13:53:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.zip" sparkle:version="2.2" length="3256087" type="application/octet-stream" sparkle:dsaSignature="MCwCFE54rNMUiI++Bh2Oo10/6XZZQeEyAhRT7tc77btTIP93Z3U6+ZOrkPNpFg== "/>
-        </item>
-        <item>
-            <title>Version 2.2.1</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Fixed bug with auto login</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Tue, 20 May 2014 10:49:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.2.1.zip" sparkle:version="2.2.1" length="3263956" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCUZHe7ab2l9+w5/gAUpMcdMNJcAgIUAY/sDieLDHoahmtr61CbFyB0mWM= "/>
-        </item>
-        <item>
-            <title>Version 2.3</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Added station history to login dialog</li>
-                <li>Ignore non call interactions</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Thur, 29 May 2014 14:39:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.3.zip" sparkle:version="2.3" length="3267410" type="application/octet-stream" sparkle:dsaSignature="MCwCFEHAqYs1x0oAJcR958/GQsBvAUg4AhRAVIG7x3g1tpQV8GvGVcSkbNvwoQ== "/>
-        </item>
-        <item>
-            <title>Version 2.4</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Added Record Button</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Fri, 6 Jun 2014 14:25:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.4.zip" sparkle:version="2.4" length="3271846" type="application/octet-stream" sparkle:dsaSignature="MCwCFDjmWlJLE/DBaiT4CHNjW6mGQKf0AhQmPzMxIFDPQly4koiaroLeIiTtqg== "/>
-        </item>
-        <item>
-            <title>Version 2.5</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Center change station dialog</li>
-                <li>Fixed window resize issues</li>
-                <li>Better handling for connection errors</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Fri, 13 Jun 2014 12:25:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.5.zip" sparkle:version="2.5" length="3272499" type="application/octet-stream" sparkle:dsaSignature=""/>
-        </item>
-        <item>
-            <title>Version 2.6</title>
-            <description><![CDATA[
-                
-                <ul>
-                <li>Restyled the UI</li>
-                <li>Added send to voicemail option</li>
-                </ul>
-                
-                
-            ]]></description>
-            <pubDate>Fri, 8 Aug 2014 13:53:01 +0000</pubDate>
-            <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.6.zip" sparkle:version="2.6" length="1293282" type="application/octet-s
-
-    </channel>
-</rss>
+    <item>
+        <title>Version 2.7</title>
+        <description><![CDATA[
+            
+            <ul>
+            <li>Hide toolbar on logout</li>
+            <li>Adding cut/copy/paste/select all commands to text boxes</li>
+            <li>Fixing record icon showing on all interactions</li>
+            <li>Adding tooltips to call control button</li>
+            <li>Disable call control buttons for a new call that isn't selected</li>
+            </ul>
+            
+            
+        ]]></description>
+        <pubDate>Wed, 20 Aug 2014 10:30:15 +0000</pubDate>
+        <enclosure url="https://s3.amazonaws.com/MacClient/MacClient.2.7.zip" sparkle:version="2.7" length="1295325" type="application/octet-stream" sparkle:dsaSignature="MCwCFEExA3zbm101fqS4ZoYBc4X8n1+tAhRdohYIjoiJXmItcQ7cPEYPBs1VEw=="/>
+    </item>
+    
+            </channel>
+            </rss>
