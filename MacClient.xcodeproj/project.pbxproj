@@ -12,6 +12,11 @@
 		892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 892C8C2818C5FE86007BB4EA /* Reachability.m */; };
 		892C8C2B18C5FEDA007BB4EA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */; };
 		892D1B2118C4254600C86E8E /* TestConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 892D1B2018C4254600C86E8E /* TestConnection.m */; };
+		89400DBE19D9AE3300013EC0 /* view-history.png in Resources */ = {isa = PBXBuildFile; fileRef = 89400DBD19D9AE3300013EC0 /* view-history.png */; };
+		89400DC019D9AEDE00013EC0 /* InteractionHistory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89400DBF19D9AEDE00013EC0 /* InteractionHistory.xib */; };
+		89400DC319D9B15100013EC0 /* CallHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89400DC219D9B15100013EC0 /* CallHistoryController.m */; };
+		89400DC619DB266A00013EC0 /* InteractionHistoryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 89400DC519DB266A00013EC0 /* InteractionHistoryItem.m */; };
+		89400DC919DB27D800013EC0 /* InteractionHistoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 89400DC819DB27D800013EC0 /* InteractionHistoryService.m */; };
 		895442D718EF3F57008E7EE8 /* media-playback-start.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D418EF3F57008E7EE8 /* media-playback-start.png */; };
 		895442D818EF3F57008E7EE8 /* media-playback-stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 895442D518EF3F57008E7EE8 /* media-playback-stop.png */; };
 		8959DEB619214B4700097F19 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8959DEB519214B4700097F19 /* dsa_pub.pem */; };
@@ -116,6 +121,14 @@
 		892C8C2A18C5FEDA007BB4EA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		892D1B1F18C4254600C86E8E /* TestConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestConnection.h; sourceTree = "<group>"; };
 		892D1B2018C4254600C86E8E /* TestConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestConnection.m; sourceTree = "<group>"; };
+		89400DBD19D9AE3300013EC0 /* view-history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "view-history.png"; sourceTree = "<group>"; };
+		89400DBF19D9AEDE00013EC0 /* InteractionHistory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InteractionHistory.xib; sourceTree = "<group>"; };
+		89400DC119D9B15100013EC0 /* CallHistoryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallHistoryController.h; sourceTree = "<group>"; };
+		89400DC219D9B15100013EC0 /* CallHistoryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallHistoryController.m; sourceTree = "<group>"; };
+		89400DC419DB266A00013EC0 /* InteractionHistoryItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionHistoryItem.h; sourceTree = "<group>"; };
+		89400DC519DB266A00013EC0 /* InteractionHistoryItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionHistoryItem.m; sourceTree = "<group>"; };
+		89400DC719DB27D800013EC0 /* InteractionHistoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionHistoryService.h; sourceTree = "<group>"; };
+		89400DC819DB27D800013EC0 /* InteractionHistoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionHistoryService.m; sourceTree = "<group>"; };
 		895442D318EF3F57008E7EE8 /* media-playback-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-pause.png"; sourceTree = "<group>"; };
 		895442D418EF3F57008E7EE8 /* media-playback-start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-start.png"; sourceTree = "<group>"; };
 		895442D518EF3F57008E7EE8 /* media-playback-stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "media-playback-stop.png"; sourceTree = "<group>"; };
@@ -388,6 +401,8 @@
 				89E94196190F20A3004E528F /* AlertingCallNotificationService.m */,
 				89BA495D198F0B8F00D341AC /* FeatureService.h */,
 				89BA495E198F0B8F00D341AC /* FeatureService.m */,
+				89400DC719DB27D800013EC0 /* InteractionHistoryService.h */,
+				89400DC819DB27D800013EC0 /* InteractionHistoryService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -399,6 +414,8 @@
 				89B2D72E18BA51A7004F0AD5 /* Status.m */,
 				8985113E18BFFA0200C6C33F /* Interaction.h */,
 				8985113F18BFFA0200C6C33F /* Interaction.m */,
+				89400DC419DB266A00013EC0 /* InteractionHistoryItem.h */,
+				89400DC519DB266A00013EC0 /* InteractionHistoryItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -411,6 +428,7 @@
 				8993A5E9192847F50025703F /* ChangeStationWindow.xib */,
 				899C51C0198C2045005D9B92 /* InteractionsView.xib */,
 				899C51C2198C205E005D9B92 /* DirectoryView.xib */,
+				89400DBF19D9AEDE00013EC0 /* InteractionHistory.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -440,6 +458,8 @@
 				8993A5EC192848FD0025703F /* ChangeStationController.m */,
 				899C51C6198C2374005D9B92 /* MyInteractionsController.h */,
 				899C51C7198C2374005D9B92 /* MyInteractionsController.m */,
+				89400DC119D9B15100013EC0 /* CallHistoryController.h */,
+				89400DC219D9B15100013EC0 /* CallHistoryController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -461,6 +481,7 @@
 			isa = PBXGroup;
 			children = (
 				89CFB3E319953C3500224CAA /* user.png */,
+				89400DBD19D9AE3300013EC0 /* view-history.png */,
 				89CFB3E11995334900224CAA /* book-addresses.png */,
 				89CFB3DF19952F8000224CAA /* audio-volume-muted-2.png */,
 				89CFB3DD19952F1700224CAA /* media-record-2.png */,
@@ -571,10 +592,12 @@
 				89CFB3DE19952F1700224CAA /* media-record-2.png in Resources */,
 				89671C6D18921CC900918B1E /* Credits.rtf in Resources */,
 				8959DEB619214B4700097F19 /* dsa_pub.pem in Resources */,
+				89400DBE19D9AE3300013EC0 /* view-history.png in Resources */,
 				89E5C8BB190C73E400DC58D6 /* user-online.png in Resources */,
 				8969AF861942147B009906C4 /* media-record.png in Resources */,
 				8969AF8819423415009906C4 /* bullet-red.png in Resources */,
 				8959DEB819214FA100097F19 /* appcast.rss in Resources */,
+				89400DC019D9AEDE00013EC0 /* InteractionHistory.xib in Resources */,
 				89BAA67418BDA50A0026380B /* Images.xcassets in Resources */,
 				89CFB3DA19952E9C00224CAA /* media-playback-stop-2.png in Resources */,
 				89CFB3D819952E6F00224CAA /* media-playback-start-2.png in Resources */,
@@ -619,6 +642,8 @@
 				8985114018BFFA0200C6C33F /* Interaction.m in Sources */,
 				8985114318C2EBE200C6C33F /* QueueController.m in Sources */,
 				89B94A8918BEB1F8007B25DA /* ServiceLocator.m in Sources */,
+				89400DC319D9B15100013EC0 /* CallHistoryController.m in Sources */,
+				89400DC919DB27D800013EC0 /* InteractionHistoryService.m in Sources */,
 				89B2D72018B99729004F0AD5 /* StatusBarController.m in Sources */,
 				892C8C2918C5FE86007BB4EA /* Reachability.m in Sources */,
 				89BAA67A18BE3AEB0026380B /* StatusController.m in Sources */,
@@ -631,6 +656,7 @@
 				892C8C2318C55C72007BB4EA /* OtherSessionService.m in Sources */,
 				899C51C8198C2374005D9B92 /* MyInteractionsController.m in Sources */,
 				89B2D74618BC2167004F0AD5 /* MainController.m in Sources */,
+				89400DC619DB266A00013EC0 /* InteractionHistoryItem.m in Sources */,
 				89BAA67718BE273D0026380B /* StatusControllerBase.m in Sources */,
 				89B94A9B18BF7A75007B25DA /* CallService.m in Sources */,
 				89E5C8AC190A0D0B00DC58D6 /* QueueItemView.m in Sources */,

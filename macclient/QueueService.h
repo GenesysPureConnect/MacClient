@@ -12,9 +12,11 @@
 
 #import "IcwsServiceBase.h"
 #import "Interaction.h"
+#import "InteractionHistoryService.h"
+
 @interface QueueService : IcwsServiceBase
 
--(id) initMyInteractionsQueue:(IcwsClient*) icwsClient isConnected:(BOOL)isConnected withUser:(NSString*) user;
+-(id) initMyInteractionsQueue:(IcwsClient*) icwsClient isConnected:(BOOL)isConnected withUser:(NSString*) user withHistoryService:(InteractionHistoryService*) interactionHistoryService;
 - (void) onQueueContentsChanged: (NSNotification*) data;
 @property NSArray* queueList;
 

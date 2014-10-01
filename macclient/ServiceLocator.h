@@ -19,6 +19,7 @@
 #import "OtherSessionService.h"
 #import "TestConnection.h"
 #import "DirectoryService.h"
+#import "InteractionHistoryService.h"
 
 //Simple Service locator to get instances of different services.
 @interface ServiceLocator : NSObject
@@ -29,4 +30,5 @@
 +(TestConnection*) getConnectionService;
 +(OtherSessionService*) getOtherSessionService;
 +(DirectoryService*) getDirectoryService;
++(InteractionHistoryService*) getInteractionHistoryService;
 @end

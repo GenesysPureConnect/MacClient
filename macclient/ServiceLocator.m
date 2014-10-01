@@ -11,10 +11,6 @@
 //
 
 #import "ServiceLocator.h"
-#import "CallService.h"
-#import "QueueService.h"
-#import "ConnectionService.h"
-#import "TestConnection.h"
 
 static NSDictionary* s_fooDict;
 static IcwsClient* s_icwsClient;
@@ -24,6 +20,7 @@ static TestConnection* s_connectionService;
 static OtherSessionService* s_otherSessionService;
 static DirectoryService* s_directoryService;
 static QueueService* s_myInteractionsQueueService;
+static InteractionHistoryService* s_interactionHistoryService;
 
 @implementation ServiceLocator
 
@@ -55,6 +52,16 @@ static QueueService* s_myInteractionsQueueService;
     return s_statusService;
 }
 
++(InteractionHistoryService*) getInteractionHistoryService
+{
+    if (s_interactionHistoryService == nil)
+    {
+        s_interactionHistoryService = [[InteractionHistoryService alloc] init];
+    }
+    
+    return s_interactionHistoryService;
+}
+
 +(CallService*) getCallService
 {
     if (s_callService == nil)
@@ -78,7 +85,7 @@ static QueueService* s_myInteractionsQueueService;
 {
     if (s_myInteractionsQueueService == nil)
     {
-        s_myInteractionsQueueService = [[QueueService alloc] initMyInteractionsQueue:[self getIcwsClient] isConnected:[[self getConnectionService] isConnected] withUser:[[self getConnectionService] userId]];
+        s_myInteractionsQueueService = [[QueueService alloc] initMyInteractionsQueue:[self getIcwsClient] isConnected:[[self getConnectionService] isConnected] withUser:[[self getConnectionService] userId] withHistoryService:[self getInteractionHistoryService] ];
     }
     
     return s_myInteractionsQueueService;

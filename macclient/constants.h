@@ -45,6 +45,7 @@
 #define kWorkstationType @"DebugWorkstationType"
 #define kWorkstationName @"DebugWorkstationName"
 #define kWorkstationHistory @"DebugWorkstationHistory"
+#define kInteractionHistory @"DebugInteractionHistory"
 #else
 #define kUserName @"UserName"
 #define kPassword @"Password"
@@ -54,6 +55,7 @@
 #define kWorkstationType @"WorkstationType"
 #define kWorkstationName @"WorkstationName"
 #define kWorkstationHistory @"WorkstationHistory"
+#define kInteractionHistory @"InteractionHistory"
 #endif
 
 #endif

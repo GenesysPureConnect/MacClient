@@ -14,15 +14,20 @@
 #import "Interaction.h"
 #import "constants.h"
 
+
 @implementation QueueService
 NSString *_subscriptionId;
 IcwsClient* _icwsClient;
 NSMutableDictionary* _queueMap;
+InteractionHistoryService* _interactionHistoryService;
 
--(id) initMyInteractionsQueue:(IcwsClient*) icwsClient isConnected:(BOOL)isConnected withUser:(NSString*) user;
+
+-(id) initMyInteractionsQueue:(IcwsClient*) icwsClient isConnected:(BOOL)isConnected withUser:(NSString*) user withHistoryService:(InteractionHistoryService*) interactionHistoryService;
 {
     self = [super initWithIcwsClient:icwsClient];
     _icwsClient = icwsClient;
+    _interactionHistoryService = interactionHistoryService;
+    
     _queueMap = [[NSMutableDictionary alloc] init];
     CFUUIDRef uuid = CFUUIDCreate(kCFAllocatorDefault);
     _subscriptionId = (__bridge_transfer NSString *)CFUUIDCreateString(kCFAllocatorDefault, uuid);
@@ -87,6 +92,11 @@ NSMutableDictionary* _queueMap;
                     if([interaction interactionType] == Call){
                         [_queueMap setObject:interaction forKey:interactionData[@"interactionId"]];
                     }
+                    
+                    if(_interactionHistoryService != NULL)
+                    {
+                        [_interactionHistoryService addInteraction:interaction];
+                    }
                 }
             }
         }
@@ -101,6 +111,11 @@ NSMutableDictionary* _queueMap;
                 Interaction* interaction = _queueMap[interactionData[@"interactionId"]];
                 if(interaction != NULL){
                     [interaction setAttributes:interactionData[@"attributes"]];
+                }
+                
+                if(_interactionHistoryService != NULL)
+                {
+                    [_interactionHistoryService addInteraction:interaction];
                 }
                
             }

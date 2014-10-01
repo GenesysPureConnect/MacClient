@@ -24,6 +24,7 @@
 #import "ChangeStationController.h"
 #import "MyInteractionsController.h"
 #import "DirectorySearchController.h"
+#import "CallHistoryController.h"
 
 
 
@@ -37,6 +38,7 @@ QueueService *_myQueue;
 LoginViewController* _loginController;
 MyInteractionsController *_myInteractionsController;
 DirectorySearchController *_directorySearchController;
+CallHistoryController *_callHistoryController;
 AutoConnectService *_autoConnectService;
 AlertingCallNotificationService* _alertingCallNotificationService;
 
@@ -89,6 +91,9 @@ NSButton* closeButton;
         case 1:
             [self showDirectoryDialog];
             break;
+        case 2:
+            [self showHistoryDialog];
+            break;
         default:
             [self showInteractionsDialog];
             break;
@@ -132,6 +137,24 @@ NSButton* closeButton;
     [self setView: _directorySearchController];
     
     [self.toolbar setSelectedItemIdentifier:@"CompanyDirectory"];
+}
+
+-(void) showHistoryDialog{
+    if ([_currentViewController isKindOfClass:[CallHistoryController class]])
+    {
+        return;
+    }
+    
+    if(_callHistoryController == NULL){
+        
+        _callHistoryController = [[CallHistoryController alloc]initWithNibName:@"InteractionHistory" bundle:nil];
+    }
+    
+    [[self toolbar] setVisible:YES];
+    
+    [self setView: _callHistoryController];
+    
+    [self.toolbar setSelectedItemIdentifier:@"CallHistory"];
 }
 
 -(void) showInteractionsDialog{
