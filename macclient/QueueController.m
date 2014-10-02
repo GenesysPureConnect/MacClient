@@ -39,6 +39,9 @@ BOOL isInitialized = NO;
         [_queueTable registerForDraggedTypes: [NSArray arrayWithObject:MyPrivateTableViewDataType]];
         
         isInitialized = YES;
+        
+        [_queueTable setTarget:self];
+        [_queueTable setDoubleAction:@selector(doubleClick: )];
     }
     
 }
@@ -69,6 +72,24 @@ BOOL isInitialized = NO;
     }
     
 }
+
+- (void)doubleClick:(id)nid
+{
+    NSInteger rowNumber = [_queueTable clickedRow];
+    Interaction* interaction = _interactions[rowNumber];
+    
+    if([interaction isDisconnected] == false){
+        //only re-call disconnected interactions
+        return;
+    }
+    
+    NSString* phoneNumber = [interaction remoteId];
+    
+    CallService* callService = [ServiceLocator getCallService];
+    [callService placeCall:phoneNumber];
+
+}
+
 
 - (IBAction)pickupClick:(id)sender {
     [_queueService pickupInteraction:_currentInteraction];

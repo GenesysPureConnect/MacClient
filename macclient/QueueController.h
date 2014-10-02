@@ -47,4 +47,5 @@ writeRowsWithIndexes:(NSIndexSet *)rowIndexes
               row:(NSInteger)row
     dropOperation:(NSTableViewDropOperation)operation;
 
+- (void)doubleClick:(id)nid;
 @end
